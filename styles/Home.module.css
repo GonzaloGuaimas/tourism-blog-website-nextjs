@@ -290,6 +290,12 @@
   width: 100%;
   min-height: 60px;
 }
+.navBar a{
+  transition: font-size .2s ease;
+}
+.navBar a:hover{
+  font-size: 1.2rem;
+}
 
 .Home {
   display: flex;
@@ -311,6 +317,7 @@
 .HomeText p {
   font-weight: normal;
 }
+
 .HomeText button {
   background-color: var(--primary-background);
   border: none;
