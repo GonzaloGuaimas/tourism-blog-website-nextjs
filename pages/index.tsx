@@ -5,6 +5,7 @@ import second from "next"
 import HomeComponent from '../components/Home'
 import { Inter } from '@next/font/google'
 import Delimiter from '../components/Delimiter'
+import DestinationGrid from '../components/DestinationGrid'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function Home() {
         <main className={styles.main}>
           <HomeComponent/>
           <Delimiter image={'/assets/map.png'} title={'TOURS DE PAGO LIBRE'} />
+          <DestinationGrid/>
         </main>
       </>
     )
