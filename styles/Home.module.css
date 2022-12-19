@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -277,7 +276,7 @@
   }
 }
 
-/*--------------------------------------*/
+/*---------------NAVBAR-----------------------*/
 
 .navBar {
   padding-left: 1rem;
@@ -297,7 +296,9 @@
   font-size: 1.2rem;
 }
 
+/*--------------HOME------------*/
 .Home {
+  padding: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -358,4 +359,21 @@
   max-width: 400px;
   height: auto;
   flex: 1;
+}
+
+/*---------------DELIMITER-----------------*/
+
+.Delimiter {
+  color: white;
+  width: 100%;
+}
+.Delimiter .DelimiterContent{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3rem;
+  background-color: var(--primary-background);
+}
+.Delimiter .DelimiterContent h2{
+  font-size: 2rem;
 }
