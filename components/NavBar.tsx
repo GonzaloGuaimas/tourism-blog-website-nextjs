@@ -1,8 +1,13 @@
 import React from 'react'
+import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export const NavBar = () => {
-    const a = "asdsa"
   return (
-    <div>NavBar</div>
+    <div className={styles.navBar}>
+      <Link href={'/'}>Inicio</Link>
+      <Link href={'/'}>Destinos</Link>
+      <Link href={'/'}>Novedades</Link>
+    </div>
   )
 }

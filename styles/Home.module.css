@@ -15,7 +15,7 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
+  font-family: var(--font);
 }
 
 .description a {
@@ -36,7 +36,7 @@
 
 .code {
   font-weight: 700;
-  font-family: var(--font-mono);
+  font-family: var(--font);
 }
 
 .grid {
@@ -275,4 +275,18 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+
+.navBar {
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  font-family: '__Inter_9c9965', '__Inter_Fallback_9c9965';
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-background);
+  width: 100%;
+  min-height: 60px;
 }
