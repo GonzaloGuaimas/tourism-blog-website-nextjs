@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
 }
 
@@ -277,6 +277,7 @@
   }
 }
 
+/*--------------------------------------*/
 
 .navBar {
   padding-left: 1rem;
@@ -290,9 +291,64 @@
   min-height: 60px;
 }
 
-.home {
+.Home {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
+  column-gap: 3rem;
+}
+
+.Home .HomeText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 2rem;
+  flex-direction: column;
+  flex: 1
+}
+.HomeText p {
+  font-weight: normal;
+}
+.HomeText button {
+  background-color: var(--primary-background);
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.HomeText button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.HomeText button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.2s;
+}
+.HomeText button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+.HomeText button:hover span {
+  padding-left: 25px;
+}
+.HomeText button:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+.Home .HomeImage {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  flex: 1;
 }
