@@ -9,6 +9,7 @@ import DestinationGrid from '../components/DestinationGrid'
 import BlogGrid from '../components/BlogGrid'
 import Gallery from '../components/Gallery'
 import About from '../components/About'
+import Footer from '../components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,7 +32,8 @@ export default function Home() {
           <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
           <Gallery/>
           <About/>
-          <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
+          <Delimiter image={'/assets/map.png'} title={'ELEGÍ TU DESTINO'} />
+          <Footer/>
         </main>
       </>
     )

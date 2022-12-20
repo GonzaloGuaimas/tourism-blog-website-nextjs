@@ -614,3 +614,14 @@
   flex-direction: column;
   row-gap: 1rem;
 }
+
+/*---------------FOOTER-------------------*/
+
+.Footer {
+  text-align: center;
+  height: 100px;
+}
+.Footer a:hover{
+  color: var(--primary-background);
+  font-weight: bold;
+}
