@@ -277,6 +277,26 @@
   }
 }
 
+
+/*--------------GLOBAL-------------------*/
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.titleSection h1{
+  font-size: 3rem;
+}
+.titleSection h2{
+  font-size: 2rem;
+  color: var(--primary-background);
+}
+.titleSection h3{
+  font-size: 4rem;
+  color: var(--primary-background);
+}
+
 /*---------------NAVBAR-----------------------*/
 
 .navBar {

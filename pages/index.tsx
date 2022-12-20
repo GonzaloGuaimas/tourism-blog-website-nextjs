@@ -23,6 +23,7 @@ export default function Home() {
           <HomeComponent/>
           <Delimiter image={'/assets/map.png'} title={'TOURS DE PAGO LIBRE'} />
           <DestinationGrid/>
+          <Delimiter image={'/assets/person.png'} title={'LOS MEJORES GUÍAS PROFESIONALES'} />
         </main>
       </>
     )
