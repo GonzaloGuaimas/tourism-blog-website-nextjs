@@ -8,6 +8,7 @@ import Delimiter from '../components/Delimiter'
 import DestinationGrid from '../components/DestinationGrid'
 import BlogGrid from '../components/BlogGrid'
 import Gallery from '../components/Gallery'
+import About from '../components/About'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,6 +30,8 @@ export default function Home() {
           <BlogGrid/>
           <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
           <Gallery/>
+          <About/>
+          <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
         </main>
       </>
     )

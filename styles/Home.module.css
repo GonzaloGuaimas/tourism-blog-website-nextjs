@@ -294,11 +294,13 @@
   /* font-size: 2rem; */
   font-size: calc(2rem + 1vw);
   color: var(--primary-background);
+  text-align: center;
 }
 .titleSection h3{
   /* font-size: 4rem; */
   font-size: calc(4rem + 1vw);
   color: var(--primary-background);
+  text-align: center;
 }
 .titleSection hr{
   height: 7px;
@@ -421,6 +423,11 @@
 .Delimiter .DelimiterContent h2{
   /* font-size: 2rem; */
   font-size: calc(2rem + 1vw)
+}
+.Delimiter .DelimiterImage {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
 
 /*--------------DESTINATION------------------*/
@@ -597,4 +604,13 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+}
+
+/*---------------ABOUT-------------------*/
+.About {
+  width: 85%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 }
