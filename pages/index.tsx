@@ -7,6 +7,7 @@ import { Inter } from '@next/font/google'
 import Delimiter from '../components/Delimiter'
 import DestinationGrid from '../components/DestinationGrid'
 import BlogGrid from '../components/BlogGrid'
+import Gallery from '../components/Gallery'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +28,7 @@ export default function Home() {
           <Delimiter image={'/assets/person.png'} title={'LOS MEJORES GUÍAS'} />
           <BlogGrid/>
           <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
+          <Gallery/>
         </main>
       </>
     )
