@@ -307,6 +307,42 @@
   border-radius: 1rem;
   border: none;
 }
+
+.Button {
+  background-color: var(--primary-background);
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+}
+.Button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.Button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.2s;
+}
+.Button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+.Button:hover span {
+  padding-left: 25px;
+}
+.Button:hover span:after {
+  opacity: 1;
+  left: 0;
+}
 /*---------------NAVBAR-----------------------*/
 
 .navBar {
@@ -357,42 +393,6 @@
 }
 .HomeText h2 {
   font-size: calc(2rem + 1vw)
-}
-
-.HomeText button {
-  background-color: var(--primary-background);
-  border: none;
-  padding: 1rem;
-  font-weight: bold;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition-duration: 0.5s;
-  border-radius: 10px;
-}
-.HomeText button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-.HomeText button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: -20px;
-  transition: 0.2s;
-}
-.HomeText button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.2s;
-}
-.HomeText button:hover span {
-  padding-left: 25px;
-}
-.HomeText button:hover span:after {
-  opacity: 1;
-  left: 0;
 }
 
 .Home .HomeImage {
@@ -517,6 +517,7 @@
   gap: 1rem;
   width: 100%;
   justify-items: center;
+  margin-bottom: 2rem;
 }
 
 .BlogCard {

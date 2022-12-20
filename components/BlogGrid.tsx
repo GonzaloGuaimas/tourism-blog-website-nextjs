@@ -12,10 +12,11 @@ const BlogGrid = () => {
         <hr />
       </div>
       <div className={styles.Blog}>
-        <BlogCard image={'/assets/1.png'} title={'un titulo'} subtitle={'subtitulo'} date={'19 dic 22'}/>
-        <BlogCard image={'/assets/1.png'} title={'un titulo'} subtitle={'subtitulo'} date={'19 dic 22'}/>
-        <BlogCard image={'/assets/1.png'} title={'un titulo'} subtitle={'subtitulo'} date={'19 dic 22'}/>
+        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
+        <BlogCard image={'/assets/blogExample/main.jpg'} title={'Este fin de Semana estuvimos Con todo!'} subtitle={'llegaron turistas de todas partes'} date={'19 dic 22'}/>
+        <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'}/>
       </div>
+      <button className={styles.Button}><span>Visitá Nuestro Blog Completo</span></button>
     </>
   )
 }
