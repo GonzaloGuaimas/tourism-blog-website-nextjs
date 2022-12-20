@@ -84,58 +84,12 @@
   width: 100%;
   min-height: 60px;
   align-items: center;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 0rem 2rem 0rem 2rem;
 }
-.navBar .navBarMenu {
-  display: none;
-  cursor: pointer;
-}
-.navBar .navBarMenu div{
-  width:25px;
-  height:3px;
-  margin: 5px;
-  background-color: white;
-  transition: all 0.3s ease
-}
-.navBarMenuActive {
-  transform: translateX(0%);
-}
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-4px, 5px);
-}
-.toggle .line2 {
-  opacity: 0;
-}
-.toggle .line3 {
-  transform: rotate(45deg) translate(-4px, -5px);
-}
-
-
-
-.navBar .navBarItems {
+.navBarImage {
   flex: 1;
-  display: flex;
-  column-gap: 2rem;
-  font-weight: bold;
-  color: white;
-}
-@media (max-width: 800px) {
-  .navBar .navBarItems {
-    display: none;
-  }
-  .navBar .navBarMenu {
-    display: block;
-  }
-}
-
-.navBar .navBarImage {
-  flex: 1;
-}
-.navBar .navBarItems a{
-  transition: font-size .2s ease;
-}
-.navBar .navBarItems a:hover{
-  font-size: 1.2rem;
+  height: 35px;
+  max-width: 250px;
 }
 
 /*--------------HOME------------*/

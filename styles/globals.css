@@ -32,3 +32,92 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+/*------------------NAVBAR--------------*/
+.nav__brand {
+  text-transform: uppercase;
+}
+
+.navBarMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.navBarMenu a {
+  text-align: -webkit-center;
+}
+.navBarMenu h3{
+  transition: font-size .2s ease;
+  color: white;
+  font-weight: bold;
+}
+.navBarMenu h3:hover{
+  font-size: 1.2rem;
+}
+.navBarMenu hr {
+  height: none;
+  width: 30%;
+}
+.nav__toggler {
+  display: none;
+}
+.nav__toggler div {
+  width: 2rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background-color: white;
+  transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+  }
+  .navBarMenu {
+    padding-top: 3rem;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: 50vh;
+    width: 40vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+    justify-content: flex-start;
+    text-align: -webkit-center;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 15px;
+  }
+  .navBarMenu h3 {
+    color: black;
+    font-weight: bold;
+    font-size: calc(1rem + 1vw);
+    transition: font-size .2s ease;
+  }
+  .navBarMenu hr {
+    background-color: var(--primary-color);
+    width: 50%;
+    border: none;
+    height: 3px;
+  }
+  .navBarMenu h3:hover{
+    font-size: calc(1.3rem + 1vw);  
+  }
+}
+.nav__active {
+  transform: translateX(0%);
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-8px, -5px);
+}
