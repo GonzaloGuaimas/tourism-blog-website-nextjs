@@ -353,7 +353,10 @@
   flex: 1
 }
 .HomeText p {
-  font-weight: normal;
+  font-weight: 500;
+}
+.HomeText h2 {
+  font-size: calc(2rem + 1vw)
 }
 
 .HomeText button {
@@ -365,6 +368,7 @@
   font-size: 1rem;
   cursor: pointer;
   transition-duration: 0.5s;
+  border-radius: 10px;
 }
 .HomeText button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
@@ -396,6 +400,7 @@
   max-width: 400px;
   height: auto;
   flex: 1;
+  border-radius: 10px;
 }
 
 /*---------------DELIMITER-----------------*/
