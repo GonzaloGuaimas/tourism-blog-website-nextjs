@@ -482,3 +482,56 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
+/*--------------------BLOG------------------*/
+.Blog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  justify-items: center;
+}
+
+.BlogCard {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 350px;
+  align-items: center;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.BlogCard:hover {
+  -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.BlogCard .BlogImage {
+   border-top-right-radius: 1rem;
+   border-top-left-radius: 1rem;
+   object-fit: cover;
+   width: 100%;
+}
+.BlogCard .BlogInfo {
+  padding: 1rem;
+  align-self: flex-start;
+  width: 100%;
+}
+.BlogCard .BlogInfo h3{
+  font-weight: 400;
+}
+.BlogCard .BlogInfo p{
+  text-align: end;
+  font-weight: 400;
+  text-decoration: underline;
+}
+.BlogCard .BlogInfo hr{
+  width: 25%;
+  height: 3px;
+  border: none;
+  background-color: var(--primary-background);
+  font-weight: 400;
+}
