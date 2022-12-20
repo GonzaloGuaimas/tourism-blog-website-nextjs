@@ -22,25 +22,25 @@
 .titleSection h2{
   /* font-size: 2rem; */
   font-size: calc(2rem + 1vw);
-  color: var(--primary-background);
+  color: var(--primary-color);
   text-align: center;
 }
 .titleSection h3{
   /* font-size: 4rem; */
   font-size: calc(4rem + 1vw);
-  color: var(--primary-background);
+  color: var(--primary-color);
   text-align: center;
 }
 .titleSection hr{
   height: 7px;
   width: 50%;
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
   border-radius: 1rem;
   border: none;
 }
 
 .Button {
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
   border: none;
   padding: 1rem;
   font-weight: bold;
@@ -83,7 +83,7 @@
   column-gap: 2rem;
   font-weight: bold;
   color: white;
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
   width: 100%;
   min-height: 60px;
 }
@@ -147,7 +147,7 @@
   padding-left: 15px;
   padding-right: 15px;
   column-gap: 10px;
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
 }
 .Delimiter .DelimiterContent h2{
   /* font-size: 2rem; */
@@ -236,7 +236,7 @@
   outline: none;
   border: none;
   border-radius: 3px;
-  background: var(--primary-background);
+  background: var(--primary-color);
   color: white;
   font-weight: bold;
   width: 90%;
@@ -299,7 +299,7 @@
   width: 25%;
   height: 3px;
   border: none;
-  background-color: var(--primary-background);
+  background-color: var(--primary-color);
   font-weight: 400;
 }
 
@@ -351,6 +351,6 @@
   height: 100px;
 }
 .Footer a:hover{
-  color: var(--primary-background);
+  color: var(--primary-color);
   font-weight: bold;
 }
