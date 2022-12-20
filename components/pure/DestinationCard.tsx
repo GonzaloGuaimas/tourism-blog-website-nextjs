@@ -6,7 +6,6 @@ const DestinationCard = ({ image, title, description }: {image: string, title: s
   return (
     <div className={styles.DestinationCard}>
         <Image src={image} alt={''} height={250} width={250} className={styles.DestinationImage}/>
-        <h4>{title}</h4>
         <div className={styles.DestinationCardInfo}>
             <h3>{title}</h3>
             <p>{description}</p>
