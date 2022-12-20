@@ -286,17 +286,27 @@
   padding-bottom: 2rem;
 }
 .titleSection h1{
-  font-size: 3rem;
+  /* font-size: 3rem; */
+  font-size: calc(3rem + 1vw);
+  text-align: center;
 }
 .titleSection h2{
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: calc(2rem + 1vw);
   color: var(--primary-background);
 }
 .titleSection h3{
-  font-size: 4rem;
+  /* font-size: 4rem; */
+  font-size: calc(4rem + 1vw);
   color: var(--primary-background);
 }
-
+.titleSection hr{
+  height: 7px;
+  width: 50%;
+  background-color: var(--primary-background);
+  border-radius: 1rem;
+  border: none;
+}
 /*---------------NAVBAR-----------------------*/
 
 .navBar {
@@ -392,11 +402,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 3rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  column-gap: 10px;
   background-color: var(--primary-background);
 }
 .Delimiter .DelimiterContent h2{
-  font-size: 2rem;
+  /* font-size: 2rem; */
+  font-size: calc(2rem + 1vw)
 }
 
 /*--------------DESTINATION------------------*/
