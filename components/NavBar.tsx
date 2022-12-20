@@ -29,15 +29,15 @@ export const NavBar = () => {
             <h3>DESTINOS</h3>
             <hr />
           </Link>
-          <Link to='blog' smooth offset={-100} duration={300} >
+          <Link to='blog' smooth offset={-100} duration={900} >
             <h3>BLOG</h3>
             <hr />
           </Link>
-          <Link to='gallery' smooth offset={-100} duration={300} >
+          <Link to='gallery' smooth offset={-100} duration={900} >
             <h3>GALERÍA</h3>
             <hr />
           </Link>
-          <Link to='about' smooth offset={-100} duration={300} >
+          <Link to='about' smooth offset={-80} duration={900} >
             <h3>ACERCA DE</h3>
             <hr />
           </Link>
