@@ -9,6 +9,7 @@ const DestinationCard = ({ image, title, description }: {image: string, title: s
         <div className={styles.DestinationCardInfo}>
             <h3>{title}</h3>
             <p>{description}</p>
+            <button>Más Info</button>
         </div>
         
     </div>

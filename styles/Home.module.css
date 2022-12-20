@@ -444,6 +444,7 @@
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  text-align: center;
 }
 .DestinationCard:hover {
   transform: translateY(-10px);
@@ -494,19 +495,21 @@
   margin-top: 8px;
 }
 .DestinationCard .DestinationCardInfo button {
-  padding: 0.6rem;
+  margin-top: 5px;
+  padding: .5rem;
   outline: none;
   border: none;
   border-radius: 3px;
-  background: white;
-  color: black;
+  background: var(--primary-background);
+  color: white;
   font-weight: bold;
+  width: 90%;
   cursor: pointer;
   transition: 0.4s ease;
 }
 .DestinationCard .DestinationCardInfo button:hover {
-  background: dodgerblue;
-  color: white;
+  background: white;
+  color: black;
 }
 
 
