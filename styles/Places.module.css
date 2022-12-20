@@ -1,0 +1,43 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+  }
+  
+.Home {
+    width: 100%;
+    height: 35vh;
+    margin-top: 60px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('../public/assets/blogExample/main.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.HomeInfo {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    column-gap: 3rem;
+    height: 100%;
+}
+.HomeInfo h2 {
+    font-size: calc(3rem + 1vw);
+}
+.HomeInfo p {
+    padding: 1rem;
+    font-size: calc(.8rem + 1vw);
+    font-weight: 400;
+    font-style: italic;
+}
+.HomeInfo hr {
+    background-color: white;
+    border: none;
+    height: 3px;
+    width: 40%;
+}
