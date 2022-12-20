@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const HomeComponent = () => {
   return (
-    <div className={styles.Home}>
+    <div className={styles.Home} id={'home'}>
         <Image src={'/assets/1.png'} alt={''} height={788} width={940} className={styles.HomeImage}/>
         <div className={styles.HomeText}>
           <h2>Descubrí Argentina con los mejores guías de cada destino.</h2>

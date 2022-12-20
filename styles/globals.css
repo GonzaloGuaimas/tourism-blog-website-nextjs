@@ -31,6 +31,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 
@@ -49,6 +50,7 @@ a {
   text-align: -webkit-center;
 }
 .navBarMenu h3{
+  font-size: calc(1rem);
   transition: font-size .2s ease;
   color: white;
   font-weight: bold;
@@ -57,8 +59,11 @@ a {
   font-size: 1.2rem;
 }
 .navBarMenu hr {
-  height: none;
+  height: 3px;
   width: 30%;
+  background-color: black;
+  border: none;
+  border-radius: 3px;
 }
 .nav__toggler {
   display: none;
@@ -81,7 +86,7 @@ a {
     position: fixed;
     top: 60px;
     right: 0;
-    height: 50vh;
+    height: 70vh;
     width: 40vw;
     background-color: white;
     display: flex;

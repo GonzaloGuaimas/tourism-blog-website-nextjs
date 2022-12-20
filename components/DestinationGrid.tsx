@@ -6,7 +6,7 @@ import DestinationCard from './pure/DestinationCard'
 const DestinationGrid = () => {
   return (
     <>
-      <div className={styles.titleSection}>
+      <div className={styles.titleSection} id={'destination'}>
         <h2>CONOCÉ</h2>
         <h1>NUESTROS INCREÍBLES</h1>
         <h3>DESTINOS</h3>

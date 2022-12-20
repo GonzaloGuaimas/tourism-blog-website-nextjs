@@ -5,7 +5,7 @@ import BlogCard from './pure/BlogCard'
 const BlogGrid = () => {
   return (
     <>
-      <div className={styles.titleSection}>
+      <div className={styles.titleSection} id={'blog'}>
         <h2>NUESTRO BLOG</h2>
         <h2>DEL FREE TOUR!</h2>
         <h1>EL DÍA A DÍA</h1>
