@@ -167,6 +167,11 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
+.MapAnimate {
+    animation-duration: 1s;
+    animation-name: animate-element-left;
+    animation-fill-mode: forwards;
+}
 .Map p {
     padding: 1rem;
     font-weight: 600;
