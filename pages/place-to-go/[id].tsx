@@ -5,6 +5,8 @@ import styles from '../../styles/Places.module.css'
 import Home from '../../components/place-to-go/Home'
 import About from '../../components/place-to-go/About'
 import Gallery from '../../components/place-to-go/Gallery'
+import Map from '../../components/place-to-go/Map'
+import Footer from '../../components/Footer'
 
 export default function Place() {
     const router = useRouter()
@@ -22,6 +24,8 @@ export default function Place() {
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
             <About/>
             <Gallery/>
+            <Map/>
+            <Footer/>
         </main>
       </>
     )
