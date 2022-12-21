@@ -2,7 +2,11 @@ import React from 'react'
 import styles from '../../styles/Places.module.css'
 import AboutCard from '../pure/place-to-go/AboutCard'
 import { IoFootstepsSharp } from "react-icons/io5"
-
+import { ImClock2 } from "react-icons/im"
+import { IoLogoInstagram } from "react-icons/io5"
+import { IoLogoFacebook } from "react-icons/io5"
+import { IoLogoWhatsapp } from "react-icons/io5"
+import { IoLocationSharp } from "react-icons/io5"
 const About = () => {
   return (
     <div className={styles.About} id='about'>
@@ -14,10 +18,11 @@ const About = () => {
         </div>
         <div className={styles.AboutGrid}>
             <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<ImClock2 className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoInstagram className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoFacebook className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoWhatsapp className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationSharp className={styles.AboutCardIcon}/>}/>
         </div>
     </div>
   )
