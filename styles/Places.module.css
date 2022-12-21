@@ -163,3 +163,16 @@
     border-radius: 15px;
     width: 100%;
 }
+
+/*---------------------CONTACT--------------------*/
+.Contact {
+    transform: translateY(-90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 0rem 2rem 0rem 2rem;
+}
+.Contact p {
+    text-align: center;
+}

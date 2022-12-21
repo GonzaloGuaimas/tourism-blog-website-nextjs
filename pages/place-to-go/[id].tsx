@@ -7,6 +7,7 @@ import About from '../../components/place-to-go/About'
 import Gallery from '../../components/place-to-go/Gallery'
 import Map from '../../components/place-to-go/Map'
 import Footer from '../../components/Footer'
+import Contact from '../../components/place-to-go/Contact'
 
 export default function Place() {
     const router = useRouter()
@@ -25,6 +26,7 @@ export default function Place() {
             <About/>
             <Gallery/>
             <Map/>
+            <Contact/>
             <Footer/>
         </main>
       </>
