@@ -27,20 +27,22 @@
     column-gap: 3rem;
     height: 100%;
     animation-duration: 1s;
-    animation-name: animation-contact-btn-init;
-    /* va el bottom */
+    animation-name: animate-element-bottom ;
     animation-fill-mode: forwards;
 }
 .HomeInfo h2 {
+    display: inline-flex;
     font-size: calc(3rem + 1vw);
 }
 .HomeInfo p {
+    display: inline-flex;
     padding: 1rem;
     font-size: calc(.8rem + 1vw);
     font-weight: 400;
     font-style: italic;
 }
 .HomeInfo hr {
+    display: inline-flex;
     background-color: white;
     border: none;
     height: 3px;
