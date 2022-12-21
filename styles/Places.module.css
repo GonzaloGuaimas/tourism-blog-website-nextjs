@@ -51,7 +51,8 @@
     text-align: center;
     color: var(--primary-font-color);
     width: 100%;
-    padding: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
+    transform: translateY(-50px);
 }
 .About h2{
     font-weight: 400;
@@ -102,6 +103,7 @@
 
 .Gallery {
     width: 100%;
+    transform: translateY(-50px);
 }
 .Gallery img {
     width: 100%;
