@@ -19,7 +19,7 @@ export const NavBar = () => {
   };
   return (
     <nav className={styles.navBar}>
-      <Image src={'/assets/logo.png'} alt={''} height={45} width={350} className={styles.navBarImage}/>
+      <Image src={'/assets/logoPositive.png'} alt={''} height={45} width={350} className={styles.navBarImage}/>
       <div className={active}>
           <Link to='home' smooth offset={-100} duration={900} >
             <h3>INICIO</h3>

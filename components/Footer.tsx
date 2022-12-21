@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Footer = () => {
   return (
     <div className={styles.Footer}>
-        <Image src={'/assets/logo.png'} alt={''} height={45} width={350} className={styles.FooterImage}/>
+        <Image src={'/assets/logoNegative.png'} alt={''} height={45} width={350} className={styles.FooterImage}/>
         <a href="https://www.instagram.com/omegaa.si/"><p>Desarrollado por Omega</p></a>
     </div>
   )
