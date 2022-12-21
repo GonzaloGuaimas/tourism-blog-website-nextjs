@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
+import { Link } from 'react-scroll'
 
 const HomeComponent = () => {
   return (
@@ -14,7 +15,9 @@ const HomeComponent = () => {
           <p>
             Encontrá en Free Tours Argentina toda la información de cada destino: Ciudades, horarios, punto de encuentros y consejos de viaje.
           </p>
-          <button className='Button'><span>Descubrir Nuestros Destinos</span></button>
+          <Link to='destination' smooth offset={-100} duration={900} >
+            <button className='Button'><span>Descubrir Nuestros Destinos</span></button>
+          </Link>
         </div>
     </div>
   )
