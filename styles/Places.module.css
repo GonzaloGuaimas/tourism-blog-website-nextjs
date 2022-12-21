@@ -26,6 +26,9 @@
     font-weight: bold;
     column-gap: 3rem;
     height: 100%;
+    animation-duration: 1s;
+    animation-name: animate-element-bottom;
+    animation-fill-mode: forwards;
 }
 .HomeInfo h2 {
     font-size: calc(3rem + 1vw);
@@ -54,8 +57,16 @@
     padding: 0rem 2rem 0rem 2rem;
     transform: translateY(-50px);
 }
-.About h2{
+.About .AboutH2{
     font-weight: 400;
+    animation-duration: 1s;
+    animation-name: animate-element-left;
+    animation-fill-mode: forwards;
+}
+.About .AboutP{
+    animation-duration: 1s;
+    animation-name: animate-element-right;
+    animation-fill-mode: forwards;
 }
 .About strong{
     font-weight: 800;
@@ -69,6 +80,11 @@
     grid-gap: 1rem;
     gap: 1rem;
     justify-content: center;
+}
+.AboutGridAnimate {
+    animation-duration: 1s;
+    animation-name: animate-element-right;
+    animation-fill-mode: forwards;
 }
 .AboutCard {
     display: flex;
@@ -195,6 +211,25 @@
     animation-name: animation-contact-btn;
     animation-fill-mode: forwards;
 }
+.ContactButton button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: .5rem;
+    font-weight: bold;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.ContactButton p {
+    font-size: 1rem;
+}
+
+/*-----------------ANIMATIONS-----------------------------*/
 @keyframes animation-contact-btn {
     0%{
         opacity: 1;
@@ -222,21 +257,40 @@
         opacity: 1;
       }
 }
-
-.ContactButton button {
-    background-color: var(--primary-color);
-    border: none;
-    padding: .5rem;
-    font-weight: bold;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    transition-duration: 0.5s;
-    border-radius: 50px;
-    display: inline-flex;
-    align-items: center;
-    column-gap: 10px;
+@keyframes animate-element-bottom {
+    0% {
+        transform: translateY(100vh);
+        visibility: hidden;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }
-.ContactButton p {
-    font-size: 1rem;
+@keyframes animate-element-right {
+    0% {
+        transform: translateX(100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animate-element-left {
+    0% {
+        transform: translateX(-100vh);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }

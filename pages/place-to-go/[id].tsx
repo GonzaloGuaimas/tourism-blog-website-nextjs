@@ -15,7 +15,7 @@ export default function Place() {
     const router = useRouter()
     const { id } = router.query
     const { ref: footerRef, inView: footerVisible } = useInView()
-    const { ref: footerRef2, inView: footerVisible2 } = useInView()
+    const { ref: gridRef, inView: gridVisible } = useInView()
     return (
       <>
         <Head>
@@ -27,7 +27,7 @@ export default function Place() {
         </Head>
         <main className={styles.main}>
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
-            <About/>
+            <About refValue={gridRef} gridVisible={gridVisible}/>
             <Gallery/>
             <Map/>
             <Contact/>
