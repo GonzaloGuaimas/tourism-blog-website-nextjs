@@ -8,6 +8,7 @@ import Gallery from '../../components/place-to-go/Gallery'
 import Map from '../../components/place-to-go/Map'
 import Footer from '../../components/Footer'
 import Contact from '../../components/place-to-go/Contact'
+import ContactButton from '../../components/pure/place-to-go/ContactButton'
 
 export default function Place() {
     const router = useRouter()
@@ -28,6 +29,7 @@ export default function Place() {
             <Map/>
             <Contact/>
             <Footer/>
+            <ContactButton/>
         </main>
       </>
     )
