@@ -14,7 +14,7 @@ const HomeComponent = () => {
           <p>
             Encontrá en Free Tours Argentina toda la información de cada destino: Ciudades, horarios, punto de encuentros y consejos de viaje.
           </p>
-          <button className={styles.Button}><span>Descubrir Nuestros Destinos</span></button>
+          <button className='Button'><span>Descubrir Nuestros Destinos</span></button>
         </div>
     </div>
   )

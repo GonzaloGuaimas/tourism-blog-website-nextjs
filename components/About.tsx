@@ -8,7 +8,7 @@ const About = () => {
     const aboutText3 = 'Para quien visite Argentina, reunimos los Free Tours de las ciudades con atractivos turísticos más destacados del país. Estos Walking Tours tienen una impronta histórica y cultural donde cada Guía hace hincapié en los monumentos arquitectónicos, hechos históricos, estilo de vida, curiosidades, secretos y personajes de la historia. En cada lugar también se juega con la geo localización y se interpreta la geografía de forma didáctica y sencilla.'
   return (
     <>
-        <div className={styles.titleSection} id={'about'} style={{ marginTop: '2rem' }}>
+        <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>
             <h2>CONOCENOS MÁS</h2>
             <h1>¿QUÉ ES UN FREE TOUR?</h1>
             <hr />
