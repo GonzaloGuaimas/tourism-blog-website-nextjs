@@ -60,20 +60,39 @@
 }
 
 .AboutGrid {
+    padding: 1rem;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 2rem;
-    gap: 2rem;
+    grid-gap: 1rem;
+    gap: 1rem;
     justify-content: center;
 }
 .AboutCard {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem;
-    width: 200px;
+    padding: 1rem;
+    width: 150px;
+    height: max-content;
     border-radius: 10px;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.4),0 1px 2px 0 rgba(0,0,0,0.13);
-
+    background-color: white;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.10);
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    cursor: pointer;
+}
+.AboutCard:hover {
+    -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.AboutCard p {
+    font-size: large;
+    font-weight: 500;
+}
+.AboutCardIcon {
+    color: var(--primary-color);
+    font-size: calc(3rem + 1vw);
 }
