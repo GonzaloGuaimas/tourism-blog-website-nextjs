@@ -3,8 +3,10 @@ import styles from '../styles/Home.module.css'
 // import Link from 'next/link'
 import Image from 'next/image'
 import { Link } from 'react-scroll'
+import { useRouter } from 'next/router'
 
 export const NavBar = () => {
+  const router = useRouter()
   const [active, setActive] = useState("navBarMenu");
   const [icon, setIcon] = useState("nav__toggler");
   const navToggle = () => {
@@ -19,7 +21,7 @@ export const NavBar = () => {
   };
   return (
     <nav className={styles.navBar}>
-      <Image src={'/assets/logoPositive.png'} alt={''} height={45} width={350} className={styles.navBarImage}/>
+      <Image src={'/assets/logoPositive.png'} alt={''} height={45} width={350} className={styles.navBarImage} onClick={() => {router.back()}}/>
       <div className={active}>
           <Link to='home' smooth offset={-100} duration={900} >
             <h3>INICIO</h3>
