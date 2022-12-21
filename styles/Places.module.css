@@ -245,12 +245,14 @@
       100%{
         visibility: hidden;
         opacity: 0;
-        transform: translateX(100vw)
+        -webkit-transform: translateX(100vw);
+        transform: translateX(100vw);
       }
 }
 
 @keyframes animation-contact-btn-init {
     0%{
+        -webkit-transform: translateX(100vw);
         transform: translateX(100vw);
         visibility: hidden;
         opacity: 0;
@@ -264,6 +266,7 @@
 }
 @keyframes animate-element-bottom {
     0% {
+        -webkit-transform: translateY(100vw);
         transform: translateY(100vh);
         visibility: hidden;
         opacity: 0;
@@ -277,6 +280,7 @@
 }
 @keyframes animate-element-right {
     0% {
+        -webkit-transform: translateX(100vw);
         transform: translateX(100vh);
         opacity: 0;
     }
@@ -289,6 +293,7 @@
 }
 @keyframes animate-element-left {
     0% {
+        -webkit-transform: translateX(-100vw);
         transform: translateX(-100vh);
         opacity: 0;
     }
