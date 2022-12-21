@@ -54,11 +54,7 @@ a {
   font-size: 1.2rem;
 }
 .navBarMenu hr {
-  height: 3px;
-  width: 30%;
-  background-color: black;
-  border: none;
-  border-radius: 3px;
+  display: none;
 }
 .nav__toggler {
   display: none;
