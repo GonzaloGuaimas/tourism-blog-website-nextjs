@@ -96,3 +96,31 @@
     color: var(--primary-color);
     font-size: calc(3rem + 1vw);
 }
+
+/*-------------------GALLERY-------------------------*/
+
+.Gallery {
+    width: 100%;
+}
+.Gallery img {
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+}
+.slideshow {
+    position: relative
+}
+.actions {
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.actions .area{
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    width: 50vw;
+    cursor: pointer;
+  }

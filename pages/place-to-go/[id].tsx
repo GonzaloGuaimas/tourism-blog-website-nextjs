@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../../styles/Places.module.css'
 import Home from '../../components/place-to-go/Home'
 import About from '../../components/place-to-go/About'
+import Gallery from '../../components/place-to-go/Gallery'
 
 export default function Place() {
     const router = useRouter()
@@ -20,6 +21,7 @@ export default function Place() {
         <main className={styles.main}>
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
             <About/>
+            <Gallery/>
         </main>
       </>
     )
