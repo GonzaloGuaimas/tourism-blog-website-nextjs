@@ -21,7 +21,7 @@ const SlideShow = ({images}: {images: string[]}) => {
   
     return (
         <div className={styles.slideshow}>
-            <Image src={images[index]} alt={''} height={500} width={350}/>
+            <Image src={images[index]} alt={''} height={1080} width={1080}/>
             <div className={styles.actions}>
                 <div className={styles.area} onClick={prev}></div>
                 <div className={styles.area} onClick={next}></div>
