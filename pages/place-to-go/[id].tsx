@@ -9,10 +9,13 @@ import Map from '../../components/place-to-go/Map'
 import Footer from '../../components/Footer'
 import Contact from '../../components/place-to-go/Contact'
 import ContactButton from '../../components/pure/place-to-go/ContactButton'
+import { useInView } from 'react-intersection-observer'
 
 export default function Place() {
     const router = useRouter()
     const { id } = router.query
+    const { ref: footerRef, inView: footerVisible } = useInView()
+    const { ref: footerRef2, inView: footerVisible2 } = useInView()
     return (
       <>
         <Head>
@@ -28,8 +31,8 @@ export default function Place() {
             <Gallery/>
             <Map/>
             <Contact/>
-            <Footer/>
-            <ContactButton/>
+            <Footer refValue={footerRef}/>
+            <ContactButton footerVisible={footerVisible}/>
         </main>
       </>
     )

@@ -185,7 +185,44 @@
     color: white;
     text-align: center;
     border-top-left-radius: 10px;
+    animation-duration: 1s;
+    animation-name: animation-contact-btn-init;
+    animation-fill-mode: forwards;
 }
+
+.ContactButtonAnimate {
+    animation-duration: 2s;
+    animation-name: animation-contact-btn;
+    animation-fill-mode: forwards;
+}
+@keyframes animation-contact-btn {
+    0%{
+        opacity: 1;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(100vw)
+      }
+}
+
+@keyframes animation-contact-btn-init {
+    0%{
+        transform: translateX(100vw);
+        visibility: hidden;
+        opacity: 0;
+      }
+      50%{
+        opacity: 0.5;
+      }
+      100%{
+        opacity: 1;
+      }
+}
+
 .ContactButton button {
     background-color: var(--primary-color);
     border: none;
