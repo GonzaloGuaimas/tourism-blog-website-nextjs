@@ -10,10 +10,12 @@ import BlogGrid from '../components/BlogGrid'
 import Gallery from '../components/Gallery'
 import About from '../components/About'
 import Footer from '../components/Footer'
+import { useRef } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+    const footerRef = useRef()
     return (
       <>
         <Head>
@@ -33,7 +35,7 @@ export default function Home() {
           <Gallery/>
           <About/>
           <Delimiter image={'/assets/map.png'} title={'ELEGÍ TU DESTINO'} />
-          <Footer/>
+          <Footer refValue={footerRef}/>
         </main>
       </>
     )
