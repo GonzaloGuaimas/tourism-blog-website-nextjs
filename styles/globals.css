@@ -4,6 +4,7 @@
   --background-end-rgb: 230, 230, 230;
   --background-start-rgb: 255, 255, 255;
   --primary-color: #F19705;
+  --primary-font-color: #212529;
 }
 
 * {

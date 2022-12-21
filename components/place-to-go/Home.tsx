@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../../styles/Places.module.css'
-import Image from 'next/image'
 
 const Home = ({placeName, description}: {placeName: string, description: string}) => {
   return (

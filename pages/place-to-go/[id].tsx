@@ -1,8 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Places.module.css'
 import Home from '../../components/place-to-go/Home'
+import About from '../../components/place-to-go/About'
 
 export default function Place() {
     const router = useRouter()
@@ -18,6 +19,7 @@ export default function Place() {
         </Head>
         <main className={styles.main}>
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
+            <About/>
         </main>
       </>
     )
