@@ -27,9 +27,8 @@
     column-gap: 3rem;
     height: 100%;
     animation-duration: 1s;
-    animation-name: animate-element-bottom;
-    -webkit-animation-name: animate-element-bottom;
-    -webkit-animation-duration: 1s;
+    animation-name: animation-contact-btn-init;
+    /* va el bottom */
     animation-fill-mode: forwards;
 }
 .HomeInfo h2 {
