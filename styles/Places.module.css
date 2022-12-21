@@ -127,3 +127,39 @@
     width: 50vw;
     cursor: pointer;
   }
+
+/*----------------------MAP-------------------*/
+.MapContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-150px);
+}
+.Map {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    height: max-content;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 3px 3px rgb(0 0 0 / 10%);
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.Map p {
+    padding: 1rem;
+    font-weight: 600;
+}
+.Map:hover {
+    -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.MapElement iframe{
+    border-radius: 15px;
+    width: 100%;
+}
