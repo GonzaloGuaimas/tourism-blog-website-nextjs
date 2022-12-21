@@ -28,6 +28,8 @@
     height: 100%;
     animation-duration: 1s;
     animation-name: animate-element-bottom;
+    -webkit-animation-name: animate-element-bottom;
+    -webkit-animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 .HomeInfo h2 {
