@@ -3,10 +3,10 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import DestinationCard from './pure/DestinationCard'
 
-const DestinationGrid = () => {
+const DestinationGrid = ({placeVisible}: {placeVisible: boolean}) => {
   return (
     <>
-      <div className='titleSection' id={'destination'}>
+      <div className={`titleSection ${placeVisible ? 'titleSectionAnimate' : ''}`} id={'destination'}>
         <h2>CONOCÉ</h2>
         <h1>NUESTROS INCREÍBLES</h1>
         <h3>DESTINOS</h3>

@@ -11,10 +11,14 @@ import Gallery from '../components/Gallery'
 import About from '../components/About'
 import Footer from '../components/Footer'
 import { useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+    const { ref: placeRef, inView: placeVisible } = useInView()
+    const { ref: blogRef, inView: blogVisible } = useInView()
+    const { ref: aboutRef, inView: aboutVisible } = useInView()
     const footerRef = useRef()
     return (
       <>
@@ -27,14 +31,13 @@ export default function Home() {
         </Head>
         <main className={styles.main}>
           <HomeComponent/>
-          <Delimiter image={'/assets/map.png'} title={'TOURS DE PAGO LIBRE'} />
-          <DestinationGrid/>
-          <Delimiter image={'/assets/person.png'} title={'LOS MEJORES GUÍAS'} />
-          <BlogGrid/>
-          <Delimiter image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'} />
-          <Gallery/>
+          <Delimiter refValue={placeRef} image={'/assets/map.png'} title={'TOURS DE PAGO LIBRE'} />
+          <DestinationGrid placeVisible={placeVisible}/>
+          <Delimiter refValue={blogRef} image={'/assets/person.png'} title={'LOS MEJORES GUÍAS'}/>
+          <BlogGrid blogVisible={blogVisible}/>
+          <Delimiter refValue={aboutRef} image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'}/>
+          <Gallery aboutVisible={aboutVisible}/>
           <About/>
-          <Delimiter image={'/assets/map.png'} title={'ELEGÍ TU DESTINO'} />
           <Footer refValue={footerRef}/>
         </main>
       </>

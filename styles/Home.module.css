@@ -113,7 +113,6 @@
   width: 100%;
   justify-items: center;
 }
-
 .DestinationCard {
   width: 250px;
   height: 250px;
@@ -256,8 +255,16 @@
   gap: 1rem;
   width: 100%;
   justify-items: center;
-  
 }
+.GalleryAnimate {
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-name: animate-element-fade;
+  -webkit-animation-name: animate-element-fade;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
 .Gallery .GalleryElement {
   width: 400px;
   height: 300px;
@@ -299,4 +306,59 @@
 .Footer a:hover{
   color: var(--primary-color);
   font-weight: bold;
+}
+
+/*------------------ANIMATIONS-----------------------*/
+
+@keyframes animate-element-bottom {
+  0% {
+      -webkit-transform: translateY(100vw);
+      transform: translateY(100vh);
+      visibility: hidden;
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animate-element-right {
+  0% {
+      -webkit-transform: translateX(100vw);
+      transform: translateX(100vh);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animate-element-left {
+  0% {
+      -webkit-transform: translateX(-100vw);
+      transform: translateX(-100vh);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes animate-element-fade {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
 }
