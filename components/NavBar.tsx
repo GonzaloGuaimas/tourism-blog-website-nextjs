@@ -8,16 +8,14 @@ import { useRouter } from 'next/router'
 export const NavBar = () => {
   const router = useRouter()
   const [active, setActive] = useState("navBarMenu");
-  const [icon, setIcon] = useState("nav__toggler");
+  const [icon, setIcon] = useState("navBarToggler");
   const navToggle = () => {
     if (active === "navBarMenu") {
-      setActive("navBarMenu nav__active");
+      setActive("navBarMenu navBarMenuActive");
     } else setActive("navBarMenu");
-
-    // Icon Toggler
-    if (icon === "nav__toggler") {
-      setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
+    if (icon === "navBarToggler") {
+      setIcon("navBarToggler toggle");
+    } else setIcon("navBarToggler");
   };
   return (
     <nav className={styles.navBar}>

@@ -56,10 +56,10 @@ a {
 .navBarMenu hr {
   display: none;
 }
-.nav__toggler {
+.navBarToggler {
   display: none;
 }
-.nav__toggler div {
+.navBarToggler div {
   width: 2rem;
   height: 0.2rem;
   margin: 0.4rem;
@@ -68,7 +68,7 @@ a {
 }
 
 @media screen and (max-width: 768px) {
-  .nav__toggler {
+  .navBarToggler {
     display: block;
     cursor: pointer;
   }
@@ -105,7 +105,7 @@ a {
     font-size: calc(1.3rem + 1vw);  
   }
 }
-.nav__active {
+.navBarMenuActive {
   transform: translateX(0%);
 }
 .toggle .line1 {
