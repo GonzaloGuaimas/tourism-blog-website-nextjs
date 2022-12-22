@@ -316,11 +316,14 @@
 /*---------------FOOTER-------------------*/
 
 .Footer {
+  padding: 2rem;
   text-align: center;
-  height: 100px;
+  background-color: var(--primary-color);
+  width: 100%;
+  color: white;
 }
 .Footer a:hover{
-  color: var(--primary-color);
+  color: black;
   font-weight: bold;
 }
 /*--------------AWARDS--------------------*/
