@@ -323,6 +323,36 @@
   color: var(--primary-color);
   font-weight: bold;
 }
+/*--------------AWARDS--------------------*/
+.Awards {
+  width: 100%;
+  overflow: hidden;
+  padding: 5rem 0rem 5rem 3rem;
+}
+.AwardsSlider {
+  width: 100%;
+  display: flex;
+  gap: 10rem;
+  border-radius: 15px;
+  animation: slide 20s infinite linear;
+}
+
+.AwardsSlider img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+.AwardsSlider img:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
 
 /*------------------ANIMATIONS-----------------------*/
 
@@ -377,4 +407,37 @@
   100% {
       opacity: 1;
   }
+}
+
+@keyframes slide{
+  0% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(calc(-200px*8));
+  }
+  /* 0%{
+      transform: translateX(0);
+  }
+  25%{
+      transform: translateX(0);
+  }
+  30%{
+      transform: translateX(-100%);
+  }
+  50%{
+      transform: translateX(-100%);
+  }
+  55%{
+      transform: translateX(-200%);
+  }
+  75%{
+      transform: translateX(-200%);
+  }
+  80%{
+      transform: translateX(-300%);
+  }
+  100%{
+      transform: translateX(-300%);
+  } */
 }

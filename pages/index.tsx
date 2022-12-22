@@ -12,6 +12,7 @@ import About from '../components/About'
 import Footer from '../components/Footer'
 import { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
+import Awards from '../components/Awards'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function Home() {
           <Delimiter refValue={aboutRef} image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'}/>
           <Gallery aboutVisible={aboutVisible}/>
           <About/>
+          <Awards/>
           <Footer refValue={footerRef}/>
         </main>
       </>
