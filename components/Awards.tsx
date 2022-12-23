@@ -6,10 +6,9 @@ const Awards = () => {
   return (
     <div className={styles.Awards}>
         <div className={'titleSection'} id={'blog'}>
-            <h2>NUESTRAS INSIGNIAS</h2>
+            <h2>NUESTROS</h2>
             <h1>RECONOCIMIENTOS</h1>
             <hr />
-            <h2>DE NUESTROS TOURS</h2>
         </div>
         <div className={styles.AwardsSlider}>
             <Image src={'/assets/awards/trip2018.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>

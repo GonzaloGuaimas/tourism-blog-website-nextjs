@@ -100,6 +100,7 @@ a {
     width: 50%;
     border: none;
     height: 3px;
+    display: block;
   }
   .navBarMenu h3:hover{
     font-size: calc(1.3rem + 1vw);  
@@ -136,21 +137,21 @@ a {
   animation-fill-mode: forwards;
 }
 .titleSection h1{
-  font-size: calc(2.3rem + 1vw);
+  font-size: calc(1.5rem + 1vw);
   text-align: center;
 }
 .titleSection h2{
-  font-size: calc(1rem + 1vw);
+  font-size: calc(.8rem + 1vw);
   color: var(--primary-color);
   text-align: center;
 }
 .titleSection h3{
-  font-size: calc(2rem + 1vw);
+  font-size: calc(1.6rem + 1vw);
   color: var(--primary-color);
   text-align: center;
 }
 .titleSection hr{
-  height: 7px;
+  height: 3px;
   width: 50%;
   background-color: var(--primary-color);
   border-radius: 1rem;
