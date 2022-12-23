@@ -122,7 +122,13 @@
 
 .Gallery {
     width: 100%;
+    overflow: hidden;
     transform: translateY(-50px);
+}
+.GallerySlider {
+    width: 100%;
+    display: flex;
+    animation: slide 20s infinite linear;
 }
 .Gallery img {
     width: 100%;
@@ -302,3 +308,11 @@
         opacity: 1;
     }
 }
+@keyframes slide{
+    0% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(calc(-200px*8));
+    }
+  }
