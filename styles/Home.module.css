@@ -214,6 +214,7 @@
   width: 100%;
   justify-items: center;
   margin-bottom: 2rem;
+  padding: 1rem;
 }
 
 .BlogCard {
@@ -239,10 +240,29 @@
    object-fit: cover;
    width: 100%;
 }
+.BlogCard .AutorImage {
+  border-radius: 50rem;
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+}
 .BlogCard .BlogInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: .3rem;
   padding: 1rem;
   align-self: flex-start;
   width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+.BlogCard .BlogInfo div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.BlogCard .BlogInfo div img{
+  margin-left: 10px;
 }
 .BlogCard .BlogInfo h2 {
   font-size: calc(1rem + 1vw);
@@ -254,12 +274,12 @@
   color: var(--primary-font-color);
 }
 .BlogCard .BlogInfo p{
-  text-align: end;
   font-weight: 400;
+  font-size: calc(.5rem + 1vw);
 }
 .BlogCard .BlogInfo hr{
-  width: 30%;
-  height: 2px;
+  width: 100%;
+  height: 1px;
   border: none;
   background-color: var(--primary-color);
   font-weight: 400;
