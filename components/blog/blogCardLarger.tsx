@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '../../styles/Home.module.css'
 import Image from 'next/image'
+import styles from '../../styles/Home.module.css'
 
-const BlogCard = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
+const blogCardLarger = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
   return (
-    <div className={styles.BlogCard}>
+    <div className={`${styles.BlogCard} ${styles.BlogCardLarger}`}>
         <Image src={image} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
         
         <div className={styles.BlogInfo}>
@@ -24,4 +24,4 @@ const BlogCard = ({ image, title, subtitle, date }: {image: string, title: strin
   )
 }
 
-export default BlogCard
+export default blogCardLarger
