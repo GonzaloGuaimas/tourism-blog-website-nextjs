@@ -26,6 +26,7 @@ const About = ({refValue, gridVisible}: {refValue: any, gridVisible: boolean}) =
             <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoWhatsapp className={styles.AboutCardIcon}/>}/>
             <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationSharp className={styles.AboutCardIcon}/>}/>
         </div>
+        <p>información adicional: *Valor pago libre (Al finalizar cada asistente entrega al guía la cantidad que considere, de acuerdo a la satisfacción obtenida) *Ropa adecuada para las condiciones del clima y calzado cómodo *Apto para todas las edades | Incluido *Caminata *Guías | No Incluido *Extras de ningún tipo</p>
       </div>
     </div>
    
