@@ -5,6 +5,7 @@
     align-items: center;
     min-height: 100vh;
     overflow-y: hidden;
+    overflow-x: hidden;
     background-color: white;
   }
   
