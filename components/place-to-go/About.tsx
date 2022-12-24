@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../../styles/Places.module.css'
 import AboutCard from '../pure/place-to-go/AboutCard'
-import { IoFootstepsSharp } from "react-icons/io5"
-import { ImClock2 } from "react-icons/im"
-import { IoLogoInstagram } from "react-icons/io5"
-import { IoLogoFacebook } from "react-icons/io5"
-import { IoLogoWhatsapp } from "react-icons/io5"
-import { IoLocationSharp } from "react-icons/io5"
+import { IoFootstepsSharp } from 'react-icons/io5'
+import { ImClock2 } from 'react-icons/im'
+import { IoLogoInstagram } from 'react-icons/io5'
+import { IoLogoFacebook } from 'react-icons/io5'
+import { IoLogoWhatsapp } from 'react-icons/io5'
+import { IoLocationSharp } from 'react-icons/io5'
 const About = ({refValue, gridVisible}: {refValue: any, gridVisible: boolean}) => {
   return (
     <div>

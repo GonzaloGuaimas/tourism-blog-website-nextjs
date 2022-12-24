@@ -13,6 +13,7 @@ import { useInView } from 'react-intersection-observer'
 
 export default function Place() {
     const router = useRouter()
+    // eslint-disable-next-line no-unused-vars
     const { id } = router.query
     const { ref: footerRef, inView: footerVisible } = useInView()
     const { ref: gridRef, inView: gridVisible } = useInView()

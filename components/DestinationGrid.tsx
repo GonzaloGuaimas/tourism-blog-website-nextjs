@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
 import DestinationCard from './pure/DestinationCard'
 
 const DestinationGrid = ({placeVisible}: {placeVisible: boolean}) => {

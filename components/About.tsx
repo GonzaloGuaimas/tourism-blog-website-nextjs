@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
 
 const About = () => {
     const aboutText1 = 'Los Free Tours o Free Walking Tours son paseos que se hacen caminando por las ciudades más importantes del mundo acompañado por un Guía de turismo local. Son aptos para todas las edades y se realizan en grupos reducidos. Tienen una duración de entre 2 a 3 horas.'

@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import second from "next"
 import HomeComponent from '../components/Home'
 import { Inter } from '@next/font/google'
 import Delimiter from '../components/Delimiter'
@@ -14,6 +12,7 @@ import { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Awards from '../components/Awards'
 
+// eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {

@@ -7,16 +7,16 @@ import { useRouter } from 'next/router'
 
 export const NavBar = () => {
   const router = useRouter()
-  const [active, setActive] = useState("navBarMenu");
-  const [icon, setIcon] = useState("navBarToggler");
+  const [active, setActive] = useState('navBarMenu')
+  const [icon, setIcon] = useState('navBarToggler')
   const navToggle = () => {
-    if (active === "navBarMenu") {
-      setActive("navBarMenu navBarMenuActive");
-    } else setActive("navBarMenu");
-    if (icon === "navBarToggler") {
-      setIcon("navBarToggler toggle");
-    } else setIcon("navBarToggler");
-  };
+    if (active === 'navBarMenu') {
+      setActive('navBarMenu navBarMenuActive')
+    } else setActive('navBarMenu')
+    if (icon === 'navBarToggler') {
+      setIcon('navBarToggler toggle')
+    } else setIcon('navBarToggler')
+  }
   return (
     <nav className={styles.navBar}>
       <Image src={'/assets/logoPositive.png'} alt={''} height={45} width={350} className={styles.navBarImage} onClick={() => {router.back()}}/>
