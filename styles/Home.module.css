@@ -38,6 +38,7 @@
 /*--------------HOME------------*/
 .Home {
   margin-top: 60px;
+  width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: row;
@@ -380,9 +381,28 @@
 }
 
 
-.BlogDetailSection {
+.BlogContent {
   width: 100%;
-  padding: 3rem;
+  padding: 0rem 3rem 1rem 3rem;
+  display: flex;
+  column-gap: 2rem;
+}
+@media (max-width: 800px) {
+  .BlogContent {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
+.BlogContent div{
+  flex: 3;
+}
+.BlogContent img{
+  width: 300px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .BlogDetailSection h2{
   font-size: calc(1.4rem + 1vw);

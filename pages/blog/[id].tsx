@@ -6,6 +6,7 @@ import BlogCard from '../../components/pure/BlogCard'
 import Header from '../../components/blog/Header'
 import Image from 'next/image'
 import { BlogInfo } from '../../components/blog/BlogInfo'
+import BlogContent from '../../components/blog/BlogContent'
 
 export default function Blog() {
     const footerRef = useRef()
@@ -20,16 +21,15 @@ export default function Blog() {
             <main className={styles.main}>
                 <Header/>
                 <BlogInfo/>
-                <div className={styles.BlogDetailSection}>
-                    <h2>FREE TOUR ARGENTINA</h2>
-                </div>
-                <div style={{marginTop: '60px'}}>
+                <div>
                     <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>
                         <h2>FREE TOUR ARGENTINA</h2>
                         <h1>NUESTRO BLOG</h1>
                         <hr />
                     </div>
                 </div>
+                <BlogContent/>
+                <BlogContent/>
                 <Footer refValue={footerRef}/>
             </main>
         </>
