@@ -156,13 +156,6 @@
   /* font-size: 2rem; */
   font-size: calc(1.5rem + 1vw)
 }
-.Delimiter .DelimiterImage {
-  object-fit: cover;
-  width: 70px;
-  height: 70px;
-  z-index: 8;
-}
-
 /*--------------DESTINATION------------------*/
 .Destination {
   display: grid;

@@ -30,11 +30,11 @@ export default function Home() {
         </Head>
         <main className={styles.main}>
           <HomeComponent/>
-          <Delimiter refValue={placeRef} image={'/assets/map.png'} title={'TOURS DE PAGO LIBRE'} />
+          <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
           <DestinationGrid placeVisible={placeVisible}/>
-          <Delimiter refValue={blogRef} image={'/assets/person.png'} title={'LOS MEJORES GUÍAS'}/>
+          <Delimiter refValue={blogRef} title={'LOS MEJORES GUÍAS'}/>
           <BlogGrid blogVisible={blogVisible}/>
-          <Delimiter refValue={aboutRef} image={'/assets/footsprint.png'} title={'RECORRIDOS A PIE'}/>
+          <Delimiter refValue={aboutRef} title={'RECORRIDOS A PIE'}/>
           <Gallery aboutVisible={aboutVisible}/>
           <About/>
           <Awards/>
