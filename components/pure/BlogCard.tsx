@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/Home.module.css'
 import Image from 'next/image'
 
-const BlogCard = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
+const BlogCard = ({ image, title, subtitle, date, tourName, tourLogo }: {image: string, title: string, subtitle: string, date: string, tourName: string, tourLogo: string}) => {
   return (
     <div className={styles.BlogCard}>
         <Image src={image} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
@@ -13,8 +13,8 @@ const BlogCard = ({ image, title, subtitle, date }: {image: string, title: strin
             <div>
               <p>{date}</p>
               <div>
-                <p>BarilocheFreeTour</p>
-                <Image src={image} alt={''} height={250} width={250} className={styles.AutorImage}/>
+                <p>{tourName}</p>
+                <Image src={tourLogo} alt={''} height={250} width={250} className={styles.AutorImage}/>
               </div>
             </div>
             <hr />
