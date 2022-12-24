@@ -4,6 +4,8 @@ import styles from '../../styles/Home.module.css'
 import Footer from '../../components/Footer'
 import BlogCard from '../../components/pure/BlogCard'
 import Header from '../../components/blog/Header'
+import Image from 'next/image'
+import { BlogInfo } from '../../components/blog/BlogInfo'
 
 export default function Blog() {
     const footerRef = useRef()
@@ -17,6 +19,10 @@ export default function Blog() {
             </Head>
             <main className={styles.main}>
                 <Header/>
+                <BlogInfo/>
+                <div className={styles.BlogDetailSection}>
+                    <h2>FREE TOUR ARGENTINA</h2>
+                </div>
                 <div style={{marginTop: '60px'}}>
                     <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>
                         <h2>FREE TOUR ARGENTINA</h2>
