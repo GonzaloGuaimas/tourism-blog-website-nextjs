@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose'
 import Content from './Content'
 
-const BlogSchema = new mongoose.Schema({
+const PostSchema = new mongoose.Schema({
     title: {
         require: true,
         type: String
@@ -32,4 +32,4 @@ const BlogSchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.models.BlogSchema || mongoose.model('Blog', BlogSchema)
+export default mongoose.models.PostSchema || mongoose.model('Post', PostSchema)

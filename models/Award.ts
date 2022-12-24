@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 
-const AwardsSchema = new mongoose.Schema({
+const AwardSchema = new mongoose.Schema({
     uploadDate: {
         require: true,
         type: String
@@ -23,4 +23,4 @@ const AwardsSchema = new mongoose.Schema({
     }
 })
 
-export default mongoose.models.AwardsSchema || mongoose.model('Awards', AwardsSchema)
+export default mongoose.models.AwardSchema || mongoose.model('Awards', AwardSchema)
