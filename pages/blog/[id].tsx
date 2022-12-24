@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/Footer'
 import BlogCard from '../../components/pure/BlogCard'
+import Header from '../../components/blog/Header'
 
 export default function Blog() {
     const footerRef = useRef()
@@ -15,6 +16,7 @@ export default function Blog() {
             <link rel="icon" href="/assets/logoMundo.png" />
             </Head>
             <main className={styles.main}>
+                <Header/>
                 <div style={{marginTop: '60px'}}>
                     <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>
                         <h2>FREE TOUR ARGENTINA</h2>
@@ -22,7 +24,7 @@ export default function Blog() {
                         <hr />
                     </div>
                 </div>
-                
+                <Footer refValue={footerRef}/>
             </main>
         </>
     )

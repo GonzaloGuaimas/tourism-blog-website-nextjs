@@ -6,7 +6,6 @@ import { Link } from 'react-scroll'
 const HomeComponent = () => {
   return (
     <div className={styles.Home} id={'home'}>
-        {/* <Image src={'/assets/mainImage.png'} alt={''} height={788} width={940} className={styles.HomeImage}/> */}
         <div className={styles.HomeText}>
           <h2>Descubrí Argentina.</h2>
           <h2>Con los mejores guías de cada destino.</h2>

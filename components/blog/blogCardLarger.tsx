@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 
-const blogCardLarger = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
+const BlogCardLarger = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
   return (
     <div className={`${styles.BlogCard} ${styles.BlogCardLarger}`}>
         <Image src={image} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
@@ -24,4 +24,4 @@ const blogCardLarger = ({ image, title, subtitle, date }: {image: string, title:
   )
 }
 
-export default blogCardLarger
+export default BlogCardLarger
