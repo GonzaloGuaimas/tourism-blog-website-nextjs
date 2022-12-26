@@ -26,17 +26,17 @@ export default function Blog() {
                 <div className={styles.BlogContainer}>
                     <BlogCardLarger image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
                     <div className={styles.Blog}>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.jpg'} title={'Este fin de Semana estuvimos Con todo!'} subtitle={'llegaron turistas de todas partes'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
                     </div>
                     <BlogCardLarger image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
                     <div className={styles.Blog}>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.jpg'} title={'Este fin de Semana estuvimos Con todo!'} subtitle={'llegaron turistas de todas partes'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'}/>
-                        <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'}/>
+                    <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
+                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
                     </div>
                 </div>
                 <Footer refValue={footerRef}/>
