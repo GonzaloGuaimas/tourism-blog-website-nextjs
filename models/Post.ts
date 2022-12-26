@@ -29,12 +29,12 @@ const PostSchema = new mongoose.Schema({
         type: String
     },
     updateDate: {
-        require: true,
-        type: String
+        type: Date, 
+        default: Date.now
     },
     date: {
         require: true,
-        type: String
+        type: Date
     },
     userRegisterId: {
         require: true,

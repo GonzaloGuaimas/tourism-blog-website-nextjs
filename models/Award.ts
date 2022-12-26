@@ -2,12 +2,12 @@ import mongoose, { Schema } from 'mongoose'
 
 const AwardSchema = new mongoose.Schema({
     uploadDate: {
-        require: true,
-        type: String
+        type: Date, 
+        default: Date.now
     },
     date: {
         require: true,
-        type: String
+        type: Date
     },
     name: {
         require: true,
