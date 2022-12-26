@@ -1,5 +1,19 @@
 import mongoose, { Schema } from 'mongoose'
-import Content from './Content'
+
+const ContentSchema = new Schema({
+    title: {
+        require: true,
+        type: String
+    },
+    paragraph: {
+        require: true,
+        type: String
+    },
+    imageLink: {
+        require: false,
+        type: String
+    }
+ })
 
 const PostSchema = new mongoose.Schema({
     title: {
@@ -28,8 +42,8 @@ const PostSchema = new mongoose.Schema({
     },
     content: {
         require: false,
-        type: [Content]
+        type: [ContentSchema]
     }
 })
 
-export default mongoose.models.PostSchema || mongoose.model('Post', PostSchema)
+export default mongoose.models.Post || mongoose.model('Post', PostSchema)

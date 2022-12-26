@@ -1,6 +1,35 @@
-import mongoose from 'mongoose'
-import Gallery from './Gallery'
-import Point from './Point'
+import mongoose, { Schema } from 'mongoose'
+
+const GallerySchema = new Schema({
+    uploadDate: {
+        require: true,
+        type: String
+    },
+    imageLink: {
+        require: true,
+        type: String
+    },
+    userRegisterId: {
+        require: true,
+        type: Schema.Types.ObjectId
+    }
+})
+
+const PointSchema = new Schema({
+    name: {
+        require: true,
+        type: String
+    },
+    locationLink: {
+        require: true,
+        type: String
+    },
+    imageLink: {
+        require: true,
+        type: String
+    },
+})
+
 
 const TourSchema = new mongoose.Schema({
     name: {
@@ -9,7 +38,7 @@ const TourSchema = new mongoose.Schema({
     },
     location: {
         require: true,
-        type: Point
+        type: PointSchema
     },
     meetingPoint: {
         require: true,
@@ -72,11 +101,11 @@ const TourSchema = new mongoose.Schema({
         type: String
     },
     gallery: {
-        type: [Gallery],
+        type: [GallerySchema],
     },
     route: {
-        type: [Point],
+        type: [PointSchema],
     },
 })
 
-export default mongoose.models.TourSchema || mongoose.model('TourSchema', TourSchema)
+export default mongoose.models.Tour || mongoose.model('TourSchema', TourSchema)
