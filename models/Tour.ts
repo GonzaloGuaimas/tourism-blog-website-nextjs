@@ -36,10 +36,6 @@ const TourSchema = new mongoose.Schema({
         require: true,
         type: String
     },
-    location: {
-        require: true,
-        type: PointSchema
-    },
     meetingPoint: {
         require: true,
         type: String
@@ -76,11 +72,11 @@ const TourSchema = new mongoose.Schema({
         require: true,
         type: String
     },
-    instagramLink: {
+    instagramUser: {
         require: true,
         type: String
     },
-    facebookLink: {
+    facebookUser: {
         require: true,
         type: String
     },
