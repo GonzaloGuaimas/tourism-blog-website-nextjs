@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+/*----------------HEADER---------------------------*/
+.Header {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 2rem;
+}
+.Header h2{
+    font-size: calc(1.2rem + 1vw);
+    color:  white;
+}
+.Header h3{
+    font-size: calc(.7rem + 1vw);
+    color:  var(--primary-font-color);
+}
+.Header hr{
+    width: 50%;
+    height: 1px;
+    border: none;
+    background-color: white;
+    font-weight: 400;
+}
+
+.Header img {
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 5rem;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
