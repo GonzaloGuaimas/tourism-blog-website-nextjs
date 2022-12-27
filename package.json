@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db-populate": "ts-node -O '{\"module\": \"commonjs\"}' ./populate-db-script.ts"
   },
   "dependencies": {
     "@next/font": "13.0.7",
