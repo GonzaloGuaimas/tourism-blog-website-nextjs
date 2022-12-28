@@ -4,30 +4,29 @@ import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
 import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
-// import { uploadImage } from '../../../services/cloudinary/handleOnSubmit'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
 
 const PointDialog = ({ showPointDialog, hidePointDialog, point, setPoint } : { showPointDialog: boolean, hidePointDialog: any, point: any, setPoint: any }) => {
-    const [submitted, setSubmitted] = useState(false)
-    const [image, setImage] = useState('/assets/emptyImage.png')
+    const [submitted, setSubmitted] = useState<any>(false)
+    const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
+    
     const onInputChange = (e: any, name: string) => {
         const val = (e.target && e.target.value) || ''
         let _point = {...point}
         _point[`${name}`] = val
-
         setPoint(_point)
     }
     function handleOnChange(changeEvent: any) {
         const reader = new FileReader()
         reader.onload = function(onloadEvent){
-            setImage(onloadEvent.target?.result)
+            setImage(onloadEvent.target?.result?.toString())
         }
         reader.readAsDataURL(changeEvent.target.files[0])
     }
     
   return (
-    <Dialog visible={showPointDialog} style={{ width: '450px' }} header="Product Details" modal className="p-fluid" onHide={hidePointDialog}>
+    <Dialog visible={showPointDialog} style={{ margin: '1rem' }} header='Nuevo/Modificar Punto' modal className="p-fluid" onHide={hidePointDialog}>
         <form method='post' onSubmit={async (e)=>{
             setSubmitted(true)
             let _point = {...point}
@@ -50,7 +49,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, point, setPoint } : { s
                     Seleccionar Imagen
                     <input id='inputLogo' type="file" name='file' onChange={handleOnChange}/>
                 </label>
-                <Image src={image} alt={''} height={500} width={500}/>
+                <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
             <Button type='submit'>Guardar</Button>
         </form>
