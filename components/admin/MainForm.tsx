@@ -112,7 +112,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="coverDescription" control={control} rules={{ required: 'Ingrese Descripción' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="coverDescription" className={classNames({ 'p-error': errors.name })}>Descripción Imagen Portada*</label>
                 </span>
@@ -122,7 +122,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="shortDescription" control={control} rules={{ required: 'Ingrese Descripción.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="shortDescription" className={classNames({ 'p-error': errors.name })}>Descripción Corta Encabezado*</label>
                 </span>
@@ -132,7 +132,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="longerDescription" control={control} rules={{ required: 'Ingrese Descripción.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="longerDescription" className={classNames({ 'p-error': errors.name })}>Descripción Larga Encabezado*</label>
                 </span>
@@ -142,7 +142,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="extraInfo" control={control} rules={{ required: 'Ingrese Información Extra.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="extraInfo" className={classNames({ 'p-error': errors.name })}>Información Extra del Tour*</label>
                 </span>
@@ -152,7 +152,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="meetingPoint" control={control} rules={{ required: 'Ingrese Punto de Encuentro.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="meetingPoint" className={classNames({ 'p-error': errors.name })}>Nombre Punto de Encuentro*</label>
                 </span>
@@ -162,7 +162,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="meetingPointLink" control={control} rules={{ required: 'Ingrese Link Google Maps Punto de Encuentro.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="meetingPointLink" className={classNames({ 'p-error': errors.name })}>Link Google Maps Punto de Encuentro*</label>
                 </span>
@@ -172,7 +172,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="schedules" control={control} rules={{ required: 'Ingrese Horarios.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="schedules" className={classNames({ 'p-error': errors.name })}>Horarios*</label>
                 </span>
@@ -183,7 +183,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="duration" control={control} rules={{ required: 'Ingrese Duración.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="duration" className={classNames({ 'p-error': errors.name })}>Duración*</label>
                 </span>
@@ -193,7 +193,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="instagramUser" control={control} rules={{ required: 'Ingrese Usuario Instagram.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="instagramUser" className={classNames({ 'p-error': errors.name })}>Usuario Instagram*</label>
                 </span>
@@ -203,7 +203,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="facebookUser" control={control} rules={{ required: 'Ingrese Usuario Facebook.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="facebookUser" className={classNames({ 'p-error': errors.name })}>Usuario Facebook*</label>
                 </span>
@@ -213,7 +213,7 @@ export const MainForm = () => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="whatsAppNumber" control={control} rules={{ required: 'Ingrese Número WhatsApp.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                     )} />
                     <label htmlFor="whatsAppNumber" className={classNames({ 'p-error': errors.name })}>Número WhatsApp*</label>
                 </span>
