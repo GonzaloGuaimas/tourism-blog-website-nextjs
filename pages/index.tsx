@@ -12,6 +12,7 @@ import { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Awards from '../components/Awards'
 import React from 'react'
+import { NavBar } from '../components/NavBar'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -29,6 +30,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
+        <NavBar/>
         <main className={styles.main}>
           <HomeComponent/>
           <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
