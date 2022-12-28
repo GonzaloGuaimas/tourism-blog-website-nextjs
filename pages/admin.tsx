@@ -5,7 +5,8 @@ import Header from '../components/admin/Header'
 import { TabView, TabPanel } from 'primereact/tabview'
 import { MainForm } from '../components/admin/MainForm'
 import React from 'react'
-import { useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
+import { NavBar } from '../components/NavBarAdmin'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -23,6 +24,7 @@ export default function Home() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/assets/logoMundo.png" />
           </Head>
+          <NavBar showIcon={true} logOut={() => signOut()}/>
           <main className={styles.main}>
             <Header tourName={'Bariloche'} tourlogo={'/assets/blogExample/1.jpg'}/>
             <TabView>

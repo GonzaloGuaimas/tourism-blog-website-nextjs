@@ -9,8 +9,6 @@ export const authOptions = {
         CredentialsProvider({
             name: 'Credentials',
             async authorize(credentials) {
-                console.log(credentials)
-                console.log(credentials.name)
                 const tour = await Tour.findOne({name: credentials.name})
                 console.log(tour)
                 if(credentials.password === tour.password) {

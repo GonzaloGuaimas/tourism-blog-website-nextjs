@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Inter } from '@next/font/google'
-import React from 'react'
+import React, { useState } from 'react'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { Controller, useForm } from 'react-hook-form'
@@ -9,6 +9,7 @@ import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
 import { Button } from 'primereact/button'
 import { Password } from 'primereact/password'
+import { NavBar } from '../components/NavBarAdmin'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -17,13 +18,23 @@ export default function Home() {
     const router = useRouter()
     const defaultValues = {name: '', password: ''}
     const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })
+    const [loading, setLoading] = useState({loading: false, error: ''})
 
     const onSubmit = async (data: any) => {
-        signIn('credentials', {...data, redirect: false}).then(res => {
-            if(res?.ok){
-                router.push('/admin')
-            }
-        }).catch(error => console.log(error, 'tira error'))
+        try {
+            setLoading(prev => ({...prev, loading: true, error: '' }))
+            signIn('credentials', {...data, redirect: false}).then(res => {
+                if(res?.ok){
+                    setLoading(prev => ({...prev, loading: false, error: '' }))
+                    router.push('/admin')
+                }else {
+                    setLoading(prev => ({...prev, loading: false, error: 'Contraseña o Usuario Incorrecto' }))
+                }
+            }).catch(error => console.log(error))
+        } catch (error: any) {
+            console.log(error.message)
+        }
+       
       }
     return (
       <>
@@ -33,6 +44,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
+        <NavBar showIcon={false} logOut={() => {}}/>
         <main className={styles.main}>
             <div className={styles.loginForm}>
                 <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
@@ -56,7 +68,8 @@ export default function Home() {
                         </span>
                         {errors['password'] && <small className="p-error">{errors['password'].message}</small>}
                     </div>
-                    <Button type="submit" label="Guardar" className="mt-2" />
+                    <label>{loading.error}</label>
+                    <Button type="submit" label="Ingresar" className="mt-2" loading={loading.loading}/>
                 </form>
             </div>
         </main>

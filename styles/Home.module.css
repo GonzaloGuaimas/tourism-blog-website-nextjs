@@ -20,6 +20,21 @@
   align-items: center;
   padding: 0rem 2rem 0rem 2rem;
 }
+.navBar .NavBarIcon {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.navBar .NavBarIcon:hover {
+  font-size: 2rem;
+  color: white;
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
 .navBarImage {
   flex: 1;
   height: 35px;
@@ -514,7 +529,9 @@
   color: var(--primary-font-color);
   margin-bottom: 2rem;
 }
-
+.loginForm label {
+  color: var(--primary-color);
+}
 /*------------------ANIMATIONS-----------------------*/
 
 @keyframes animate-element-bottom {

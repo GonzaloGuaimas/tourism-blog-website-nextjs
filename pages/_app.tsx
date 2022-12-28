@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { NavBar } from '../components/NavBar'
 import { Inter } from '@next/font/google'
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
@@ -15,7 +14,6 @@ export default function App({ Component, pageProps: {session, ...pageProps} }: A
   return (
     <main className={inter.className}>
       <SessionProvider session={session}>
-        <NavBar/>
         <Component {...pageProps} />
       </SessionProvider>
     </main>
