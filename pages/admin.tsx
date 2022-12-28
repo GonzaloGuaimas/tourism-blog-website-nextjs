@@ -4,11 +4,17 @@ import { Inter } from '@next/font/google'
 import Header from '../components/admin/Header'
 import { TabView, TabPanel } from 'primereact/tabview'
 import { MainForm } from '../components/admin/MainForm'
+import React from 'react'
+import { useSession } from 'next-auth/react'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const { data: session } = useSession({required: true})
+  if(!session?.user){
+    return <></>
+  }
     return (
         <>
           <Head>

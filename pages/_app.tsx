@@ -5,14 +5,19 @@ import { Inter } from '@next/font/google'
 import 'primereact/resources/themes/lara-light-indigo/theme.css'
 import 'primereact/resources/primereact.min.css'
 import 'primeicons/primeicons.css'   
+import { SessionProvider } from 'next-auth/react'
+import React from 'react'
+
 const inter = Inter({ subsets: ['latin'] })
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps: {session, ...pageProps} }: AppProps) {
 
   return (
     <main className={inter.className}>
-      <NavBar/>
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <NavBar/>
+        <Component {...pageProps} />
+      </SessionProvider>
     </main>
   )
 }

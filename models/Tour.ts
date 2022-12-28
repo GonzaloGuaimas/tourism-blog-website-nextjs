@@ -108,4 +108,4 @@ const TourSchema = new mongoose.Schema({
     },
 })
 
-export default mongoose.models.Tour || mongoose.model('TourSchema', TourSchema)
+export default mongoose.models.Tour || mongoose.model('Tour', TourSchema)

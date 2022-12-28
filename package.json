@@ -17,6 +17,7 @@
     "eslint-config-next": "13.0.7",
     "mongoose": "^6.8.1",
     "next": "13.0.7",
+    "next-auth": "^4.18.7",
     "primeicons": "^6.0.1",
     "primereact": "^8.7.3",
     "react": "18.2.0",

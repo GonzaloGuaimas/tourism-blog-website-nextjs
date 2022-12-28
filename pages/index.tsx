@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 import { useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 import Awards from '../components/Awards'
+import React from 'react'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
