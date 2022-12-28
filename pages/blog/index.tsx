@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
-import BlogCardLarger from '../../components/blog/blogCardLarger'
+import BlogCardLarger from '../../components/blog/BlogCardLarger'
 import BlogCard from '../../components/pure/BlogCard'
 import Footer from '../../components/Footer'
 
