@@ -55,7 +55,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, gallery, setGallery
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
-            <Button type='submit'>Guardar</Button>
+            <Button type='submit' label='Guardar'></Button>
         </form>
     </Dialog>
   )
