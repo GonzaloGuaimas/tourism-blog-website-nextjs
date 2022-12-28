@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 import BlogCard from './pure/BlogCard'
+import { useRouter } from 'next/router'
 const BlogGrid = ({blogVisible}: {blogVisible: boolean}) => {
+  const router = useRouter()
   return (
     <>
       <div className={`titleSection ${blogVisible ? 'titleSectionAnimateSec' : ''}`} id={'blog'}>
@@ -15,7 +17,7 @@ const BlogGrid = ({blogVisible}: {blogVisible: boolean}) => {
         <BlogCard image={'/assets/blogExample/main.jpg'} title={'Este fin de Semana estuvimos Con todo!'} subtitle={'llegaron turistas de todas partes'} date={'19 dic 22'} tourName={'asdasd'} tourLogo={'/assets/blogExample/1.jpg'}/>
         <BlogCard image={'/assets/blogExample/main.png'} title={'Que Calor en Catamarca'} subtitle={'a pesar de las altas temperaturas acá estuvimos'} date={'19 dic 22'} tourName={'asdsad'} tourLogo={'/assets/blogExample/1.jpg'}/>
       </div>
-      <button className='Button'><span>Visitá Nuestro Blog Completo</span></button>
+      <button className='Button' onClick={() => {router.push('blog')}}><span>Visitá Nuestro Blog Completo</span></button>
     </>
   )
 }
