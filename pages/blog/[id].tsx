@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/Footer'
-import { Header } from '../../components/blog/Header'
+import { Header } from '../../components/blog/header'
 import { BlogInfo } from '../../components/blog/BlogInfo'
 import { BlogContent } from '../../components/blog/BlogContent'
 
