@@ -1,0 +1,251 @@
+:root {
+  --max-width: 1100px;
+  --foreground-rgb: 0, 0, 0;
+  /* --primary-color: #F19705; */
+  --primary-color: #FE5500 !important;
+  --primary-font-color: #212529 !important;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rbg(--foreground-rgb);
+  background: white
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*------------------NAVBAR--------------*/
+.nav__brand {
+  text-transform: uppercase;
+}
+
+.navBarMenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.navBarMenu a {
+  text-align: -webkit-center;
+}
+.navBarMenu h3{
+  font-size: calc(1rem);
+  transition: font-size .2s ease;
+  color: white;
+  font-weight: bold;
+}
+.navBarMenu h3:hover{
+  font-size: 1.2rem;
+}
+.navBarMenu hr {
+  display: none;
+}
+.navBarToggler {
+  display: none;
+}
+.navBarToggler div {
+  width: 2rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background-color: white;
+  transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+  .navBarToggler {
+    display: block;
+    cursor: pointer;
+  }
+  .navBarMenu {
+    padding-top: 3rem;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: 70vh;
+    width: 40vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+    justify-content: flex-start;
+    text-align: -webkit-center;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 15px;
+  }
+  .navBarMenu h3 {
+    color: black;
+    font-weight: bold;
+    font-size: calc(1rem + 1vw);
+    transition: font-size .2s ease;
+  }
+  .navBarMenu hr {
+    background-color: var(--primary-color);
+    width: 50%;
+    border: none;
+    height: 3px;
+    display: block;
+  }
+  .navBarMenu h3:hover{
+    font-size: calc(1.3rem + 1vw);  
+  }
+}
+.navBarMenuActive {
+  transform: translateX(0%);
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-8px, -5px);
+}
+
+/*--------------GLOBAL-------------------*/
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+.titleSectionAnimate {
+  animation-duration: 1s;
+  animation-name: animate-element-right;
+  animation-fill-mode: forwards;
+}
+.titleSectionAnimateSec {
+  animation-duration: 1s;
+  animation-name: animate-element-left;
+  animation-fill-mode: forwards;
+}
+.titleSection h1{
+  font-size: calc(1.5rem + 1vw);
+  text-align: center;
+}
+.titleSection h2{
+  font-size: calc(.8rem + 1vw);
+  color: var(--primary-color);
+  text-align: center;
+}
+.titleSection h3{
+  font-size: calc(1.6rem + 1vw);
+  color: var(--primary-color);
+  text-align: center;
+}
+.titleSection hr{
+  height: 3px;
+  width: 50%;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  border: none;
+}
+
+
+.Button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  border-radius: 10px;
+}
+.Button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.Button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.2s;
+}
+.Button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.2s;
+}
+.Button:hover span {
+  padding-left: 25px;
+}
+.Button:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+/*------------------CUSTOM PRIMEREACT COMP-------------------*/
+.p-component{
+  width: 100% !important;
+}
+.p-tabview .p-tabview-panels{
+  padding: 1rem 0rem 1rem 0rem;
+}
+.p-button {
+  background: var(--primary-color) !important;
+  border-style: none !important;
+}
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+.p-tabview .p-tabview-nav .p-tabview-ink-bar{
+  background-color: var(--primary-color) !important;
+}
+/*---------------------ANIMATIONS-------------------------*/
+@keyframes animate-element-right {
+  0% {
+      transform: translateX(100vh);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animate-element-left {
+  0% {
+      transform: translateX(-100vh);
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes animate-element-fade {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 0.5;
+  }
+  100% {
+      opacity: 1;
+  }
+}
