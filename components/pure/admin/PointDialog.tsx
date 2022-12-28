@@ -54,9 +54,9 @@ const PointDialog = ({ showPointDialog, hidePointDialog, route, setRoute } : { s
                 {submitted && !point.locationLink && <small className="p-error">Ingresar Link Google Maps.</small>}
             </div>
             <div className={styles.ImageField}>
-                <label htmlFor="inputLogo">
+                <label htmlFor="imageLink">
                     Seleccionar Imagen
-                    <input id='inputLogo' type="file" name='file' onChange={handleOnChange}/>
+                    <input id='imageLink' type="file" name='file' onChange={handleOnChange}/>
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
