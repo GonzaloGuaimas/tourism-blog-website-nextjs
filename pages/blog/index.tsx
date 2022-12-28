@@ -4,8 +4,11 @@ import styles from '../../styles/Home.module.css'
 import BlogCardLarger from '../../components/blog/BlogCardLarger'
 import BlogCard from '../../components/pure/BlogCard'
 import Footer from '../../components/Footer'
+import { NavBar } from '../../components/NavBar'
+import { useRouter } from 'next/router'
 
 export default function Blog() {
+    const router = useRouter()
     const footerRef = useRef()
     return(
         <>
@@ -15,6 +18,7 @@ export default function Blog() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/assets/logoMundo.png" />
             </Head>
+            <NavBar action={() => {router.back()}} type={'blog'}/>
             <main className={styles.main}>
                 <div style={{marginTop: '60px'}}>
                     <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>

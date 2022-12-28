@@ -9,7 +9,7 @@ import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
 import { Button } from 'primereact/button'
 import { Password } from 'primereact/password'
-import { NavBar } from '../components/NavBarAdmin'
+import { NavBar } from '../components/NavBar'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -44,7 +44,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
-        <NavBar showIcon={false} logOut={() => {}}/>
+        <NavBar type='blog' action={() => {router.back()}}/>
         <main className={styles.main}>
             <div className={styles.loginForm}>
                 <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">

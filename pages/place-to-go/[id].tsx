@@ -10,6 +10,7 @@ import Footer from '../../components/Footer'
 import Contact from '../../components/place-to-go/Contact'
 import ContactButton from '../../components/pure/place-to-go/ContactButton'
 import { useInView } from 'react-intersection-observer'
+import { NavBar } from '../../components/NavBar'
 
 export default function Place() {
     const router = useRouter()
@@ -26,6 +27,7 @@ export default function Place() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
+        <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
             <About refValue={gridRef} gridVisible={gridVisible}/>

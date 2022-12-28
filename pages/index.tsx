@@ -30,7 +30,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
-        <NavBar/>
+        <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
           <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
