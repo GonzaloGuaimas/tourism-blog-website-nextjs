@@ -50,14 +50,14 @@
 .MainInfo .field {
     margin-bottom: 1.5rem !important;
 }
-.MainInfo .ImageField {
+.ImageField {
     margin-bottom: 1.5rem !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 10px;
 }
-.MainInfo .ImageField img {
+.ImageField img {
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     width: 100%;
@@ -66,7 +66,7 @@
        object-fit: cover;
     flex: 1;
 }
-.MainInfo .ImageField label {
+.ImageField label {
     background-color: var(--primary-color);
     border: none;
     padding: .7rem;
@@ -78,11 +78,11 @@
     border-radius: 10px;
     height: fit-content;
 }
-.MainInfo .ImageField label:hover {
+.ImageField label:hover {
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
 }
 
-.MainInfo .ImageField input[type="file"] {
+.ImageField input[type="file"] {
    display: none;
 }
 
