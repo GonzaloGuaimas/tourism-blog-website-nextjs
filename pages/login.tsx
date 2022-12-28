@@ -17,6 +17,7 @@ export default function Home() {
     const router = useRouter()
     const defaultValues = {name: '', password: ''}
     const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })
+
     const onSubmit = async (data: any) => {
         signIn('credentials', {...data, redirect: false}).then(res => {
             if(res?.ok){
@@ -49,7 +50,7 @@ export default function Home() {
                     <div className={styles.field}>
                         <span className="p-float-label">
                             <Controller name="password" control={control} rules={{ required: 'Ingrese Contraseña.' }} render={({ field, fieldState }) => (
-                                <Password id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} feedback={false}/>
+                                <Password type='submit' id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} feedback={false}/>
                             )} />
                             <label htmlFor="password" className={classNames({ 'p-error': errors.password })}>Contraseña*</label>
                         </span>
