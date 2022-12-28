@@ -2,9 +2,9 @@ import React, { useRef } from 'react'
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
 import Footer from '../../components/Footer'
-import Header from '../../components/blog/Header'
+import { Header } from '../../components/blog/Header'
 import { BlogInfo } from '../../components/blog/BlogInfo'
-import BlogContent from '../../components/blog/BlogContent'
+import { BlogContent } from '../../components/blog/BlogContent'
 
 export default function Blog() {
     const footerRef = useRef()

@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../styles/Home.module.css'
 import Image from 'next/image'
 
-const BlogContent = () => {
+export const BlogContent = () => {
   return (
     <div className={styles.BlogContent}>
         <div>
@@ -13,5 +13,3 @@ const BlogContent = () => {
     </div>
   )
 }
-
-export default BlogContent

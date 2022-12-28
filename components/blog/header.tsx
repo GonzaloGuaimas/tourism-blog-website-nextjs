@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../../styles/Home.module.css'
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <div className={styles.Header} id={'home'}>
@@ -11,5 +11,3 @@ const Header = () => {
 
   )
 }
-
-export default Header
