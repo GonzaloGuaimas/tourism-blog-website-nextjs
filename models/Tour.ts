@@ -1,6 +1,10 @@
 import mongoose, { Schema } from 'mongoose'
 
 const GallerySchema = new Schema({
+    title: {
+        require: true,
+        type: String
+    },
     uploadDate: {
         type: Date, 
         default: Date.now

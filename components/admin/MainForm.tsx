@@ -9,6 +9,7 @@ import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import Image from 'next/image'
 import PointDialog from '../pure/admin/PointDialog'
+import GalleryDialog from '../pure/admin/GalleryDialog'
 
 export const MainForm = () => {
   const defaultValues = {
@@ -34,39 +35,37 @@ export const MainForm = () => {
     gallery: [],
     route: []
   }
-  const defaultPoint = {
-    name: '',
-    locationLink: '',
-    imageLink: ''
-  }
   {/*PointDialog params */}
-  const [point, setPoint] = useState(defaultPoint)
-  const [showPointDialog, setShowPointDialog] = useState(false)
-
-  const [formData, setFormData] = useState({})
-  const [route, setRoute] = useState([{'name': 'asdsad11', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}, {'name': 'asdsad222', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}, {'name': 'asdsad33', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}])
-  const [gallery, setGallery] = useState([{'name': 'asdsad11', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}, {'name': 'asdsad222', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}, {'name': 'asdsad33', 'locationLink': 'uwu', 'imageLink': '/assets/blogExample/main.jpg'}])
-//   const [showMessage, setShowMessage] = useState(false)
-  const [logoImage, setLogoImage] = useState('/assets/emptyImage.png')
   const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })
-  const getFormErrorMessage = (name: any) => {
-    return errors[name] && <small className="p-error">{errors[name].message}</small>
-  }
+
+  const [showPointDialog, setShowPointDialog] = useState(false)
+  const [showGalleryDialog, setShowGalleryDialog] = useState(false)
+
+  const [route, setRoute] = useState([])
+  const [gallery, setGallery] = useState([])
+  //const [showMessage, setShowMessage] = useState(false)
+  const [logoImage, setLogoImage] = useState<string | undefined>('/assets/emptyImage.png')
+  const [coverImage, setCoverImage] = useState<string | undefined>('/assets/emptyImage.png')
+
   const onSubmit = (data: any) => {
     data.route = route
     data.gallery = gallery
-    setFormData(data)
+    
     console.log(data)
     // setShowMessage(true)
   }
 
   function handleOnChange(changeEvent: any) {
-      const reader = new FileReader()
-      reader.onload = function(onloadEvent){
-        setLogoImage(onloadEvent.target?.result)
-      }
-      reader.readAsDataURL(changeEvent.target.files[0])
+    const reader = new FileReader()
+    reader.onload = function(onloadEvent){
+        let image = onloadEvent.target?.result?.toString()
+        changeEvent.target.id === 'inputLogo'
+        ? setLogoImage(image)
+        : setCoverImage(image)
     }
+    reader.readAsDataURL(changeEvent.target.files[0])
+  }
+
   return (
     <>
       <div className={styles.MainInfo}>
@@ -77,7 +76,7 @@ export const MainForm = () => {
                 Seleccionar Imagen
                 <input id='inputLogo' type="file" name='logoImageLink' onChange={handleOnChange}/>
               </label>
-              <Image src={logoImage} alt={''} height={500} width={500}/>
+              <Image src={logoImage || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
 
             <div className={styles.field}>
@@ -87,7 +86,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="name" className={classNames({ 'p-error': errors.name })}>Nombre del Tour*</label>
                 </span>
-                {getFormErrorMessage('name')}
+                {errors['name'] && <small className="p-error">{errors['name'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -97,7 +96,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="password" className={classNames({ 'p-error': errors.password })}>Contraseña*</label>
                 </span>
-                {getFormErrorMessage('password')}
+                {errors['password'] && <small className="p-error">{errors['password'].message}</small>}
             </div>
 
             <div className={styles.ImageField}>
@@ -105,7 +104,7 @@ export const MainForm = () => {
                 Seleccionar Imagen
                 <input id='inputCover' type="file" name='coverImageLink' onChange={handleOnChange}/>
               </label>
-              <Image src={logoImage} alt={''} height={500} width={500}/>
+              <Image src={coverImage || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
 
             <div className={styles.field}>
@@ -115,7 +114,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="coverDescription" className={classNames({ 'p-error': errors.name })}>Descripción Imagen Portada*</label>
                 </span>
-                {getFormErrorMessage('coverDescription')}
+                {errors['coverDescription'] && <small className="p-error">{errors['coverDescription'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -125,7 +124,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="shortDescription" className={classNames({ 'p-error': errors.name })}>Descripción Corta Encabezado*</label>
                 </span>
-                {getFormErrorMessage('shortDescription')}
+                {errors['shortDescription'] && <small className="p-error">{errors['shortDescription'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -135,7 +134,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="longerDescription" className={classNames({ 'p-error': errors.name })}>Descripción Larga Encabezado*</label>
                 </span>
-                {getFormErrorMessage('longerDescription')}
+                {errors['longerDescription'] && <small className="p-error">{errors['longerDescription'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -145,7 +144,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="extraInfo" className={classNames({ 'p-error': errors.name })}>Información Extra del Tour*</label>
                 </span>
-                {getFormErrorMessage('extraInfo')}
+                {errors['extraInfo'] && <small className="p-error">{errors['extraInfo'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -155,7 +154,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="meetingPoint" className={classNames({ 'p-error': errors.name })}>Nombre Punto de Encuentro*</label>
                 </span>
-                {getFormErrorMessage('meetingPoint')}
+                {errors['meetingPoint'] && <small className="p-error">{errors['meetingPoint'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -165,7 +164,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="meetingPointLink" className={classNames({ 'p-error': errors.name })}>Link Google Maps Punto de Encuentro*</label>
                 </span>
-                {getFormErrorMessage('meetingPointLink')}
+                {errors['meetingPointLink'] && <small className="p-error">{errors['meetingPointLink'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -175,7 +174,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="schedules" className={classNames({ 'p-error': errors.name })}>Horarios*</label>
                 </span>
-                {getFormErrorMessage('schedules')}
+                {errors['schedules'] && <small className="p-error">{errors['schedules'].message}</small>}
             </div>
 
             
@@ -186,7 +185,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="duration" className={classNames({ 'p-error': errors.name })}>Duración*</label>
                 </span>
-                {getFormErrorMessage('duration')}
+                {errors['duration'] && <small className="p-error">{errors['duration'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -196,7 +195,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="instagramUser" className={classNames({ 'p-error': errors.name })}>Usuario Instagram*</label>
                 </span>
-                {getFormErrorMessage('instagramUser')}
+                {errors['instagramUser'] && <small className="p-error">{errors['instagramUser'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -206,7 +205,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="facebookUser" className={classNames({ 'p-error': errors.name })}>Usuario Facebook*</label>
                 </span>
-                {getFormErrorMessage('facebookUser')}
+                {errors['facebookUser'] && <small className="p-error">{errors['facebookUser'].message}</small>}
             </div>
 
             <div className={styles.field}>
@@ -216,7 +215,7 @@ export const MainForm = () => {
                     )} />
                     <label htmlFor="whatsAppNumber" className={classNames({ 'p-error': errors.name })}>Número WhatsApp*</label>
                 </span>
-                {getFormErrorMessage('whatsAppNumber')}
+                {errors['whatsAppNumber'] && <small className="p-error">{errors['whatsAppNumber'].message}</small>}
             </div>
 
             <hr />
@@ -249,7 +248,8 @@ export const MainForm = () => {
             <Button type="submit" label="Guardar" className="mt-2" />
         </form>
       </div>
-      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} point={point} setPoint={setPoint}/>
+      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} route={route} setRoute={setRoute}/>
+      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} gallery={gallery} setGallery={setGallery}/>
     </>
   )
 }
