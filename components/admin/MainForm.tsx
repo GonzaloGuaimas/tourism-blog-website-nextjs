@@ -10,6 +10,7 @@ import { Column } from 'primereact/column'
 import Image from 'next/image'
 import PointDialog from '../pure/admin/PointDialog'
 import GalleryDialog from '../pure/admin/GalleryDialog'
+import { uploadOne } from '../../services/cloudinary/uploadOne'
 
 export const MainForm = () => {
   const defaultValues = {
@@ -47,10 +48,11 @@ export const MainForm = () => {
   const [logoImage, setLogoImage] = useState<string | undefined>('/assets/emptyImage.png')
   const [coverImage, setCoverImage] = useState<string | undefined>('/assets/emptyImage.png')
 
-  const onSubmit = (data: any) => {
+  const onSubmit = async (data: any) => {
+    data.logoImageLink = await uploadOne(logoImage)
+    data.coverImageLink = await uploadOne(coverImage)
     data.route = route
     data.gallery = gallery
-    
     console.log(data)
     // setShowMessage(true)
   }
@@ -225,7 +227,7 @@ export const MainForm = () => {
                     <h2>Recorrido</h2>
                     <Button className={styles.TableButton} type='button' label="Nuevo Punto" onClick={() => setShowPointDialog(true)}/>
                 </div>
-                <DataTable value={route} name='route' size="small" responsiveLayout="scroll">
+                <DataTable value={route} size="small" responsiveLayout="scroll">
                     <Column field="name" header="Nombre"></Column>
                     <Column field="locationLink" header="Mapa"></Column>
                     <Column field="imageLink" header="Imagen" 
@@ -242,7 +244,7 @@ export const MainForm = () => {
                     <h2>Galería</h2>
                     <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
                 </div>
-                <DataTable value={route} name='route' size="small" responsiveLayout="scroll">
+                <DataTable value={gallery} size="small" responsiveLayout="scroll">
                     <Column field="uploadDate" header="Fecha"></Column>
                     <Column field="userRegisterId" header="Usuario"></Column>
                     <Column field="imageLink" header="Imagen" 
@@ -254,8 +256,8 @@ export const MainForm = () => {
             <Button type="submit" label="Guardar" className="mt-2" />
         </form>
       </div>
-      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} route={route} setRoute={setRoute}/>
-      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} gallery={gallery} setGallery={setGallery}/>
+      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute}/>
+      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} setGallery={setGallery}/>
     </>
   )
 }

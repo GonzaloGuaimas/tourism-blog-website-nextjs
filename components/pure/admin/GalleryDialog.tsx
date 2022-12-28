@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
 
-const PointDialog = ({ showGalleryDialog, hideGalleryDialog, gallery, setGallery } : { showGalleryDialog: boolean, hideGalleryDialog: any, gallery: any, setGallery: any }) => {
+const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any }) => {
     const defaultGallery = {
         name: '',
         locationLink: '',
@@ -31,12 +31,12 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, gallery, setGallery
         reader.readAsDataURL(changeEvent.target.files[0])
     }
     async function submitForm(e: any) {
+        e.preventDefault()
         setSubmitted(true)
         let _galleryItem = {...galleryItem}
         _galleryItem['imageLink'] = await handleOnSubmit(e)
         setGalleryItem(_galleryItem)
-        let _gallery = {...gallery, galleryItem}
-        setGallery(_gallery)
+        setGallery((prev: any) => [...prev, _galleryItem])
         hideGalleryDialog()
     }
 

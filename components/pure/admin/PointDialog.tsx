@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
 
-const PointDialog = ({ showPointDialog, hidePointDialog, route, setRoute } : { showPointDialog: boolean, hidePointDialog: any, route: any, setRoute: any }) => {
+const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPointDialog: boolean, hidePointDialog: any, setRoute: any }) => {
     const defaultPoint = {
         name: '',
         locationLink: '',
@@ -15,7 +15,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, route, setRoute } : { s
       }
     const [submitted, setSubmitted] = useState<any>(false)
     const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
-    const [point, setPoint] = useState<any>({defaultPoint})
+    const [point, setPoint] = useState<any>(defaultPoint)
 
     const onInputChange = (e: any, name: string) => {
         const val = (e.target && e.target.value) || ''
@@ -24,19 +24,23 @@ const PointDialog = ({ showPointDialog, hidePointDialog, route, setRoute } : { s
         setPoint(_point)
     }
     function handleOnChange(changeEvent: any) {
-        const reader = new FileReader()
-        reader.onload = function(onloadEvent){
-            setImage(onloadEvent.target?.result?.toString())
+        try {
+            const reader = new FileReader()
+            reader.onload = function(onloadEvent){
+                setImage(onloadEvent.target?.result?.toString())
+            }
+            reader.readAsDataURL(changeEvent.target.files[0])
+        } catch (e: any) {
+            console.log(e.message)
         }
-        reader.readAsDataURL(changeEvent.target.files[0])
     }
     async function submitForm(e: any) {
+        e.preventDefault()
         setSubmitted(true)
         let _point = {...point}
         _point['imageLink'] = await handleOnSubmit(e)
         setPoint(_point)
-        let _route = {...route, point}
-        setRoute(_route)
+        setRoute((prev: any) => [...prev, _point])
         hidePointDialog()
     }
 
