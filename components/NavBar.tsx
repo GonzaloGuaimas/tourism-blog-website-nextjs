@@ -6,6 +6,7 @@ import { Link } from 'react-scroll'
 import { useRouter } from 'next/router'
 import { IoLogOut } from 'react-icons/io5'
 import { IoArrowBack } from 'react-icons/io5'
+import { IoLogIn } from 'react-icons/io5'
 
 export const NavBar = ({action, type}: { action: any, type: string}) => {
   const router = useRouter()
@@ -47,6 +48,9 @@ export const NavBar = ({action, type}: { action: any, type: string}) => {
               <h3>CONTACTO</h3>
               <hr />
             </Link>
+            <label onClick={() =>{ router.push('/admin') }}>
+              <IoLogIn className={styles.NavBarIcon}/>
+            </label>
         </div>
         <div onClick={navToggle} className={icon}>
           <div className="line1"></div>
@@ -101,6 +105,9 @@ export const NavBar = ({action, type}: { action: any, type: string}) => {
               <h3>ACERCA DE</h3>
               <hr />
             </Link>
+            <label onClick={() =>{ router.push('/admin') }}>
+              <IoLogIn className={styles.NavBarIcon}/>
+            </label>
         </div>
         <div onClick={navToggle} className={icon}>
           <div className="line1"></div>

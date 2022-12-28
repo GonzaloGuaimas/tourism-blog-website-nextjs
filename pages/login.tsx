@@ -44,7 +44,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logoMundo.png" />
         </Head>
-        <NavBar type='blog' action={() => {router.back()}}/>
+        <NavBar type='blog' action={() => {router.replace('/')}}/>
         <main className={styles.main}>
             <div className={styles.loginForm}>
                 <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">

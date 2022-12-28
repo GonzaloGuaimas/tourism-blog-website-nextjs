@@ -39,19 +39,19 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 3rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
 }
 .navBarMenu a {
   text-align: -webkit-center;
 }
 .navBarMenu h3{
-  font-size: calc(1rem);
+  font-size: .9rem;
   transition: font-size .2s ease;
   color: white;
-  font-weight: bold;
 }
 .navBarMenu h3:hover{
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .navBarMenu hr {
   display: none;
@@ -72,12 +72,15 @@ a {
     display: block;
     cursor: pointer;
   }
+  .navBarMenu svg {
+    color: var(--primary-color) !important;
+  }
   .navBarMenu {
-    padding-top: 3rem;
+    padding-top: 1rem;
     position: fixed;
     top: 60px;
     right: 0;
-    height: 70vh;
+    height: fit-content;
     width: 40vw;
     background-color: white;
     display: flex;
@@ -92,7 +95,7 @@ a {
   .navBarMenu h3 {
     color: black;
     font-weight: bold;
-    font-size: calc(1rem + 1vw);
+    font-size: 1rem;
     transition: font-size .2s ease;
   }
   .navBarMenu hr {
