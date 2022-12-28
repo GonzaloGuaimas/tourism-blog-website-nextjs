@@ -20,7 +20,7 @@ export default function Blog() {
                     <div className='titleSection' id={'about'} style={{ marginTop: '2rem' }}>
                         <h2>FREE TOUR ARGENTINA</h2>
                         <h1>NUESTRO BLOG</h1>
-                        <hr />
+                        <hr/>
                     </div>
                 </div>
                 <div className={styles.BlogContainer}>
