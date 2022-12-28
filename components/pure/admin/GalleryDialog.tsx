@@ -9,13 +9,15 @@ import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
 
 const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any }) => {
     const defaultGallery = {
-        name: '',
-        locationLink: '',
-        imageLink: ''
+        title: '',
+        uploadDate: '',
+        imageLink: '',
+        userRegisterId: ''
       }
     const [submitted, setSubmitted] = useState<any>(false)
+    const [loading, setLoading] = useState(false)
     const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
-    const [galleryItem, setGalleryItem] = useState<any>({defaultGallery})
+    const [galleryItem, setGalleryItem] = useState<any>(defaultGallery)
 
     const onInputChange = (e: any, name: string) => {
         const val = (e.target && e.target.value) || ''
@@ -31,12 +33,14 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { sh
         reader.readAsDataURL(changeEvent.target.files[0])
     }
     async function submitForm(e: any) {
+        setLoading(true)
         e.preventDefault()
         setSubmitted(true)
         let _galleryItem = {...galleryItem}
         _galleryItem['imageLink'] = await handleOnSubmit(e)
         setGalleryItem(_galleryItem)
         setGallery((prev: any) => [...prev, _galleryItem])
+        setLoading(false)
         hideGalleryDialog()
     }
 
@@ -45,7 +49,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { sh
         <form method='post' onSubmit={(e) => submitForm(e)}>
             <div className="field">
                 <label htmlFor="title">Título</label>
-                <InputText id="title" value={galleryItem.title} onChange={(e) => onInputChange(e, 'name')} required autoFocus className={classNames({ 'p-invalid': submitted && !galleryItem.title })} />
+                <InputText id="title" value={galleryItem.title} onChange={(e) => onInputChange(e, 'title')} required autoFocus className={classNames({ 'p-invalid': submitted && !galleryItem.title })} />
                 {submitted && !galleryItem.title && <small className="p-error">Ingresar Título.</small>}
             </div>
             <div className={styles.ImageField}>
@@ -55,7 +59,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { sh
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
-            <Button type='submit' label='Guardar'></Button>
+            <Button type='submit' loading={loading} label='Guardar'></Button>
         </form>
     </Dialog>
   )
