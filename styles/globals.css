@@ -206,7 +206,13 @@ a {
   background: var(--primary-color) !important;
   border-style: none !important;
 }
-
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+.p-tabview .p-tabview-nav .p-tabview-ink-bar{
+  background-color: var(--primary-color) !important;
+}
 /*---------------------ANIMATIONS-------------------------*/
 @keyframes animate-element-right {
   0% {
