@@ -219,9 +219,12 @@ export const MainForm = () => {
             </div>
 
             <hr />
-            <h2>Recorrido</h2>
+            
             <div className={styles.DataTableField}>
-                <Button type='button' label="Nuevo Punto" onClick={() => setShowPointDialog(true)}/>
+                <div>
+                    <h2>Recorrido</h2>
+                    <Button className={styles.TableButton} type='button' label="Nuevo Punto" onClick={() => setShowPointDialog(true)}/>
+                </div>
                 <DataTable value={route} name='route' size="small" responsiveLayout="scroll">
                     <Column field="name" header="Nombre"></Column>
                     <Column field="locationLink" header="Mapa"></Column>
@@ -233,9 +236,12 @@ export const MainForm = () => {
             </div>
 
             <hr />
-            <h2>Galería</h2>
+           
             <div className={styles.DataTableField}>
-                <Button type='button' label="Nueva Imagen"/>
+                <div>
+                    <h2>Galería</h2>
+                    <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
+                </div>
                 <DataTable value={route} name='route' size="small" responsiveLayout="scroll">
                     <Column field="uploadDate" header="Fecha"></Column>
                     <Column field="userRegisterId" header="Usuario"></Column>

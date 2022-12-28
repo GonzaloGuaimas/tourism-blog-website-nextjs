@@ -202,7 +202,10 @@ a {
 .p-tabview .p-tabview-panels{
   padding: 1rem 0rem 1rem 0rem;
 }
-
+.p-button {
+  background: var(--primary-color) !important;
+  border-style: none !important;
+}
 
 /*---------------------ANIMATIONS-------------------------*/
 @keyframes animate-element-right {

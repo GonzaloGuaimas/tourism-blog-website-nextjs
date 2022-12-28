@@ -97,6 +97,14 @@
     -o-object-fit: cover;
        object-fit: cover;
 }
+.DataTableField div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.MainInfo .DataTableField .TableButton{
+    width: fit-content !important;
+}
 .MainInfo h2 {
     color: var(--primary-color);
     padding: 1rem 0rem 1rem 0rem;

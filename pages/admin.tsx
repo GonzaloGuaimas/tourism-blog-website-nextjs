@@ -20,13 +20,13 @@ export default function Home() {
           <main className={styles.main}>
             <Header tourName={'Bariloche'} tourlogo={'/assets/blogExample/1.jpg'}/>
             <TabView>
-                <TabPanel header="Header I">
+                <TabPanel header="Información Principal">
                     <MainForm/>
                 </TabPanel>
-                <TabPanel header="Header II">
+                <TabPanel header="Contenido Blog">
                     Content II
                 </TabPanel>
-                <TabPanel header="Header III">
+                <TabPanel header="Reconocimientos">
                     Content III
                 </TabPanel>
             </TabView>
