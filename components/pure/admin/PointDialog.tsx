@@ -14,6 +14,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
         imageLink: ''
       }
     const [submitted, setSubmitted] = useState<any>(false)
+    const [loading, setLoading] = useState(false)
     const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
     const [point, setPoint] = useState<any>(defaultPoint)
 
@@ -35,12 +36,14 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
         }
     }
     async function submitForm(e: any) {
+        setLoading(true)
         e.preventDefault()
         setSubmitted(true)
         let _point = {...point}
         _point['imageLink'] = await handleOnSubmit(e)
         setPoint(_point)
         setRoute((prev: any) => [...prev, _point])
+        setLoading(false)
         hidePointDialog()
     }
 
@@ -64,7 +67,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
-            <Button type='submit' label='Guardar'></Button>
+            <Button type='submit' loading={loading} label='Guardar'></Button>
         </form>
     </Dialog>
   )
