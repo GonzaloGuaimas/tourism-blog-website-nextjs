@@ -381,12 +381,6 @@
   display: flex;
   column-gap: 2rem;
 }
-@media (max-width: 800px) {
-  .BlogContent {
-    flex-direction: column;
-    row-gap: 1rem;
-  }
-}
 .BlogContent div{
   flex: 3;
 }
@@ -540,6 +534,20 @@
 .loginForm label {
   color: var(--primary-color);
 }
+
+
+/*------------------MEDIA Q --------------------------*/
+@media (max-width: 800px) {
+  .Home {
+    height: 70vh;
+  }
+  .BlogContent {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
+
+
 /*------------------ANIMATIONS-----------------------*/
 
 @keyframes animate-element-bottom {
