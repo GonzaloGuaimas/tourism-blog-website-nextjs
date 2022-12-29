@@ -11,7 +11,7 @@ const DestinationCard = ({ image, title, description }: {image: string, title: s
         <div className={styles.DestinationCardInfo}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <button onClick={() => {router.push(`place-to-go/${title}`)}}>Descubrir Destino</button>
+            <button onClick={() => {router.push(`tour/${title}`)}}>Descubrir Destino</button>
         </div>
     </div>
   )
