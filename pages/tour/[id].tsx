@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styles from '../../styles/Places.module.css'
 import Home from '../../components/place-to-go/Home'
@@ -12,11 +11,12 @@ import ContactButton from '../../components/pure/place-to-go/ContactButton'
 import { useInView } from 'react-intersection-observer'
 import { NavBar } from '../../components/NavBar'
 import Comments from '../../components/place-to-go/Comments'
+import { getTour } from '../../services/tours/getTour'
+import router from 'next/router'
+import { ITour } from '../../models/Tour'
 
-export default function Place() {
-    const router = useRouter()
+export default function Place({tour}: {tour: ITour}) {
     // eslint-disable-next-line no-unused-vars
-    const { id } = router.query
     const { ref: footerRef, inView: footerVisible } = useInView()
     return (
       <>
@@ -28,8 +28,8 @@ export default function Place() {
         </Head>
         <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
-            <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
-            <About/>
+            <Home placeName={tour.name} description={tour.shortDescription}/>
+            <About tour={tour}/>
             <Gallery/>
             <Map/>
             <Contact/>
@@ -40,4 +40,15 @@ export default function Place() {
       </>
     )
   }
-  
+  export async function getStaticPaths() {
+    return {
+        paths: [],
+        fallback: 'blocking'
+    }
+  }
+  export async function getStaticProps(context: any) {
+    const tour = await getTour(context.params.id)
+    return {
+      props: {tour}, 
+    }
+  }

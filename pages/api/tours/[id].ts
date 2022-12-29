@@ -14,7 +14,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 	switch (method) {
 		case 'GET':
 			try {
-				const tour = await Tour.findById(id)
+				// const tour = await Tour.findById(id)
+				const tour = await Tour.find({name: id})
 				return res.status(200).json({tour})
 			} catch(error){
 				res.status(400).json({success: false, error})

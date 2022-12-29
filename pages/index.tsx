@@ -44,8 +44,7 @@ export default function Home({tours}: {tours: ITour[]}) {
     )
   }
   export async function getStaticProps() {
-    const allTours = await getTours()
-    const tours= allTours.data.tours
+    const tours = await getTours()
     return {
       props: {tours},
     }
