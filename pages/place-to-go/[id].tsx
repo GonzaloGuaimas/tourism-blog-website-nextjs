@@ -11,6 +11,7 @@ import Contact from '../../components/place-to-go/Contact'
 import ContactButton from '../../components/pure/place-to-go/ContactButton'
 import { useInView } from 'react-intersection-observer'
 import { NavBar } from '../../components/NavBar'
+import Comments from '../../components/place-to-go/Comments'
 
 export default function Place() {
     const router = useRouter()
@@ -32,6 +33,7 @@ export default function Place() {
             <Gallery/>
             <Map/>
             <Contact/>
+            <Comments/>
             <Footer refValue={footerRef}/>
             <ContactButton footerVisible={footerVisible}/>
         </main>

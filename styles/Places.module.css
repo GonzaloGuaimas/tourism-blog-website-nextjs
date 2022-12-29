@@ -79,12 +79,6 @@
 }
 
 .AboutGrid {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    justify-items: center; */
-    
     padding: 1rem;
     max-width: 100%;
     display: flex;
@@ -240,6 +234,88 @@
 .ContactButton p {
     font-size: 1rem;
 }
+
+/*--------------------COMMENTS--------------------------*/
+
+.Comments {
+    padding: 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: .4rem;
+    justify-content: center;
+}
+
+.CommentCard {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    width: 350px;
+    height: max-content;
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    cursor: pointer;
+}
+.CommentCard:hover {
+    -webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}
+.CommentCard p {
+    font-size: medium;
+    font-weight: 400;
+}
+.CommentCard hr {
+    display: inline-flex;
+    background-color: var(--primary-color);
+    border: none;
+    height: 2px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.CommentCardData p {
+    font-size: medium;
+    font-weight: 500;
+}
+.CommentCardData p:last-child{
+    font-size: medium;
+    font-weight: 300;
+}
+.CommentCardData strong {
+    font-size: medium;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.CommentCardProfile{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: .3rem;
+}
+.CommentCardProfileData {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+.CommentCardProfileData p {
+    font-size: smaller;
+}
+
+.CommentCardProfile img {
+    border-radius: 50rem;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
 
 /*-----------------ANIMATIONS-----------------------------*/
 @keyframes animation-contact-btn {
