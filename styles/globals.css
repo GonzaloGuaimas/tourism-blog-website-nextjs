@@ -60,8 +60,8 @@ a {
   display: none;
 }
 .navBarToggler div {
-  width: 2rem;
-  height: 0.2rem;
+  width: 1.5rem;
+  height: 0.1rem;
   margin: 0.4rem;
   background-color: white;
   transition: 0.3s ease-in;
@@ -78,7 +78,7 @@ a {
   .navBarMenu {
     padding-top: 1rem;
     position: fixed;
-    top: 60px;
+    top: 48px;
     right: 0;
     height: fit-content;
     width: 40vw;
@@ -113,13 +113,13 @@ a {
   transform: translateX(0%);
 }
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-8px, 5px);
+  transform: rotate(-45deg) translate(-6px, 5px);
 }
 .toggle .line2 {
   opacity: 0;
 }
 .toggle .line3 {
-  transform: rotate(45deg) translate(-8px, -5px);
+  transform: rotate(45deg) translate(-6px, -5px);
 }
 
 /*--------------GLOBAL-------------------*/
