@@ -154,7 +154,7 @@ a {
   text-align: center;
 }
 .titleSection p {
-  padding-top: 1rem;
+  padding: 1rem;
   color: var(--primary-font-color);
   text-align: center;
 }

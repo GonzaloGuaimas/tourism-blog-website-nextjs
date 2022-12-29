@@ -9,7 +9,7 @@ const DestinationGrid = () => {
         <h2>DESCUBRÍ</h2>
         <h1>NUESTRAS EXCURSIONES</h1>
         <hr />
-        <p>Reservá ahora mismo tu excursión. Hacé click en tu Destino!</p>
+        <p>Reservá ahora mismo tu excursión. <strong>Hacé click en tu Destino!</strong></p>
       </div>
       <div className={styles.Destination}>
           <DestinationCard image={'/assets/cover/bariloche.jpg'} title={'BARILOCHE FREE TOUR'} description={'Su apasionante historia, su arquitectura, cultura y la influencia de los inmigrantes europeos. Caminamos por los barrios del casco histórico.'}/>

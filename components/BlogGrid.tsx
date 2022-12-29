@@ -2,11 +2,11 @@ import React from 'react'
 import styles from '../styles/Home.module.css'
 import BlogCard from './pure/BlogCard'
 import { useRouter } from 'next/router'
-const BlogGrid = ({blogVisible}: {blogVisible: boolean}) => {
+const BlogGrid = () => {
   const router = useRouter()
   return (
     <>
-      <div className={`titleSection ${blogVisible ? 'titleSectionAnimateSec' : ''}`} id={'blog'}>
+      <div className={'titleSection'} id={'blog'}>
         <h2>NUESTRO BLOG</h2>
         <h2>DEL FREE TOUR!</h2>
         <h1>EL DÍA A DÍA</h1>

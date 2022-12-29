@@ -9,7 +9,6 @@ import Gallery from '../components/Gallery'
 import About from '../components/About'
 import Footer from '../components/Footer'
 import { useRef } from 'react'
-import { useInView } from 'react-intersection-observer'
 import Awards from '../components/Awards'
 import React from 'react'
 import { NavBar } from '../components/NavBar'
@@ -18,8 +17,6 @@ import { NavBar } from '../components/NavBar'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const { ref: blogRef, inView: blogVisible } = useInView()
-    const { ref: aboutRef, inView: aboutVisible } = useInView()
     const footerRef = useRef()
     return (
       <>
@@ -33,10 +30,10 @@ export default function Home() {
         <main className={styles.main}>
           <HomeComponent/>
           <DestinationGrid/>
-          <Delimiter refValue={blogRef} title={'TOURS DE PAGO LIBRE'} />
-          <BlogGrid blogVisible={blogVisible}/>
-          <Delimiter refValue={aboutRef} title={'RECORRIDOS A PIE'}/>
-          <Gallery aboutVisible={aboutVisible}/>
+          <Delimiter title={'TOURS DE PAGO LIBRE'} />
+          <BlogGrid/>
+          <Delimiter title={'RECORRIDOS A PIE'}/>
+          <Gallery/>
           <About/>
           <Awards/>
           <Footer refValue={footerRef}/>

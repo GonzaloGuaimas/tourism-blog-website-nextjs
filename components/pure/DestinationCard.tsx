@@ -13,7 +13,6 @@ const DestinationCard = ({ image, title, description }: {image: string, title: s
             <p>{description}</p>
             <button onClick={() => {router.push(`place-to-go/${title}`)}}>Descubrir Destino</button>
         </div>
-        
     </div>
   )
 }
