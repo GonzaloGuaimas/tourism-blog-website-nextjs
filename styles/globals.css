@@ -156,6 +156,7 @@ a {
 .titleSection p {
   padding-top: 1rem;
   color: var(--primary-font-color);
+  text-align: center;
 }
 .titleSection hr{
   height: 3px;
