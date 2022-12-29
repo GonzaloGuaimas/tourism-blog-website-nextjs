@@ -460,11 +460,34 @@
 /*---------------FOOTER-------------------*/
 
 .Footer {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  text-align: -webkit-center;
   background-color: var(--primary-color);
   width: 100%;
   color: white;
+}
+.Footer hr {
+  width: 60%;
+  height: 2px;
+  border: none;
+  background-color: var(--primary-font-color);
+  font-weight: 400;
+  margin-bottom: .5rem;
+}
+.Footer .FooterLegal {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.Footer .FooterLegal div {
+  display: flex;
+  column-gap: .6rem;
+  color: var(--primary-font-color);
+}
+.Footer .FooterLegal div a{
+  font-weight: 400;
+  font-size: x-small;
 }
 .Footer a:hover{
   color: black;
