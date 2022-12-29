@@ -33,8 +33,8 @@ export default function Home() {
         <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
-          <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
           <DestinationGrid placeVisible={placeVisible}/>
+          <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
           <Delimiter refValue={blogRef} title={'LOS MEJORES GUÍAS'}/>
           <BlogGrid blogVisible={blogVisible}/>
           <Delimiter refValue={aboutRef} title={'RECORRIDOS A PIE'}/>
