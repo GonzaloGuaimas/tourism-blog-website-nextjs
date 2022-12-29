@@ -10,7 +10,6 @@ export const authOptions = {
             name: 'Credentials',
             async authorize(credentials) {
                 const tour = await Tour.findOne({name: credentials.name})
-                console.log(tour)
                 if(credentials.password === tour.password) {
                     return {
                         user: {

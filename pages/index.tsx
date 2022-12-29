@@ -12,11 +12,13 @@ import { useRef } from 'react'
 import Awards from '../components/Awards'
 import React from 'react'
 import { NavBar } from '../components/NavBar'
+import { getTours } from '../services/tours/getTours'
+import { ITour } from '../models/Tour'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({tours}: {tours: ITour[]}) {
     const footerRef = useRef()
     return (
       <>
@@ -29,7 +31,7 @@ export default function Home() {
         <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
-          <DestinationGrid/>
+          <DestinationGrid tours={tours}/>
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid/>
           <Delimiter title={'RECORRIDOS A PIE'}/>
@@ -41,4 +43,10 @@ export default function Home() {
       </>
     )
   }
-  
+  export async function getStaticProps() {
+    const allTours = await getTours()
+    const tours= allTours.data.tours
+    return {
+      props: {tours},
+    }
+  }
