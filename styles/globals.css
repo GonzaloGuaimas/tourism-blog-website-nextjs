@@ -106,7 +106,7 @@ a {
     display: block;
   }
   .navBarMenu h3:hover{
-    font-size: calc(1.3rem + 1vw);  
+    font-size: calc(1.1rem + 1vw);  
   }
 }
 .navBarMenuActive {
