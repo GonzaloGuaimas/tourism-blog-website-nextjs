@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from '../../styles/Places.module.css'
 import AboutCard from '../pure/place-to-go/AboutCard'
-import { IoFootstepsSharp } from 'react-icons/io5'
-import { ImClock2 } from 'react-icons/im'
+import { IoCalendarNumberOutline } from 'react-icons/io5'
 import { IoLogoInstagram } from 'react-icons/io5'
-import { IoLogoFacebook } from 'react-icons/io5'
+import { AiOutlineFacebook } from 'react-icons/ai'
 import { IoLogoWhatsapp } from 'react-icons/io5'
-import { IoLocationSharp } from 'react-icons/io5'
+import { IoLocationOutline } from 'react-icons/io5'
+import { IoFlagOutline } from 'react-icons/io5'
+import { RxCounterClockwiseClock } from 'react-icons/rx'
 const About = () => {
   return (
     <div>
@@ -19,14 +20,15 @@ const About = () => {
             <hr />
         </div>
         <div className={styles.AboutGrid}>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoFootstepsSharp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<ImClock2 className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoCalendarNumberOutline className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'2 Horas'} icon={<RxCounterClockwiseClock className={styles.AboutCardIcon}/>}/>
             <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoInstagram className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoFacebook className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<AiOutlineFacebook className={styles.AboutCardIcon}/>}/>
             <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoWhatsapp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationSharp className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationOutline className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Español / Ingles'} icon={<IoFlagOutline className={styles.AboutCardIcon}/>}/>
         </div>
-        <p>información adicional: *Valor pago libre (Al finalizar cada asistente entrega al guía la cantidad que considere, de acuerdo a la satisfacción obtenida) *Ropa adecuada para las condiciones del clima y calzado cómodo *Apto para todas las edades | Incluido *Caminata *Guías | No Incluido *Extras de ningún tipo</p>
+        <p className={styles.AboutP}>información adicional: *Valor pago libre (Al finalizar cada asistente entrega al guía la cantidad que considere, de acuerdo a la satisfacción obtenida) *Ropa adecuada para las condiciones del clima y calzado cómodo *Apto para todas las edades | Incluido *Caminata *Guías | No Incluido *Extras de ningún tipo</p>
       </div>
     </div>
    

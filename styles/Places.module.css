@@ -72,35 +72,36 @@
     animation-name: animate-element-right;
     animation-fill-mode: forwards;
     text-align: justify;
+    padding: 1rem;
 }
 .About strong{
     font-weight: 800;
 }
 
 .AboutGrid {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    justify-items: center; */
+    
     padding: 1rem;
     max-width: 100%;
     display: flex;
     flex-wrap: wrap;
-    grid-gap: 1rem;
-    gap: 1rem;
+    grid-gap: .4rem;
     justify-content: center;
-}
-.AboutGridAnimate {
-    animation-duration: 1s;
-    animation-name: animate-element-right;
-    animation-fill-mode: forwards;
 }
 .AboutCard {
     display: flex;
-    flex-direction: column;
+    column-gap: 1rem;
     align-items: center;
     padding: 1rem;
-    width: 130px;
+    width: 350px;
     height: max-content;
-    border-radius: 10px;
+    border-radius: 2px;
     background-color: white;
-    box-shadow: 1px 1px 3px 3px rgb(0 0 0 / 10%);
+    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
@@ -108,8 +109,8 @@
     cursor: pointer;
 }
 .AboutCard:hover {
-    -webkit-transform: scale(1.05);
-	transform: scale(1.05);
+    -webkit-transform: scale(1.02);
+	transform: scale(1.02);
 }
 .AboutCard p {
     font-size: large;
@@ -117,7 +118,7 @@
 }
 .AboutCardIcon {
     color: var(--primary-color);
-    font-size: calc(3rem + 1vw);
+    font-size: calc(2rem + 1vw);
 }
 
 /*-------------------GALLERY-------------------------*/
