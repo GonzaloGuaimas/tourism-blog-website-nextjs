@@ -20,13 +20,13 @@ const About = () => {
             <hr />
         </div>
         <div className={styles.AboutGrid}>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoCalendarNumberOutline className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'2 Horas'} icon={<RxCounterClockwiseClock className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoInstagram className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<AiOutlineFacebook className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoWhatsapp className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationOutline className={styles.AboutCardIcon}/>}/>
-            <AboutCard text={'Español / Ingles'} icon={<IoFlagOutline className={styles.AboutCardIcon}/>}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoCalendarNumberOutline className={styles.AboutCardIcon}/>} title={'Horarios'} />
+            <AboutCard text={'2 Horas'} icon={<RxCounterClockwiseClock className={styles.AboutCardIcon} />} title={'Duración'}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoInstagram className={styles.AboutCardIcon} />} title={'Instagram'}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<AiOutlineFacebook className={styles.AboutCardIcon} />} title={'Facebook'}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLogoWhatsapp className={styles.AboutCardIcon} />} title={'WhatsApp'}/>
+            <AboutCard text={'Lunes a Sábados 09:45hs'} icon={<IoLocationOutline style={{ fontSize: '3rem'}} className={styles.AboutCardIcon} />} title={'Punto Encuentro'}/>
+            <AboutCard text={'Español / Ingles'} icon={<IoFlagOutline style={{ fontSize: '2rem'}} className={styles.AboutCardIcon} />} title={'Idioma/s'}/>
         </div>
         <p className={styles.AboutP}>información adicional: *Valor pago libre (Al finalizar cada asistente entrega al guía la cantidad que considere, de acuerdo a la satisfacción obtenida) *Ropa adecuada para las condiciones del clima y calzado cómodo *Apto para todas las edades | Incluido *Caminata *Guías | No Incluido *Extras de ningún tipo</p>
       </div>
