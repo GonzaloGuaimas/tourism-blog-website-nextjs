@@ -14,7 +14,7 @@ import { NavBar } from '../components/NavBar'
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Login() {
     const router = useRouter()
     const defaultValues = {name: '', password: ''}
     const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })

@@ -11,7 +11,7 @@ import { NavBar } from '../components/NavBar'
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Admin() {
   const { data: session } = useSession({required: true})
   if(!session?.user){
     return <></>
