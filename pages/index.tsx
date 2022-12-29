@@ -18,7 +18,6 @@ import { NavBar } from '../components/NavBar'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-    const { ref: placeRef, inView: placeVisible } = useInView()
     const { ref: blogRef, inView: blogVisible } = useInView()
     const { ref: aboutRef, inView: aboutVisible } = useInView()
     const footerRef = useRef()
@@ -33,7 +32,7 @@ export default function Home() {
         <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
-          <DestinationGrid placeVisible={placeVisible}/>
+          <DestinationGrid/>
           <Delimiter refValue={blogRef} title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid blogVisible={blogVisible}/>
           <Delimiter refValue={aboutRef} title={'RECORRIDOS A PIE'}/>
