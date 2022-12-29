@@ -8,8 +8,8 @@ const BlogCard = ({ image, title, subtitle, date, tourName, tourLogo }: {image: 
         <Image src={image} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
         
         <div className={styles.BlogInfo}>
-            <h2>{title}</h2>
-            <h3>{subtitle}</h3>
+            <h3>{title}</h3>
+            <h4>{subtitle}</h4>
             <div>
               <p>{date}</p>
               <div>
