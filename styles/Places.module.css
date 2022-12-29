@@ -33,12 +33,12 @@
 }
 .HomeInfo h2 {
     display: inline-flex;
-    font-size: calc(3rem + 1vw);
+    font-size: calc(2rem + 1vw);
 }
 .HomeInfo p {
     display: inline-flex;
     padding: 1rem;
-    font-size: calc(.8rem + 1vw);
+    font-size: calc(.7rem + 1vw);
     font-weight: 400;
     font-style: italic;
 }
@@ -58,10 +58,10 @@
     text-align: center;
     color: var(--primary-font-color);
     width: 100%;
-    padding: 0rem 2rem 0rem 2rem;
+    padding: 0rem 1rem 0rem 1rem;
     transform: translateY(-50px);
 }
-.About .AboutH2{
+.About .AboutH3{
     font-weight: 400;
     animation-duration: 1s;
     animation-name: animate-element-left;
@@ -71,6 +71,7 @@
     animation-duration: 1s;
     animation-name: animate-element-right;
     animation-fill-mode: forwards;
+    text-align: justify;
 }
 .About strong{
     font-weight: 800;
