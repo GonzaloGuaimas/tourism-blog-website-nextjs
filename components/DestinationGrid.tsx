@@ -2,10 +2,10 @@ import React from 'react'
 import styles from '../styles/Home.module.css'
 import DestinationCard from './pure/DestinationCard'
 
-const DestinationGrid = ({placeVisible}: {placeVisible: boolean}) => {
+const DestinationGrid = () => {
   return (
     <>
-      <div className={`titleSection ${placeVisible ? 'titleSectionAnimate' : ''}`} id={'destination'}>
+      <div className={'titleSection'} id={'destination'}>
         <h2>DESCUBRÍ</h2>
         <h1>NUESTRAS EXCURSIONES</h1>
         <hr />
