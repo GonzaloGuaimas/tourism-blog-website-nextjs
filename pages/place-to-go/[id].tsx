@@ -17,8 +17,6 @@ export default function Place() {
     // eslint-disable-next-line no-unused-vars
     const { id } = router.query
     const { ref: footerRef, inView: footerVisible } = useInView()
-    const { ref: gridRef, inView: gridVisible } = useInView()
-    const { ref: mapRef, inView: mapVisible } = useInView()
     return (
       <>
         <Head>
@@ -30,9 +28,9 @@ export default function Place() {
         <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
             <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
-            <About refValue={gridRef} gridVisible={gridVisible}/>
+            <About/>
             <Gallery/>
-            <Map refValue={mapRef} mapVisible={mapVisible}/>
+            <Map/>
             <Contact/>
             <Footer refValue={footerRef}/>
             <ContactButton footerVisible={footerVisible}/>

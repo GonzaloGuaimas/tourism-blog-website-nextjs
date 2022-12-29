@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from '../../styles/Places.module.css'
 
-const Map = ({refValue, mapVisible}: {refValue: any, mapVisible: boolean}) => {
+const Map = () => {
   return (
-    <div className={styles.MapContainer} ref={refValue}>  
-        <div className={`titleSection ${mapVisible ? 'titleSectionAnimate' : ''}`} style={{ marginTop: '2rem' }} id='map'>
+    <div className={styles.MapContainer}>  
+        <div className={'titleSection'} id='map'>
             <h3 style={{color: 'black'}}>PUNTO DE ENCUENTRO</h3>
             <hr />
         </div>
