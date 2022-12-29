@@ -7,6 +7,7 @@ const Map = () => {
         <div className={'titleSection'} id='map'>
             <h3 style={{color: 'black'}}>PUNTO DE ENCUENTRO</h3>
             <hr />
+            <p>Punto Encuentro</p>
         </div>
         <div className={styles.Map}>
             <div className={styles.MapElement}>
