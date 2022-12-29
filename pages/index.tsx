@@ -34,8 +34,7 @@ export default function Home() {
         <main className={styles.main}>
           <HomeComponent/>
           <DestinationGrid placeVisible={placeVisible}/>
-          <Delimiter refValue={placeRef} title={'TOURS DE PAGO LIBRE'} />
-          <Delimiter refValue={blogRef} title={'LOS MEJORES GUÍAS'}/>
+          <Delimiter refValue={blogRef} title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid blogVisible={blogVisible}/>
           <Delimiter refValue={aboutRef} title={'RECORRIDOS A PIE'}/>
           <Gallery aboutVisible={aboutVisible}/>
