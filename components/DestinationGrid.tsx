@@ -13,7 +13,7 @@ const DestinationGrid = ({tours}: {tours: ITour[]}) => {
         <p>Reservá ahora mismo tu excursión. <strong>Hacé click en tu Destino!</strong></p>
       </div>
       <div className={styles.Destination}>
-          {tours.map((tour: ITour)=> {
+          {tours?.map((tour: ITour)=> {
             return (
               <DestinationCard key={tour.name} image={tour.coverImageLink} title={tour.name} description={tour.coverDescription}/>
             )

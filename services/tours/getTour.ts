@@ -1,6 +1,6 @@
-import axiosInstance from '../../pages/api/axios'
+import { ITour } from '../../models/Tour'
 
-export const getTour = async (name: string | string[] | undefined) => {
-    const tour = await axiosInstance.get('/tours/'+name)
-    return tour.data.tour[0]
+export const getTour = (query: any, name: string) => {
+    const tourResult: ITour = query.data?.find((tour: ITour) => tour.name = name)!
+    return tourResult
 }
