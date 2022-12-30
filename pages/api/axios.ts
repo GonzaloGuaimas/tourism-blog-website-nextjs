@@ -5,7 +5,8 @@ const axiosConfig: AxiosRequestConfig = {
     headers: {
       'Content-type': 'application/json',
       Accept: 'application/json'
-    }
+    },
+    proxy: false
   }
   
   const axiosInstance = axios.create(axiosConfig)
