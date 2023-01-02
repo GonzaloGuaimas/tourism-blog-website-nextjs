@@ -1,6 +1,6 @@
-import Award from './models/Award'
-import Post from './models/Post'
-import Tour from './models/Tour'
+import Award from './src/models/Award'
+import Post from './src/models/Post'
+import Tour from './src/models/Tour'
 
 const deleteCollections = async () => {
     Award.deleteMany()
