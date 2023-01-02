@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
-
 import HomeComponent from '../components/Home'
 import { Inter } from '@next/font/google'
 import Delimiter from '../components/Delimiter'
