@@ -18,6 +18,12 @@ const GallerySchema = new Schema({
         type: Schema.Types.ObjectId
     }
 })
+export interface IGallery extends Document{
+    title: string,
+    uploadDate: Date,
+    imageLink: string,
+    userRegisterId: string
+}
 
 const PointSchema = new Schema({
     name: {
@@ -33,7 +39,11 @@ const PointSchema = new Schema({
         type: String
     },
 })
-
+export interface IPoint extends Document{
+    name: string,
+    locationLink: Date,
+    imageLink: string,
+}
 
 const TourSchema = new mongoose.Schema({
     name: {
@@ -107,5 +117,26 @@ const TourSchema = new mongoose.Schema({
         type: [PointSchema],
     },
 })
+
+export interface ITour extends Document {
+    name: string
+    meetingPoint: string
+    shortDescription: string
+    coverDescription: string
+    longerDescription: string
+    extraInfo: string
+    logoImageLink: string
+    coverImageLink: string
+    schedules: string
+    duration: string
+    instagramUser: string
+    facebookUser: string
+    whatsAppNumber: string
+    meetingPointLink: string
+    ownerFullName: string
+    password: string
+    gallery: [IGallery],
+    route: [IPoint]
+}
 
 export default mongoose.models.Tour || mongoose.model('Tour', TourSchema)

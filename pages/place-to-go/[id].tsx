@@ -1,5 +1,4 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import styles from '../../styles/Places.module.css'
 import Home from '../../components/place-to-go/Home'
@@ -12,11 +11,16 @@ import ContactButton from '../../components/pure/place-to-go/ContactButton'
 import { useInView } from 'react-intersection-observer'
 import { NavBar } from '../../components/NavBar'
 import Comments from '../../components/place-to-go/Comments'
+import { getTours } from '../../services/tours/getTours'
+import { useRouter } from 'next/router'
+import { useQuery } from 'react-query'
+import { getTour } from '../../services/tours/getTour'
 
-export default function Place() {
+export default function Place({ params }: { params: any}) {
     const router = useRouter()
-    // eslint-disable-next-line no-unused-vars
-    const { id } = router.query
+    const { id } = params
+    const toursQuery = useQuery('tours', getTours)
+    const tour = getTour(toursQuery, id)
     const { ref: footerRef, inView: footerVisible } = useInView()
     return (
       <>
@@ -28,8 +32,8 @@ export default function Place() {
         </Head>
         <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
-            <Home placeName={'Bariloche'} description={'La ciudad de la nieve'}/>
-            <About/>
+            <Home placeName={tour?.name} description={tour?.shortDescription}/>
+            <About tour={tour}/>
             <Gallery/>
             <Map/>
             <Contact/>
@@ -40,4 +44,8 @@ export default function Place() {
       </>
     )
   }
-  
+  export function getServerSideProps(context: any) {
+    return {
+      props: {params: context.params}
+    }
+  }
