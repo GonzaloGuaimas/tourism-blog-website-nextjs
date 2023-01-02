@@ -21,12 +21,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     const footerRef = useRef()
     const tourQuery = useQuery('tours', getTours)
-
-    async function getData() {
-      fetch('https://www.freetourargentina.com/api/awards')           //api for the get request
-      .then(response => response.json())
-      .then(data => console.log(data))
-    }
     return (
       <>
         <Head>
@@ -46,7 +40,6 @@ export default function Home() {
           <About/>
           <Awards/>
           <Footer refValue={footerRef}/>
-          <button onClick={() => getData()}>asdsa</button>
         </main>
       </>
     )
