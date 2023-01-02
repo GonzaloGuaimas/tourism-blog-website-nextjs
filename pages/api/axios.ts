@@ -10,5 +10,6 @@ const axiosConfig: AxiosRequestConfig = {
   }
   
   const axiosInstance = axios.create(axiosConfig)
-  
+  axiosInstance.defaults.headers.common['Authorization'] = 'AuthFromInstance'
+
   export default axiosInstance
