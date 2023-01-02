@@ -27,7 +27,7 @@ const About = ({tour}: {tour: ITour}) => {
             <AboutCard text={tour?.instagramUser} icon={<IoLogoInstagram className={styles.AboutCardIcon} />} title={'Instagram'} link={`https://www.instagram.com/${tour?.instagramUser}`}/>
             <AboutCard text={tour?.facebookUser} icon={<AiOutlineFacebook className={styles.AboutCardIcon} />} title={'Facebook'} link={`https://www.facebook.com/${tour?.facebookUser}`}/>
             <AboutCard text={tour?.whatsAppNumber} icon={<IoLogoWhatsapp className={styles.AboutCardIcon} />} title={'WhatsApp'} link={`https://wa.me/${tour?.whatsAppNumber}?text=Hola!!%20Quiero%20Anotarme%20Al%20Tour`}/>
-            <AboutCard text={tour?.meetingPoint} icon={<IoLocationOutline style={{ fontSize: '3rem'}} className={styles.AboutCardIcon} />} title={'Punto Encuentro'} link={tour?.meetingPointLink}/>
+            <AboutCard text={tour?.meetingPoint} icon={<IoLocationOutline style={{ fontSize: '3rem'}} className={styles.AboutCardIcon} />} title={'Punto Encuentro'} link={'#map'}/>
             <AboutCard text={'Español / Ingles'} icon={<IoFlagOutline style={{ fontSize: '2rem'}} className={styles.AboutCardIcon} />} title={'Idioma/s'} link={undefined}/>
         </div>
         <p className={styles.AboutP}>{tour?.extraInfo}</p>

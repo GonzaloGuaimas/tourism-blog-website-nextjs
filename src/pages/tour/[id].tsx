@@ -32,14 +32,14 @@ export default function Place({ params }: { params: any}) {
         </Head>
         <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
-            <Home placeName={tour?.name} description={tour?.shortDescription}/>
+        <Home placeName={tour?.name} description={tour?.shortDescription}/>
             <About tour={tour}/>
-            <Gallery/>
-            <Map/>
-            <Contact/>
+            <Gallery tour={tour} />
+            <Map tour={tour}/>
+            <Contact whatsAppNumber={tour?.whatsAppNumber}/>
             <Comments/>
             <Footer refValue={footerRef}/>
-            <ContactButton footerVisible={footerVisible}/>
+            <ContactButton whatsAppNumber={tour?.whatsAppNumber} footerVisible={footerVisible}/>
         </main>
       </>
     )
