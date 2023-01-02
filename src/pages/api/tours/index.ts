@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../../lib/dbConnect'
 import Tour from '../../../models/Tour'
 
-export default async function handler (req: NextApiRequest, res: NextApiResponse) {
+export default async function (req: NextApiRequest, res: NextApiResponse) {
     const { method, body } = req
 
     await dbConnect() 
