@@ -1,12 +1,15 @@
 import React from 'react'
 import styles from '../../../../styles/Places.module.css'
+import Link from 'next/link'
 
-const AboutCard = ({title, icon, text}: {title: string, icon: any, text: string}) => {
+const AboutCard = ({title, icon, text, link}: {title: string, icon: any, text: string, link: string | undefined}) => {
   return (
-    <div className={styles.AboutCard}>
+    <Link href={link != undefined ? link : ''}>
+       <div className={styles.AboutCard}>
         {icon}
         <p><strong>{title}</strong> {text}</p>
-    </div>
+      </div>
+    </Link>
   )
 }
 
