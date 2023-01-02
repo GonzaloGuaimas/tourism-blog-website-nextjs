@@ -12,15 +12,12 @@ import { useRef } from 'react'
 import Awards from '../components/Awards'
 import React from 'react'
 import { NavBar } from '../components/NavBar'
-import { useQuery } from 'react-query'
-import { getTours } from '../services/tours/getTours'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     const footerRef = useRef()
-    const tourQuery = useQuery('tours', getTours)
     return (
       <>
         <Head>
@@ -32,7 +29,7 @@ export default function Home() {
         <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
-          <DestinationGrid tours={tourQuery?.data}/>
+          <DestinationGrid/>
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid/>
           <Delimiter title={'RECORRIDOS A PIE'}/>
@@ -44,3 +41,4 @@ export default function Home() {
       </>
     )
   }
+  

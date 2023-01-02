@@ -11,7 +11,6 @@ import Image from 'next/image'
 import PointDialog from '../pure/admin/PointDialog'
 import GalleryDialog from '../pure/admin/GalleryDialog'
 import { uploadOne } from '../../services/cloudinary/uploadOne'
-import { createTour } from '../../services/tours/createTour'
 
 export const MainForm = () => {
   const defaultValues = {
@@ -55,7 +54,6 @@ export const MainForm = () => {
     data.route = route
     data.gallery = gallery
     console.log(data)
-    await createTour(data)
     // setShowMessage(true)
   }
 
