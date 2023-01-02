@@ -1,9 +1,10 @@
 // import { NextApiRequest, NextApiResponse } from 'next'
-// import dbConnect from '../../../lib/dbConnect'
+import dbConnect from '../../../lib/dbConnect'
 // import Award from '../../../models/Award'
 
 export default async function (req: any, res: any) {
     const { method } = req
+    await dbConnect()
     switch (method){
         case 'GET':
             try {
@@ -12,8 +13,7 @@ export default async function (req: any, res: any) {
                 res.status(400).json({ success: false })
             }
             break
-    }
-    // await dbConnect() 
+    } 
     // switch (method) {
     //     case 'GET':
     //         try {
