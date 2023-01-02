@@ -4,16 +4,23 @@ import dbConnect from '../../../lib/dbConnect'
 
 export default async function (req: any, res: any) {
     const { method } = req
-    await dbConnect()
-    switch (method){
-        case 'GET':
-            try {
-                return res.status(200).send({ message: 'hola'})
-            } catch(error){
-                res.status(400).json({ success: false })
-            }
-            break
-    } 
+    try {
+        await dbConnect()
+        switch (method){
+            case 'GET':
+                try {
+                    return res.status(200).send({ message: 'hola'})
+                } catch(error){
+                    res.status(400).json({ success: false })
+                }
+                break
+        } 
+        return res.status(200).send({success: 'se conect'})
+    } catch (error) {
+        console.log(error)
+        return res.status(200).send({error})
+    }
+   
     // switch (method) {
     //     case 'GET':
     //         try {
