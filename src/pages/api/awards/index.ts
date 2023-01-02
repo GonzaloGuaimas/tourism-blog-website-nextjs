@@ -1,8 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+// import { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../../lib/dbConnect'
 import Award from '../../../models/Award'
 
-export default async function handler (req: NextApiRequest, res: NextApiResponse) {
+export default async function (req: any, res: any) {
     const { method, body } = req
 
     await dbConnect() 

@@ -3,7 +3,7 @@ import dbConnect from '../../../lib/dbConnect'
 import Award from '../../../models/Award'
 
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse){
+export default async function (req: NextApiRequest, res: NextApiResponse){
 	const {
 		body,
 		method
