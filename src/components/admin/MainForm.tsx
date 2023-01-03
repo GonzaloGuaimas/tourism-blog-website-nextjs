@@ -100,7 +100,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
             <div className={styles.ImageField}>
               <label htmlFor="inputLogo">
-                Seleccionar Imagen
+                Seleccionar Logo
                 <input id='inputLogo' type="file" name='logoImageLink' onChange={handleOnChange}/>
               </label>
               <Image src={logoImage || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
@@ -128,7 +128,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
             <div className={styles.ImageField}>
               <label htmlFor="inputCover">
-                Seleccionar Imagen
+                Seleccionar Principal
                 <input id='inputCover' type="file" name='coverImageLink' onChange={handleOnChange}/>
               </label>
               <Image src={coverImage || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>

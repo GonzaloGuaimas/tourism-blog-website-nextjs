@@ -208,7 +208,8 @@ a {
   width: 100% !important;
 }
 .p-tabview .p-tabview-panels{
-  padding: 1rem 0rem 1rem 0rem;
+  padding: 0rem 1rem 0rem 1rem !important;
+  text-align: -webkit-center !important;
 }
 .p-button {
   background: var(--primary-color) !important;

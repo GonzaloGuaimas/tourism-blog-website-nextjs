@@ -8,7 +8,7 @@ const Header = ({ tourName, tourlogo }: {tourName: string, tourlogo: string}) =>
         <div>
           <h2>Bienvenido <strong>{tourName}</strong></h2>
           <hr />
-          <h2>A su administrador de Contenido</h2>
+          <h3>A su administrador de Contenido</h3>
         </div>
         <Image src={tourlogo} alt={''} height={250} width={250}/>
     </div>
