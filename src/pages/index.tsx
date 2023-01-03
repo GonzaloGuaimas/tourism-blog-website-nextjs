@@ -36,7 +36,7 @@ export default function Home() {
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid/>
           <Delimiter title={'RECORRIDOS A PIE'}/>
-          <Gallery/>
+          <Gallery tours={tourQuery?.data}/>
           <About/>
           <Awards/>
           <Footer refValue={footerRef}/>
