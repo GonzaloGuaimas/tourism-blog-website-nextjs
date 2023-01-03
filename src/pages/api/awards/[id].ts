@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../../lib/dbConnect'
 import Award from '../../../models/Award'
 
-
 export default async function (req: NextApiRequest, res: NextApiResponse){
 	const {
 		body,

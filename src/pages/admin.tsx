@@ -10,6 +10,8 @@ import { NavBar } from '../components/NavBar'
 import { useQuery } from 'react-query'
 import { getTours } from '../services/tours/getTours'
 import { getTour } from '../services/tours/getTour'
+import { getAwards } from '../services/awards/getAwards'
+import AwardsForm from '../components/admin/AwardsForm'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -17,7 +19,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Admin() {
   const { data: session } = useSession({required: true})
   const toursQuery = useQuery('tours', getTours)
+  const awardsQuery = useQuery('awards', getAwards)
   const tour = getTour(toursQuery, session?.user?.name!)
+
   if(!session?.user){
     return <></>
   }
@@ -34,13 +38,13 @@ export default function Admin() {
             <Header tourName={tour?.name} tourlogo={tour?.logoImageLink}/>
             <TabView>
                 <TabPanel header={'Información Principal'}>
-                  {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour= {tour}/>}
+                  {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour={tour}/>}
                 </TabPanel>
                 <TabPanel header="Contenido Blog">
-                    Content II
+                  Content
                 </TabPanel>
                 <TabPanel header="Reconocimientos">
-                    Content III
+                  {awardsQuery.isLoading ? <h2>Cargando Datos</h2> : <AwardsForm tour={tour} awardsData={awardsQuery.data}/>}
                 </TabPanel>
             </TabView>
           </main>

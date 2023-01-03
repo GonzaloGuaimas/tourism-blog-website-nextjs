@@ -9,11 +9,11 @@ const Gallery = ({ tours }: { tours: ITour[]}) => {
   return (
     <div className={styles.Gallery} id={'gallery'}>
         {
-            tours.map((tour: ITour) => {
+            tours?.map((tour: ITour) => {
                 return (
-                    <div key={tour.name} className={styles.GalleryElement}>
-                        <Link href={'tour/'+tour.name}>
-                            <Image src={tour.gallery[0].imageLink} alt={''} height={500} width={500} className={styles.DestinationImage}/>
+                    <div key={tour?.name} className={styles.GalleryElement}>
+                        <Link href={'tour/'+tour?.name}>
+                            <Image src={tour?.gallery[0].imageLink} alt={''} height={500} width={500} className={styles.DestinationImage}/>
                         </Link>
                     </div>
                 )

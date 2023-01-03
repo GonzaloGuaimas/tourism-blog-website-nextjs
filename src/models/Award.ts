@@ -1,4 +1,13 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose from 'mongoose'
+
+export interface IAward extends Document{
+    uploadDate: Date,
+    date: Date,
+    name: string,
+    imageLink: string,
+    tourName: string,
+    _id: string
+}
 
 const AwardSchema = new mongoose.Schema({
     uploadDate: {
@@ -17,9 +26,9 @@ const AwardSchema = new mongoose.Schema({
         require: true,
         type: String
     },
-    userRegisterId: {
+    tourName: {
         require: true,
-        type: Schema.Types.ObjectId
+        type: String
     }
 })
 
