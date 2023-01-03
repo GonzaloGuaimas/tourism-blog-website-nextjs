@@ -41,7 +41,7 @@ const PointSchema = new Schema({
 })
 export interface IPoint extends Document{
     name: string,
-    locationLink: Date,
+    locationLink: string,
     imageLink: string,
 }
 

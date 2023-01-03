@@ -10,7 +10,7 @@ const Gallery = ({tour}: {tour:  ITour}) => {
       <div className={styles.Gallery} id='gallery'>
         <div className={styles.GallerySlider}>
             {
-              tour?.gallery.map((gallery: IGallery) => {
+              tour?.gallery?.map((gallery: IGallery) => {
                 return( 
                   <Image key={gallery.imageLink} src={gallery.imageLink} alt={''} height={1080} width={1080} className={styles.BlogImage}/> 
                 )

@@ -11,7 +11,6 @@ import { classNames } from 'primereact/utils'
 import { Button } from 'primereact/button'
 import { Password } from 'primereact/password'
 import { NavBar } from '../components/NavBar'
-
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
