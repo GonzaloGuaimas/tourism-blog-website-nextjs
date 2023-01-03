@@ -51,10 +51,13 @@ export const MainForm = ({tour}: { tour: ITour}) => {
   const [logoImage, setLogoImage] = useState<string | undefined>(defaultValues.logoImageLink)
   const [coverImage, setCoverImage] = useState<string | undefined>(defaultValues.coverImageLink)
 
+  const [loading, setLoading] = useState(false)
+
   const mutation = useMutation(
     (data: ITour) => updateTour(data),
         {
             onSuccess: () => {
+                setLoading(false)
                 console.log('Update Data')
             },
         }
@@ -73,6 +76,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
     }
     data.route = route
     data.gallery = gallery
+    setLoading(true)
     mutation.mutate(data)
     // await createTour(data)
     // setShowMessage(true)
@@ -278,7 +282,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                 </DataTable>
             </div>
             <br />
-            <Button type="submit" loading={mutation.isLoading} label="Guardar" className="mt-2" />
+            <Button type="submit" loading={loading} label="Guardar" className="mt-2" />
         </form>
       </div>
       <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute}/>
