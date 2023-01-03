@@ -14,6 +14,7 @@ import React from 'react'
 import { NavBar } from '../components/NavBar'
 import { useQuery } from 'react-query'
 import { getTours } from '../services/tours/getTours'
+import { getAwards } from '../services/awards/getAwards'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -21,6 +22,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     const footerRef = useRef()
     const tourQuery = useQuery('tours', getTours)
+    const awardsQuery = useQuery('awards', getAwards)
     return (
       <>
         <Head>
@@ -38,7 +40,7 @@ export default function Home() {
           <Delimiter title={'RECORRIDOS A PIE'}/>
           <Gallery tours={tourQuery?.data}/>
           <About/>
-          <Awards/>
+          <Awards awards={awardsQuery?.data}/>
           <Footer refValue={footerRef}/>
         </main>
       </>

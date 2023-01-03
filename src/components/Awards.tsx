@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from '../../styles/Home.module.css'
 import Image from 'next/image'
+import { IAward } from '../models/Award'
 
-const Awards = () => {
+const Awards = ({ awards }: { awards: IAward[] }) => {
   return (
     <div className={styles.Awards}>
         <div className={'titleSection'} id={'blog'}>
@@ -11,14 +12,13 @@ const Awards = () => {
             <hr />
         </div>
         <div className={styles.AwardsSlider}>
-            <Image src={'/assets/awards/trip2018.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2019.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2020.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2022.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2018.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2019.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2020.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
-            <Image src={'/assets/awards/trip2022.png'} alt={''} height={250} width={250} className={styles.BlogImage}/>
+          {
+            awards?.map((award: IAward) => {
+              return(
+                <Image key={award.imageLink} src={award.imageLink} alt={''} height={250} width={250} className={styles.BlogImage}/>
+              )
+            })
+          }
         </div>
     </div>
   )
