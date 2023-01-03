@@ -10,7 +10,7 @@ const Header = ({ tourName, tourlogo }: {tourName: string, tourlogo: string}) =>
           <hr />
           <h3>A su administrador de Contenido</h3>
         </div>
-        <Image src={tourlogo} alt={''} height={250} width={250}/>
+        <Image src={tourlogo || '/assets/emptyImage.png' } alt={''} height={250} width={250}/>
     </div>
   )
 }
