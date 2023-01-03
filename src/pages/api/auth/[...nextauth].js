@@ -11,17 +11,21 @@ export const authOptions = {
             async authorize(credentials) {
                 const tour = await Tour.findOne({name: credentials.name})
                 if(credentials.password === tour.password) {
-                    return {
-                        user: {
-                            userName: tour.name
-                        }
+                    const user = {
+                        id: tour.id,
+                        name: tour.name,
                     }
+                      return user
                 }
-
-                return null
             }
         })
     ],
+    callbacks: {
+        session: async ({ session, token }) => {
+          session.user = token  // Setting token in session
+          return session
+        },
+      },
     secret: process.env.NEXTAUTH_SECRET
 }
 

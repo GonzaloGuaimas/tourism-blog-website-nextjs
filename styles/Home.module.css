@@ -77,14 +77,6 @@
   row-gap: 2rem;
   flex-direction: column;
   flex: 1;
-  animation-delay: 1.4s;
-  animation-duration: 1s;
-  animation-name: animate-element-bottom ;
-  animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.4s;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: animate-element-bottom ;
-  -webkit-animation-fill-mode: forwards;
 }
 .HomeText p {
   font-weight: 500;

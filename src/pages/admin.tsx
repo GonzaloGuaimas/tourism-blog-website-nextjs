@@ -28,7 +28,7 @@ export default function Admin() {
           <main className={styles.main}>
             <Header tourName={'Bariloche'} tourlogo={'/assets/blogExample/1.jpg'}/>
             <TabView>
-                <TabPanel header="Información Principal">
+                <TabPanel header={'Información Principal'}>
                     <MainForm/>
                 </TabPanel>
                 <TabPanel header="Contenido Blog">
