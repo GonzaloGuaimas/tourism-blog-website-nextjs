@@ -7,12 +7,17 @@ import { MainForm } from '../components/admin/MainForm'
 import React from 'react'
 import { signOut, useSession } from 'next-auth/react'
 import { NavBar } from '../components/NavBar'
+import { useQuery } from 'react-query'
+import { getTours } from '../services/tours/getTours'
+import { getTour } from '../services/tours/getTour'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Admin() {
   const { data: session } = useSession({required: true})
+  const toursQuery = useQuery('tours', getTours)
+  const tour = getTour(toursQuery, session?.user?.name!)
   if(!session?.user){
     return <></>
   }
@@ -29,7 +34,7 @@ export default function Admin() {
             <Header tourName={'Bariloche'} tourlogo={'/assets/blogExample/1.jpg'}/>
             <TabView>
                 <TabPanel header={'Información Principal'}>
-                    <MainForm/>
+                  {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour= {tour}/>}
                 </TabPanel>
                 <TabPanel header="Contenido Blog">
                     Content II

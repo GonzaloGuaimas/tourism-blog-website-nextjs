@@ -12,28 +12,29 @@ import PointDialog from '../pure/admin/PointDialog'
 import GalleryDialog from '../pure/admin/GalleryDialog'
 import { uploadOne } from '../../services/cloudinary/uploadOne'
 import { createTour } from '../../services/tours/createTour'
+import { ITour } from '../../models/Tour'
 
-export const MainForm = () => {
+export const MainForm = ({tour}: { tour: ITour}) => {
   const defaultValues = {
-    logoImageLink: '',
-    name: '',
-    password: '',
+    logoImageLink: tour.logoImageLink,
+    name: tour.name,
+    password: tour.password,
 
-    coverImageLink: '',
-    coverDescription: '',
+    coverImageLink: tour.coverImageLink,
+    coverDescription: tour.coverDescription,
 
-    shortDescription: '',
-    longerDescription: '',
-    extraInfo: '',
+    shortDescription: tour.shortDescription,
+    longerDescription: tour.longerDescription,
+    extraInfo: tour.extraInfo,
     
-    meetingPoint: '',
-    meetingPointLink: '',
+    meetingPoint: tour.meetingPoint,
+    meetingPointLink: tour.meetingPointLink,
 
-    schedules: '',
-    duration: '',
-    instagramUser: '',
-    facebookUser: '',
-    whatsAppNumber: '',
+    schedules: tour.schedules,
+    duration: tour.duration,
+    instagramUser: tour.instagramUser,
+    facebookUser: tour.facebookUser,
+    whatsAppNumber: tour.whatsAppNumber,
     gallery: [],
     route: []
   }
@@ -43,11 +44,11 @@ export const MainForm = () => {
   const [showPointDialog, setShowPointDialog] = useState(false)
   const [showGalleryDialog, setShowGalleryDialog] = useState(false)
 
-  const [route, setRoute] = useState([])
-  const [gallery, setGallery] = useState([])
+  const [route, setRoute] = useState(tour.route.map((element) => element))
+  const [gallery, setGallery] = useState(tour.gallery.map((element) => element))
   //const [showMessage, setShowMessage] = useState(false)
-  const [logoImage, setLogoImage] = useState<string | undefined>('/assets/emptyImage.png')
-  const [coverImage, setCoverImage] = useState<string | undefined>('/assets/emptyImage.png')
+  const [logoImage, setLogoImage] = useState<string | undefined>(defaultValues.logoImageLink)
+  const [coverImage, setCoverImage] = useState<string | undefined>(defaultValues.coverImageLink)
 
   const onSubmit = async (data: any) => {
     data.logoImageLink = await uploadOne(logoImage)
