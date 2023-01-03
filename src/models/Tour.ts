@@ -13,16 +13,16 @@ const GallerySchema = new Schema({
         require: true,
         type: String
     },
-    userRegisterId: {
+    tourName: {
         require: true,
-        type: Schema.Types.ObjectId
+        type: String
     }
 })
 export interface IGallery extends Document{
     title: string,
     uploadDate: Date,
     imageLink: string,
-    userRegisterId: string
+    tourName: string
 }
 
 const PointSchema = new Schema({

@@ -11,8 +11,9 @@ import Image from 'next/image'
 import PointDialog from '../pure/admin/PointDialog'
 import GalleryDialog from '../pure/admin/GalleryDialog'
 import { uploadOne } from '../../services/cloudinary/uploadOne'
-import { createTour } from '../../services/tours/createTour'
-import { ITour } from '../../models/Tour'
+import { IGallery, ITour } from '../../models/Tour'
+import { useMutation } from 'react-query'
+import { updateTour } from '../../services/tours/updateTour'
 
 export const MainForm = ({tour}: { tour: ITour}) => {
   const defaultValues = {
@@ -50,13 +51,30 @@ export const MainForm = ({tour}: { tour: ITour}) => {
   const [logoImage, setLogoImage] = useState<string | undefined>(defaultValues.logoImageLink)
   const [coverImage, setCoverImage] = useState<string | undefined>(defaultValues.coverImageLink)
 
+  const mutation = useMutation(
+    (data: ITour) => updateTour(data),
+        {
+            onSuccess: () => {
+                console.log('Update Data')
+            },
+        }
+    )
+
   const onSubmit = async (data: any) => {
-    data.logoImageLink = await uploadOne(logoImage)
-    data.coverImageLink = await uploadOne(coverImage)
+    if(logoImage !== defaultValues.logoImageLink){
+        data.logoImageLink = await uploadOne(logoImage)
+    }else{
+        data.logoImageLink = defaultValues.logoImageLink
+    }
+    if(coverImage !== defaultValues.coverImageLink){
+        data.coverImageLink = await uploadOne(coverImage)
+    }else{
+        data.coverImageLink = defaultValues.coverImageLink
+    }
     data.route = route
     data.gallery = gallery
-    console.log(data)
-    await createTour(data)
+    mutation.mutate(data)
+    // await createTour(data)
     // setShowMessage(true)
   }
 
@@ -69,6 +87,10 @@ export const MainForm = ({tour}: { tour: ITour}) => {
         : setCoverImage(image)
     }
     reader.readAsDataURL(changeEvent.target.files[0])
+  }
+
+  const removeGalleryItem = (gallery: IGallery) => {
+    setGallery((prev) => prev.filter((prevItem) => prevItem.imageLink !== gallery.imageLink))
   }
 
   return (
@@ -248,19 +270,19 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                     <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
                 </div>
                 <DataTable value={gallery} size="small" responsiveLayout="scroll">
-                    <Column field="uploadDate" header="Fecha"></Column>
-                    <Column field="userRegisterId" header="Usuario"></Column>
+                    {/* <Column field="uploadDate" header="Fecha"></Column> */}
+                    <Column field="tourName" header="Usuario"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' icon="pi pi-trash" onClick={() => console.log('delete', rowData.id)} />)}/>
+                    <Column body={(rowData) => (<Button type='button' icon="pi pi-trash" onClick={() => removeGalleryItem(rowData)} />)}/>
                 </DataTable>
             </div>
             <br />
-            <Button type="submit" label="Guardar" className="mt-2" />
+            <Button type="submit" loading={mutation.isLoading} label="Guardar" className="mt-2" />
         </form>
       </div>
       <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute}/>
-      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} setGallery={setGallery}/>
+      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} setGallery={setGallery} tourName={tour.name}/>
     </>
   )
 }

@@ -7,12 +7,12 @@ import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
 
-const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any }) => {
+const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourName } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any, tourName: string }) => {
     const defaultGallery = {
         title: '',
         uploadDate: '',
         imageLink: '',
-        userRegisterId: ''
+        tourName: ''
       }
     const [submitted, setSubmitted] = useState<any>(false)
     const [loading, setLoading] = useState(false)
@@ -37,10 +37,13 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery } : { sh
         e.preventDefault()
         setSubmitted(true)
         let _galleryItem = {...galleryItem}
+        _galleryItem['tourName'] = tourName
+        _galleryItem['uploadDate'] = new Date()
         _galleryItem['imageLink'] = await handleOnSubmit(e)
         setGalleryItem(_galleryItem)
         setGallery((prev: any) => [...prev, _galleryItem])
         setLoading(false)
+        setImage('/assets/emptyImage.png')
         hideGalleryDialog()
     }
 

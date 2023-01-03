@@ -31,7 +31,7 @@ export default function Admin() {
           </Head>
           <NavBar type={'admin'} action={() => signOut()}/>
           <main className={styles.main}>
-            <Header tourName={'Bariloche'} tourlogo={'/assets/blogExample/1.jpg'}/>
+            <Header tourName={tour?.name} tourlogo={tour?.logoImageLink}/>
             <TabView>
                 <TabPanel header={'Información Principal'}>
                   {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour= {tour}/>}
