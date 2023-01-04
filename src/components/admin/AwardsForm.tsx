@@ -29,7 +29,7 @@ const AwardsForm = ({tour, awardsData}: { tour: ITour, awardsData: IAward[]}) =>
                     <Column field="tourName" header="Usuario"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' icon="pi pi-trash" onClick={() => {
+                    <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => {
                         mutation.mutate(rowData)
                         removeItem(rowData)
                     }} />)}/>

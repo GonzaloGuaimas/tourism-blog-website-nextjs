@@ -261,8 +261,8 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                     <Column field="locationLink" header="Mapa"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' icon="pi pi-trash" onClick={() => console.log('delete', rowData.id)} />)}/>
-                    <Column body={(rowData) => (<Button type='button' icon="pi pi-pencil" onClick={() => console.log('delete', rowData.id)} />)}/>
+                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => console.log('delete', rowData.id)} />)}/>
+                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-pencil" onClick={() => console.log('delete', rowData.id)} />)}/>
                 </DataTable>
             </div>
 
