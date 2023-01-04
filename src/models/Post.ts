@@ -14,6 +14,20 @@ const ContentSchema = new Schema({
         type: String
     }
  })
+export interface IContent extends Document{
+    title: string,
+    paragraph: string,
+    imageLink: string
+}
+export interface IPost extends Document{
+    title: string,
+    subtitle: string,
+    imageLink: string,
+    updateDate: Date,
+    date: Date,
+    tourName: string,
+    content: [IContent]
+}
 
 const PostSchema = new mongoose.Schema({
     title: {
@@ -36,9 +50,9 @@ const PostSchema = new mongoose.Schema({
         require: true,
         type: Date
     },
-    userRegisterId: {
+    tourName: {
         require: true,
-        type: Schema.Types.ObjectId
+        type: String
     },
     content: {
         require: false,
