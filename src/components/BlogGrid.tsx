@@ -18,7 +18,7 @@ const BlogGrid = ({ posts }: { posts: IPost[] }) => {
         {
           posts?.map((post: IPost) => {
             return(
-              <BlogCard key={post.imageLink} image={post?.imageLink} title={post?.title} subtitle={post?.subtitle} date={post?.date.toString().split('T')[0]} tourName={post?.tourName} tourLogo={'/assets/blogExample/1.jpg'}/>
+              <BlogCard key={post.imageLink} post={post}/>
             )
           })
         }
