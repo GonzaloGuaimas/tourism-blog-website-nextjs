@@ -33,12 +33,13 @@
 }
 .HomeInfo h2 {
     display: inline-flex;
-    font-size: calc(2rem + 1vw);
+    font-size: 1.5rem;
+    text-align: center;
 }
 .HomeInfo p {
     display: inline-flex;
     padding: 1rem;
-    font-size: calc(.7rem + 1vw);
+    font-size: 1rem;
     font-weight: 400;
     font-style: italic;
 }
@@ -73,6 +74,7 @@
     animation-fill-mode: forwards;
     text-align: justify;
     padding: 1rem;
+    white-space: break-spaces;
 }
 .About strong{
     font-weight: 800;
