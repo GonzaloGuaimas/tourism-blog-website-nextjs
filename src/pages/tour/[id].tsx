@@ -32,7 +32,7 @@ export default function Place({ params }: { params: any}) {
         </Head>
         <NavBar action={() => {router.back()}} type={'place'}/>
         <main className={styles.main}>
-        <Home placeName={tour?.name} description={tour?.shortDescription}/>
+            <Home tour={tour}/>
             <About tour={tour}/>
             <Gallery tour={tour} />
             <Map tour={tour}/>
