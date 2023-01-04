@@ -88,7 +88,7 @@
 
 /*---------------HEADER-----------------*/
 .Header {
-  margin-top: 60px;
+  margin-top: 48px;
   padding: 2rem;
   display: flex;
   flex-direction: row;
@@ -96,7 +96,6 @@
   align-items: center;
   font-weight: bold;
   column-gap: 3rem;
-  background-image: linear-gradient(rgb(66 62 55 / 52%), rgb(190 179 179 / 7%)),url('../public/assets/blogExample/main.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -105,22 +104,23 @@
   width: 100%;
 }
 
+
 .Header .HeaderText {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  row-gap: 2rem;
+  row-gap: .5rem;
   flex-direction: column;
   flex: 1;
-  animation-delay: 1.4s;
-  animation-duration: 1s;
-  animation-name: animate-element-bottom ;
-  animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.4s;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: animate-element-bottom ;
-  -webkit-animation-fill-mode: forwards;
   align-items: center;
+  text-align: center;
+}
+.Header hr{
+  height: 3px;
+  width: 50%;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  border: none;
 }
 .Header p {
   font-weight: 500;
@@ -341,7 +341,7 @@
 
 
 .BlogDetailDate {
-  transform: translateY(-60px);
+  margin-top: 2rem;
   align-items: flex-start;
   width: 100%;
   padding: 0rem 2rem 0rem 2rem;
@@ -382,13 +382,17 @@
 
 .BlogContent {
   width: 100%;
-  padding: 0rem 3rem 1rem 3rem;
+  padding: 0rem 1rem 0rem 1rem;
   display: flex;
   column-gap: 2rem;
   align-items: center;
 }
 .BlogContent div{
   flex: 3;
+}
+.BlogContent p{
+  white-space: break-spaces;
+  text-align: justify;
 }
 .BlogContent img{
   width: 300px;
@@ -400,12 +404,6 @@
 }
 .BlogDetailSection h2{
   font-size: calc(1.4rem + 1vw);
-}
-.BlogDetailSection h3{
- 
-}
-.BlogDetailSection p{
-  
 }
 /*-----------------GALLERY------------------*/
 .Gallery {
