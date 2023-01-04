@@ -19,7 +19,6 @@ const useNewContent = (setContents: any, hideContentDialog: any) => {
         setContentItem(_contentItem)
     }
     function handleOnChange(changeEvent: any) {
-        console.log('entra a contetn')
         const reader = new FileReader()
         reader.onload = function(onloadEvent){
             setImageContent(onloadEvent.target?.result?.toString())
