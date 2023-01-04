@@ -47,6 +47,7 @@
 
 .MainInfo{
     width: 30%;
+    margin-bottom: 2rem;
 }
 .MainInfo .field {
     margin-bottom: 1.5rem !important;
@@ -101,9 +102,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .MainInfo .DataTableField .TableButton{
     width: fit-content !important;
+}
+.MainInfo .DataTableField .RowButton {
+    background-color: white !important;
+    color: var(--primary-color) !important;
 }
 .MainInfo h2 {
     color: var(--primary-color);

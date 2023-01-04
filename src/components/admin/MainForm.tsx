@@ -275,14 +275,15 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                 </div>
                 <DataTable value={gallery} size="small" responsiveLayout="scroll">
                     {/* <Column field="uploadDate" header="Fecha"></Column> */}
-                    <Column field="tourName" header="Usuario"></Column>
+                    <Column field="title" header="Titulo"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' icon="pi pi-trash" onClick={() => removeGalleryItem(rowData)} />)}/>
+                    <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => removeGalleryItem(rowData)} />)}/>
                 </DataTable>
             </div>
             <br />
             <Button type="submit" loading={loading} label="Guardar" className="mt-2" />
+            <p>Después de realizar los cambios, Guardalos!</p>
         </form>
       </div>
       <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute}/>
