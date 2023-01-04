@@ -537,13 +537,7 @@
     flex-direction: column;
     row-gap: 1rem;
   }
-  .DestinationCard {
-    width: 150px;
-    height: 150px;
-  }
-  .Destination {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+
 }
 
 
