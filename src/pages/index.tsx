@@ -36,7 +36,7 @@ export default function Home() {
         <NavBar action={() => {}} type={'index'}/>
         <main className={styles.main}>
           <HomeComponent/>
-          <DestinationGrid tours={tourQuery?.data}/>
+          <DestinationGrid tourQuery={tourQuery}/>
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
           <BlogGrid posts={postsQuery?.data}/>
           <Delimiter title={'RECORRIDOS A PIE'}/>
