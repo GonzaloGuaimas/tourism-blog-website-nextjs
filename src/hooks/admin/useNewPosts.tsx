@@ -32,6 +32,8 @@ const useNewPosts = (tour: ITour) => {
       const onSubmit = async (data: any) => {
         data.imageLink = await uploadOne(image)
         data.content = contents
+        data.updateDate = new Date()
+        data.date = new Date()
         data.tourName = tour.name
         setLoading(true)
         mutation.mutate(data)

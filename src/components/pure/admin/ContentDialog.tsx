@@ -20,7 +20,7 @@ const ContentDialog = ({ showContentDialog, hideContentDialog, setContents } : {
             </div>
             <div className="field">
                 <label htmlFor="paragraph">Párrafo</label>
-                <InputText id="paragraph" value={contentItem.paragraph} onChange={(e) => onInputChange(e, 'paragraph')} required autoFocus className={classNames({ 'p-invalid': submitted && !contentItem.paragraph })} />
+                <InputText id="paragraph" value={contentItem.paragraph} onChange={(e) => onInputChange(e, 'paragraph')} required className={classNames({ 'p-invalid': submitted && !contentItem.paragraph })} />
                 {submitted && !contentItem.paragraph && <small className="p-error">Ingresar Párrafo.</small>}
             </div>
             <div className={styles.ImageField}>
