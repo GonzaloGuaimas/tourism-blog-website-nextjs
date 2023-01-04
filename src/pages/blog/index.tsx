@@ -1,16 +1,19 @@
 import React, { useRef } from 'react'
 import Head from 'next/head'
 import styles from '../../../styles/Home.module.css'
-
-import BlogCardLarger from '../../components/blog/BlogCardLarger'
 import BlogCard from '../../components/pure/BlogCard'
 import Footer from '../../components/Footer'
 import { NavBar } from '../../components/NavBar'
 import { useRouter } from 'next/router'
+import { useQuery } from 'react-query'
+import { getPosts } from '../../services/posts/getPosts'
+import { IPost } from '../../models/Post'
 
 export default function Blog() {
     const router = useRouter()
     const footerRef = useRef()
+    const postsQuery = useQuery('posts', getPosts)
+    
     return(
         <>
             <Head>
@@ -29,20 +32,13 @@ export default function Blog() {
                     </div>
                 </div>
                 <div className={styles.BlogContainer}>
-                    <BlogCardLarger image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
-                    <div className={styles.Blog}>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                    </div>
-                    <BlogCardLarger image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'}/>
-                    <div className={styles.Blog}>
-                    <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                        <BlogCard image={'/assets/blogExample/1.jpg'} title={'-2°C En Bariloche!!'} subtitle={'Llegó el invierno a nuestra ciudad'} date={'19 dic 22'} tourName={''} tourLogo={''}/>
-                    </div>
+                    {
+                        postsQuery?.data?.map((post: IPost) => {
+                            return(
+                                <BlogCard key={post.imageLink} post={post}/>
+                            )
+                        })
+                    }
                 </div>
                 <Footer refValue={footerRef}/>
             </main>

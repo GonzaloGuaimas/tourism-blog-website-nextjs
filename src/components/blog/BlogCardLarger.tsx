@@ -1,26 +1,29 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../../../styles/Home.module.css'
+import Link from 'next/link'
+import { IPost } from '../../models/Post'
 
-const BlogCardLarger = ({ image, title, subtitle, date }: {image: string, title: string, subtitle: string, date: string}) => {
+const BlogCardLarger = ({ post }: {post: IPost}) => {
   return (
-    <div className={`${styles.BlogCard} ${styles.BlogCardLarger}`}>
-        <Image src={image} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
-        
-        <div className={styles.BlogInfo}>
-            <h2>{title}</h2>
-            <h3>{subtitle}</h3>
-            <div>
-              <p>{date}</p>
-              <div>
-                <p>BarilocheFreeTour</p>
-                <Image src={image} alt={''} height={250} width={250} className={styles.AutorImage}/>
-              </div>
-            </div>
-            <hr />
-            
+    <Link href={'/blog/'+post?.title}>
+      <div className={`${styles.BlogCard} ${styles.BlogCardLarger}`}>
+        <Image src={post?.imageLink} alt={''} height={1080} width={1080} className={styles.BlogImage}/>
+        <div className={styles.BlogCardDate}>
+          <p>{post?.date.toString().split('T')[0]}</p>
         </div>
-    </div>
+
+        <div className={styles.BlogInfo}>
+            <h3>{post?.title}</h3>
+            <h4>{post?.subtitle}</h4>
+            <hr />
+            <div className={styles.BlogCardAuthor}>
+              <p>{post?.tourName}</p>
+              <Image src={'/assets/blogExample/1.jpg'} alt={''} height={250} width={250} className={styles.AutorImage}/>
+            </div>
+        </div>
+      </div>
+    </Link>
   )
 }
 
