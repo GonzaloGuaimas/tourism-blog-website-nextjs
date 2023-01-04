@@ -372,6 +372,7 @@
   padding: 0rem 3rem 1rem 3rem;
   display: flex;
   column-gap: 2rem;
+  align-items: center;
 }
 .BlogContent div{
   flex: 3;
