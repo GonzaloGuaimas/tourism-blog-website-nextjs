@@ -20,6 +20,7 @@ export interface IContent extends Document{
     imageLink: string
 }
 export interface IPost extends Document{
+    _id: string,
     title: string,
     subtitle: string,
     imageLink: string,

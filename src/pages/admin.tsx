@@ -44,7 +44,7 @@ export default function Admin() {
                   {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour={tour}/>}
                 </TabPanel>
                 <TabPanel header="Contenido Blog">
-                  {postsQuery.isLoading ? <h2>Cargando Datos</h2> : <BlogForm tour={tour} posts={postsQuery.data}/>}
+                  {postsQuery.isLoading ? <h2>Cargando Datos</h2> : <BlogForm tour={tour} postsData={postsQuery.data}/>}
                 </TabPanel>
                 <TabPanel header="Reconocimientos">
                   {awardsQuery.isLoading ? <h2>Cargando Datos</h2> : <AwardsForm tour={tour} awardsData={awardsQuery.data}/>}

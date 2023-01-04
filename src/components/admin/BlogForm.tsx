@@ -11,11 +11,14 @@ import { Column } from 'primereact/column'
 import { IContent, IPost } from '../../models/Post'
 import useNewPosts from '../../hooks/admin/useNewPosts'
 import { ITour } from '../../models/Tour'
+import useDeletePost from '../../hooks/admin/useDeletePost'
 
-const BlogForm = ({ posts, tour }: { posts: IPost[], tour: ITour}) => {
+const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
     const [showContentDialog, setShowContentDialog] = useState(false)
     const { setContents, contents, image, loading, defaultValues, onSubmit, handleOnChange } = useNewPosts(tour)
     const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })
+    const [posts, setPosts] = useState(postsData)
+    const { mutation, removeItem }= useDeletePost(setPosts)
   return (
     <>
         <div className={styles.MainInfo}>
@@ -50,10 +53,9 @@ const BlogForm = ({ posts, tour }: { posts: IPost[], tour: ITour}) => {
                 </div>
 
                 <h2>Contenido de la publicación</h2>
-                <Button className={styles.TableButton} type='button' label="Nuevo Reconocimiento" onClick={() => setShowContentDialog(true)}/>
+                <Button className={styles.TableButton} type='button' label="Nuevo Párrafo" onClick={() => setShowContentDialog(true)}/>
+                <h2>Vista Previa</h2>
                 <div className={styles.BlogPreview}>
-                    <h1>Titulo principal</h1>
-                    <h3>subtitulo</h3>
                     {
                         contents.map((content: IContent) => {
                             return (
@@ -62,7 +64,7 @@ const BlogForm = ({ posts, tour }: { posts: IPost[], tour: ITour}) => {
                                         <h2>{content.title}</h2>
                                         <p>{content.paragraph}</p>
                                     </div>
-                                    {content.imageLink !== '' ? <Image src={content.imageLink} alt={''} height={1080} width={1080} className={styles.BlogImage}/> : null}
+                                    {content.imageLink !== undefined ? <Image src={content.imageLink} alt={''} height={1080} width={1080} className={styles.BlogImage}/> : null}
                                 </div>
                             )
                         })
@@ -86,7 +88,8 @@ const BlogForm = ({ posts, tour }: { posts: IPost[], tour: ITour}) => {
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
                     <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => {
-                        console.log('delete', rowData)
+                        mutation.mutate(rowData)
+                        removeItem(rowData)
                     }} />)}/>
                 </DataTable>
             </div>
