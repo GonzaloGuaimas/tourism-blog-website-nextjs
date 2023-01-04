@@ -268,6 +268,19 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
+.BlogCardDate {
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.BlogCardDate p{
+  padding: 3px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: small;
+}
 .BlogCardLarger {
   width: 100%;
 }
@@ -298,13 +311,10 @@
   width: 100%;
   justify-content: space-between;
 }
-.BlogCard .BlogInfo div{
+.BlogCardAuthor{
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.BlogCard .BlogInfo div img{
-  margin-left: 10px;
 }
 .BlogCard .BlogInfo h3 {
   color: var(--primary-font-color);

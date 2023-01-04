@@ -15,6 +15,7 @@ import { NavBar } from '../components/NavBar'
 import { useQuery } from 'react-query'
 import { getTours } from '../services/tours/getTours'
 import { getAwards } from '../services/awards/getAwards'
+import { getPosts } from '../services/posts/getPosts'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -23,6 +24,7 @@ export default function Home() {
     const footerRef = useRef()
     const tourQuery = useQuery('tours', getTours)
     const awardsQuery = useQuery('awards', getAwards)
+    const postsQuery = useQuery('posts', getPosts)
     return (
       <>
         <Head>
@@ -36,7 +38,7 @@ export default function Home() {
           <HomeComponent/>
           <DestinationGrid tours={tourQuery?.data}/>
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
-          <BlogGrid/>
+          <BlogGrid posts={postsQuery?.data}/>
           <Delimiter title={'RECORRIDOS A PIE'}/>
           <Gallery tours={tourQuery?.data}/>
           <About/>
