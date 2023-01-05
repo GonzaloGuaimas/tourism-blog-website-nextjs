@@ -3,6 +3,7 @@
   --foreground-rgb: 0, 0, 0;
   /* --primary-color: #F19705; */
   --primary-color: #FE5500 !important;
+  --swiper-theme-color: #FE5500 !important;
   --primary-font-color: #212529 !important;
 }
 
@@ -72,6 +73,9 @@ a {
 @media (max-width: 800px) {
   .p-dialog {
     max-width: 100% !important;
+  }
+  .swiper {
+    width: 100%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -228,6 +232,12 @@ a {
 }
 .p-tabview .p-tabview-nav .p-tabview-ink-bar{
   background-color: var(--primary-color) !important;
+}
+
+.swiper {
+  width: 90%;
+  text-align: -webkit-center;
+  height: 30vh;
 }
 /*---------------------ANIMATIONS-------------------------*/
 @keyframes animate-element-right {
