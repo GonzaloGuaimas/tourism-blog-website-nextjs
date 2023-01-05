@@ -235,9 +235,9 @@ a {
 }
 
 .swiper {
-  width: 90%;
+  width: 100%;
   text-align: -webkit-center;
-  height: 30vh;
+  height: 100%;
 }
 /*---------------------ANIMATIONS-------------------------*/
 @keyframes animate-element-right {

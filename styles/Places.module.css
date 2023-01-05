@@ -123,6 +123,7 @@
     width: 100%;
     overflow: hidden;
     transform: translateY(-50px);
+    height: 50vh;
 }
 .GallerySlider {
     width: 100%;
