@@ -39,6 +39,30 @@ const PointSchema = new Schema({
         type: String
     },
 })
+export interface IComment extends Document{
+    name: string,
+    date: Date,
+    country: string,
+    comment: string
+}
+const CommentSchema = new Schema({
+    name: {
+        require: true,
+        type: String
+    },
+    date: {
+        type: Date, 
+        default: Date.now
+    },
+    country: {
+        require: true,
+        type: String
+    },
+    comment: {
+        require: true,
+        type: String
+    }
+})
 export interface IPoint extends Document{
     name: string,
     locationLink: string,
@@ -116,6 +140,9 @@ const TourSchema = new mongoose.Schema({
     route: {
         type: [PointSchema],
     },
+    comments: {
+        type: [CommentSchema],
+    },
 })
 
 export interface ITour extends Document {
@@ -136,7 +163,8 @@ export interface ITour extends Document {
     ownerFullName: string
     password: string
     gallery: [IGallery],
-    route: [IPoint]
+    route: [IPoint],
+    comments: [IComment]
 }
 
 export default mongoose.models.Tour || mongoose.model('Tour', TourSchema)
