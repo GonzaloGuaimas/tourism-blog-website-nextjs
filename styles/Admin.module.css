@@ -49,6 +49,9 @@
     width: 50%;
     margin-bottom: 2rem;
 }
+.field {
+    margin-bottom: 1.5rem !important;
+}
 .MainInfo .field {
     margin-bottom: 1.5rem !important;
 }

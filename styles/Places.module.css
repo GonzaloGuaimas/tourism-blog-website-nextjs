@@ -271,6 +271,7 @@
 .CommentCard p {
     font-size: medium;
     font-weight: 400;
+    white-space: break-spaces;
 }
 .CommentCard hr {
     display: inline-flex;

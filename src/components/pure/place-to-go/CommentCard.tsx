@@ -14,7 +14,7 @@ const CommentCard = ({name, date, comment, country}: {name: string, date: string
             <p style={{ alignSelf: 'center'}}>{date}</p>
         </div>
         <hr />
-        <p>{comment}</p>
+        <p>{comment.replace(/\\n/g, '\n')}</p>
     </div>
   )
 }

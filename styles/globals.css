@@ -66,7 +66,14 @@ a {
   background-color: white;
   transition: 0.3s ease-in;
 }
-
+.p-dialog {
+  max-width: 50% !important;
+}
+@media (max-width: 800px) {
+  .p-dialog {
+    max-width: 100% !important;
+  }
+}
 @media screen and (max-width: 768px) {
   .navBarToggler {
     display: block;

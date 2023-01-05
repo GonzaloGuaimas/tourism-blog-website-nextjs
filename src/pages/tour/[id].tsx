@@ -37,7 +37,7 @@ export default function Place({ params }: { params: any}) {
             <Gallery tour={tour} />
             <Map tour={tour}/>
             <Contact whatsAppNumber={tour?.whatsAppNumber}/>
-            <Comments/>
+            {!toursQuery.isLoading ? <Comments tour={tour}/> : null}
             <Footer refValue={footerRef}/>
             <ContactButton whatsAppNumber={tour?.whatsAppNumber} footerVisible={footerVisible}/>
         </main>

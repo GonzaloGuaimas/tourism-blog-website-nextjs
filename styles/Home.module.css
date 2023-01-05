@@ -157,6 +157,7 @@
   gap: 1rem;
   width: 100%;
   justify-items: center;
+  text-align: center;
 }
 .DestinationCard {
   width: 250px;
