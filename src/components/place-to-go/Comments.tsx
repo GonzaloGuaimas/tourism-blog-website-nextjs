@@ -12,8 +12,6 @@ import useScreenWidth from '../../hooks/useScreenWidth'
 
 const Comments = ({ tour }: { tour: ITour}) => {
   const [showCommentDialog, setShowCommentDialog] = useState(false)
-  // const [width, setWidth] = useState<number>(window.innerWidth)
-  // console.log(width)
   const { isMobile } = useScreenWidth() 
   return (
     <>
@@ -21,7 +19,7 @@ const Comments = ({ tour }: { tour: ITour}) => {
           <h3>Opiniones del Tour</h3>
           <hr />
         </div>
-        <Swiper slidesPerView={isMobile ? 1 : 3} pagination={{clickable: true}} modules={[Pagination]} className="mySwiper">
+        <Swiper slidesPerView={isMobile ? 1 : 3} pagination={{clickable: true}} modules={[Pagination]} className="mySwiper" style={{ height: '40vh'}}>
           <div className={styles.Comments}>
           {
             tour?.comments.map((comment: IComment) => {
