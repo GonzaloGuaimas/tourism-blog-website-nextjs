@@ -24,9 +24,6 @@ export const NavBar = ({action, type}: { action: any, type: string}) => {
   const placeNavBar = () => {
     return (
       <>
-        <label onClick={() => action()}>
-          <IoArrowBack className={styles.NavBarIcon}/>
-        </label>
         <Image src={'/assets/logoPositive.png'} alt={''} height={45} width={350} className={styles.navBarImage} onClick={() => {router.back()}}/>
         <div className={active}>
             <Link to='home' smooth offset={-100} duration={900} >
