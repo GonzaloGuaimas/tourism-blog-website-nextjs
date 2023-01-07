@@ -173,10 +173,6 @@
     padding: 1rem;
     font-weight: 600;
 }
-.Map:hover {
-    -webkit-transform: scale(1.05);
-	transform: scale(1.05);
-}
 .MapElement iframe{
     border-radius: 3px;
     width: 100%;
