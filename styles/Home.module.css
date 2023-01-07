@@ -255,10 +255,13 @@
   padding: 0rem 1rem 0rem 1rem;
   width: 100%;
 }
+.Blog .BlogCard {
+  flex-direction: column;
+}
 
 .BlogCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.5);
   border-radius: 2px;
   width: 100%;
@@ -297,7 +300,7 @@
    -o-object-fit: cover;
      object-fit: cover;
    width: 100%;
-   height: 100%;
+   max-height: 300px;
    flex: 1;
 }
 .AutorImage {
@@ -549,6 +552,9 @@
   .BlogContent {
     flex-direction: column;
     row-gap: 1rem;
+  }
+  .BlogCard {
+    flex-direction: column;
   }
 
 }
