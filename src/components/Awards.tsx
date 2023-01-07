@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { IAward } from '../models/Award'
 
 const Awards = ({ awards }: { awards: IAward[] }) => {
-  let triplicateAwards = awards.concat(awards)
+  let triplicateAwards = awards?.concat(awards)
   return (
     <div className={styles.Awards}>
         <div className={'titleSection'} id={'blog'}>
