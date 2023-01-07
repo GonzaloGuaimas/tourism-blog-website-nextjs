@@ -10,7 +10,7 @@ const Contact = ({ whatsAppNumber }: { whatsAppNumber: string}) => {
           <hr />
         </div>
         
-        <Link href={`https://wa.me/${whatsAppNumber}?text=Hola!!%20Quiero%20Anotarme%20Al%20Tour`}>
+        <Link href={`https://wa.me/${whatsAppNumber}?text=Hola!!%20Quiero%20Anotarme%20Al%20Tour`} style={{ width: '100%'}}>
           <button className='Button' style={{ width: '100%'}}><span>Reservar</span> </button>
         </Link>
         <p>Reservá tu lugar vía WhatsApp!</p>
