@@ -38,9 +38,9 @@ export default function Home() {
           <HomeComponent/>
           <DestinationGrid tourQuery={tourQuery}/>
           <Delimiter title={'TOURS DE PAGO LIBRE'} />
-          <BlogGrid posts={postsQuery?.data}/>
-          <Delimiter title={'RECORRIDOS A PIE'}/>
           <Gallery tours={tourQuery?.data}/>
+          <Delimiter title={'RECORRIDOS A PIE'}/>
+          <BlogGrid posts={postsQuery?.data}/>
           <About/>
           <Awards awards={awardsQuery?.data}/>
           <Footer refValue={footerRef}/>
