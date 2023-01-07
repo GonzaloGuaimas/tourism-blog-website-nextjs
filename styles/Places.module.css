@@ -116,7 +116,8 @@
     width: 100%;
     overflow: hidden;
     height: 30vh;
-}
+    border-radius: 10px;
+}a
 .RouteElement {
     width: 100%;
     align-items: center;
@@ -128,6 +129,7 @@
     -o-object-fit: cover;
        object-fit: cover;
     height: 50vh;
+    border-radius: 10px;
 }
 .RouteInfo {
     position: absolute;
@@ -161,6 +163,8 @@
     width: 100%;
     overflow: hidden;
     height: 40vh;
+    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
+    border-radius: 10px;
 }
 .GallerySlider {
     width: 100%;
@@ -172,6 +176,7 @@
     object-fit: cover;
     -o-object-fit: cover;
     height: -webkit-fill-available;
+    border-radius: 10px;
 }
 .slideshow {
     position: relative
@@ -398,6 +403,16 @@
     }
     .Gallery {
         height: 50vh;
+        border-radius: 0px;
+    }
+    .Gallery img {
+        border-radius: 0px;
+    }
+    .Route {
+        border-radius: 0px;
+    }
+    .Route img {
+        border-radius: 0;
     }
   }
 /*-----------------ANIMATIONS-----------------------------*/
