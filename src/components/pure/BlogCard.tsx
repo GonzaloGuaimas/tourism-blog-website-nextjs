@@ -4,8 +4,13 @@ import styles from '../../../styles/Home.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IPost } from '../../models/Post'
+import { getTours } from '../../services/tours/getTours'
+import { getTourLogo } from '../../services/tours/getTourLogo'
+import { useQuery } from 'react-query'
 
 const BlogCard = ({ post }: { post: IPost}) => {
+  const tourQuery = useQuery('tours', getTours)
+  const logo = getTourLogo(tourQuery, post.tourName)
   return (
     <Link href={'/blog/'+post?.title}>
        <div className={styles.BlogCard}>
@@ -20,7 +25,7 @@ const BlogCard = ({ post }: { post: IPost}) => {
             <hr />
             <div className={styles.BlogCardAuthor}>
               <p>{post?.tourName}</p>
-              <Image src={'/assets/blogExample/1.jpg'} alt={''} height={250} width={250} className={styles.AutorImage}/>
+              {tourQuery.isLoading ? null : <Image src={logo} alt={''} height={250} width={250} className={styles.AutorImage}/> }
             </div>
         </div>
       </div>

@@ -312,14 +312,14 @@
 }
 .BlogCardDate {
   background-color: white;
-  border-radius: 3px;
+  border-bottom-left-radius: 10px;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0;
+  right: 0;
 }
 .BlogCardDate p{
   padding: 3px;
-  color: var(--primary-color);
+  color: var(--primary-font-color);
   font-weight: 600;
   font-size: small;
 }
