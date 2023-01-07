@@ -47,12 +47,12 @@ a {
   text-align: -webkit-center;
 }
 .navBarMenu h3{
-  font-size: .9rem;
+  font-size: 1rem;
   transition: font-size .2s ease;
   color: white;
 }
 .navBarMenu h3:hover{
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 .navBarMenu hr {
   display: none;
