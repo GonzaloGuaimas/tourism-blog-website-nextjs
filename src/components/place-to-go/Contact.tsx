@@ -6,7 +6,7 @@ const Contact = ({ whatsAppNumber }: { whatsAppNumber: string}) => {
   return (
     <div className={styles.Contact}>
         <div className={'titleSection'} id={'blog'}>
-          <h1>RESERVÁ TU LUGAR EN NUESTRO TOUR!</h1>
+          <h3>RESERVÁ TU LUGAR EN NUESTRO TOUR!</h3>
           <hr />
         </div>
         
