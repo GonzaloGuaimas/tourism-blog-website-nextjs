@@ -104,13 +104,63 @@
     color: var(--primary-color);
     font-size: calc(2rem + 1vw);
 }
+/*------------------ROUTE----------------------------*/
+.RouteContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 0rem 0rem 1rem 0rem;
+}
+.Route {
+    width: 100%;
+    overflow: hidden;
+    height: 30vh;
+}
+.RouteElement {
+    width: 100%;
+    align-items: center;
+    height: 250px;
+    border-radius: 2px;
+}
+.RouteElement img{
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 50vh;
+}
+.RouteInfo {
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
+}
+.RouteElement .RouteInfo p {
+    font-weight: 700;
+}
+.RouteElement .RouteInfo hr {
+    width: 40%;
+    height: 2px;
+    border: none;
+    background-color: var(--primary-color);
+    font-weight: 400;
+}
 
 /*-------------------GALLERY-------------------------*/
-
+.GalleryContactContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-bottom: 2rem;
+}
 .Gallery {
     width: 100%;
     overflow: hidden;
-    height: 50vh;
+    height: 40vh;
 }
 .GallerySlider {
     width: 100%;
@@ -120,7 +170,8 @@
 .Gallery img {
     width: 100%;
     object-fit: cover;
-    height: 500px;
+    -o-object-fit: cover;
+    height: -webkit-fill-available;
 }
 .slideshow {
     position: relative
@@ -144,8 +195,10 @@
 .MapContainer {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
+    /* padding: 0rem 2rem 2rem 2rem ; */
+    padding-bottom: 2rem;
 }
 .Map {
     display: flex;
@@ -300,7 +353,53 @@
     height: 50px;
 }
 
+/*------------------MEDIA Q --------------------------*/
 
+@media (min-width: 1200px) {
+    .About{
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .RouteContainer{
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .MapContainer{
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+    .GalleryContactContainer {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+}
+@media (max-width: 800px) {
+    .RouteContainer {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 0rem 0rem 1rem 0rem;
+    }
+    .Route {
+        width: 100%;
+        overflow: hidden;
+        height: 50vh;
+    }
+    .MapContainer {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0rem 0rem 1rem 0rem;
+    }
+    .GalleryContactContainer{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .Gallery {
+        height: 50vh;
+    }
+  }
 /*-----------------ANIMATIONS-----------------------------*/
 @keyframes animation-contact-btn {
     0%{

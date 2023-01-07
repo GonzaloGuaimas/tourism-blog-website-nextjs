@@ -15,6 +15,7 @@ import { getTours } from '../../services/tours/getTours'
 import { useRouter } from 'next/router'
 import { useQuery } from 'react-query'
 import { getTour } from '../../services/tours/getTour'
+import Route from '../../components/place-to-go/Route'
 
 export default function Place({ params }: { params: any}) {
     const router = useRouter()
@@ -34,9 +35,13 @@ export default function Place({ params }: { params: any}) {
         <main className={styles.main}>
             <Home tour={tour}/>
             <About tour={tour}/>
+            <Route tour={tour} />
             <Map tour={tour}/>
-            <Gallery tour={tour} />
-            <Contact whatsAppNumber={tour?.whatsAppNumber}/>
+            <div className={styles.GalleryContactContainer}>
+              <Gallery tour={tour} />
+              <Contact whatsAppNumber={tour?.whatsAppNumber}/>
+            </div>
+            
             {!toursQuery.isLoading ? <Comments tour={tour}/> : null}
             <Footer refValue={footerRef}/>
             <ContactButton whatsAppNumber={tour?.whatsAppNumber} footerVisible={footerVisible}/>

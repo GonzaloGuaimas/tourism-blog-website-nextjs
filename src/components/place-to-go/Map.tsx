@@ -9,7 +9,7 @@ const Map = ({tour}: {tour: ITour}) => {
         <div className={'titleSection'} id='map'>
             <h3 style={{color: 'black'}}>PUNTO DE ENCUENTRO</h3>
             <hr />
-            <p>{tour?.meetingPoint}</p>
+            <h2>{tour?.meetingPoint}</h2>
         </div>
         <div className={styles.Map}>
             <div className={styles.MapElement}>
