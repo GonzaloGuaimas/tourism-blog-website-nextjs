@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '../../../styles/Places.module.css'
 import { ITour } from '../../models/Tour'
-
 const Map = ({tour}: {tour: ITour}) => {
   
   return (

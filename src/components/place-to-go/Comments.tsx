@@ -19,7 +19,7 @@ const Comments = ({ tour }: { tour: ITour}) => {
           <h3>Opiniones del Tour</h3>
           <hr />
         </div>
-        <Swiper slidesPerView={isMobile ? 1 : 3} pagination={{clickable: true}} modules={[Pagination]} className="mySwiper" style={{ height: '40vh'}}>
+        <Swiper slidesPerView={isMobile ? 1 : 3} pagination={{clickable: true}} modules={[Pagination]} className="mySwiper" style={{ height: '40vh', paddingTop: '3px'}}>
           <div className={styles.Comments}>
           {
             tour?.comments.map((comment: IComment) => {

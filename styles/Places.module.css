@@ -16,6 +16,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
   }
 .HomeInfo {
     color: white;
@@ -52,16 +53,30 @@
     text-align: center;
     color: var(--primary-font-color);
     width: 100%;
-    padding: 0rem 1rem 0rem 1rem;
-    transform: translateY(-50px);
+    padding: 2rem 1rem 0rem 1rem;
 }
 .About .AboutH3{
     font-weight: 400;
 }
-.About .AboutP{
+.About .AboutP {
     text-align: justify;
-    padding: 1rem;
     white-space: break-spaces;
+    padding: 1rem;
+}
+.About .ExtraInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    justify-content: space-around;
+}
+.About .ExtraInfo img {
+    width: 150px;
+    height: 150px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 5rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 .About strong{
     font-weight: 800;
@@ -84,7 +99,7 @@
     height: max-content;
     border-radius: 2px;
     background-color: white;
-    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
@@ -99,6 +114,7 @@
     font-size: medium;
     font-weight: 400;
     text-align: start;
+    padding: 1.3rem;
 }
 .AboutCardIcon {
     color: var(--primary-color);
@@ -110,14 +126,24 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
-    padding: 0rem 0rem 1rem 0rem;
+    background-color: var(--primary-color);
+    padding: 2rem 0rem 2rem 0rem
+}
+.RouteContainer h2{
+    color: var(--primary-font-color);
+}
+.RouteContainer hr {
+    background-color: white;
+}
+.RouteContainer h3{
+    color: white;
 }
 .Route {
     width: 100%;
     overflow: hidden;
     height: 30vh;
     border-radius: 10px;
-}a
+}
 .RouteElement {
     width: 100%;
     align-items: center;
@@ -157,14 +183,13 @@
     width: 100%;
     flex-direction: row-reverse;
     align-items: center;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 50%);
 }
 .Gallery {
     width: 100%;
     overflow: hidden;
     height: 40vh;
-    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
-    border-radius: 10px;
 }
 .GallerySlider {
     width: 100%;
@@ -176,7 +201,6 @@
     object-fit: cover;
     -o-object-fit: cover;
     height: -webkit-fill-available;
-    border-radius: 10px;
 }
 .slideshow {
     position: relative
@@ -203,7 +227,8 @@
     flex-direction: row-reverse;
     align-items: center;
     column-gap: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 1px 10px rgb(0 0 0 / 50%);
 }
 .Map {
     display: flex;
@@ -213,7 +238,6 @@
     height: max-content;
     padding: .3rem;
     background-color: white;
-    box-shadow: 1px 1px 3px 3px rgb(0 0 0 / 10%);
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
@@ -235,6 +259,7 @@
     align-items: center;
     row-gap: 1rem;
     padding: 2rem;
+    height: 40vh;
 }
 .Contact p {
     text-align: center;
@@ -297,7 +322,7 @@
     height: max-content;
     border-radius: 2px;
     background-color: white;
-    box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
@@ -383,12 +408,15 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        padding: 0rem 0rem 1rem 0rem;
+        padding: 2rem 0rem 1.5rem 0rem;
     }
     .Route {
         width: 100%;
         overflow: hidden;
         height: 50vh;
+    }
+    .About .ExtraInfo{
+        flex-direction: column;
     }
     .MapContainer {
         width: 100%;
