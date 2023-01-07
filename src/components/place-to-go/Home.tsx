@@ -7,7 +7,6 @@ const Home = ({ tour }: { tour: ITour }) => {
     <div className={styles.Home} id={'home'} style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(${tour?.gallery[0].imageLink})`}}>
         <div className={styles.HomeInfo}>
             <h2>{tour?.name}</h2>
-            <hr />
             <p>{tour?.shortDescription}</p>
         </div>
     </div>
