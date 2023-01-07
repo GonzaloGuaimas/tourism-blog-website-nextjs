@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ContentDialog from '../pure/admin/ContentDialog'
+import ContentDialog from './ContentDialog'
 import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
 import { Controller, useForm } from 'react-hook-form'

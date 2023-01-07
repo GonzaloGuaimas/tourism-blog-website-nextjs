@@ -2,10 +2,10 @@ import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
-import styles from '../../../../styles/Admin.module.css'
+import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
 import React from 'react'
-import useNewContent from '../../../hooks/admin/useNewContent'
+import useNewContent from '../../hooks/admin/useNewContent'
 
 const ContentDialog = ({ showContentDialog, hideContentDialog, setContents } : { showContentDialog: boolean, hideContentDialog: any, setContents: any }) => {
     const { submitted, loading, imageContent, contentItem, handleOnChange, onInputChange, submitForm  } = useNewContent(setContents, hideContentDialog)

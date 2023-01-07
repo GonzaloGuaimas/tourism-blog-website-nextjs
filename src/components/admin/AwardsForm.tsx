@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import { Button } from 'primereact/button'
-import AwardDialog from '../pure/admin/AwardDialog'
+import AwardDialog from './AwardDialog'
 import useDeleteAward from '../../hooks/admin/useDeleteAward'
 
 

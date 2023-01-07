@@ -2,10 +2,10 @@ import React from 'react'
 import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
-import styles from '../../../../styles/Admin.module.css'
+import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
 import { Button } from 'primereact/button'
-import useNewAward from '../../../hooks/admin/useNewAward'
+import useNewAward from '../../hooks/admin/useNewAward'
 
 const AwardDialog = ({ showAwardDialog, hideAwardDialog, setAwards, tourName } : { showAwardDialog: boolean, hideAwardDialog: any, setAwards: any, tourName: string }) => {
     const { submitted, loading, image, awardItem, onInputChange, handleOnChange, submitForm  } = useNewAward(setAwards, tourName, hideAwardDialog)

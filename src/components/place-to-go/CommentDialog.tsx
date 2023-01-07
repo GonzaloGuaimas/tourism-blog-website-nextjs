@@ -4,9 +4,9 @@ import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
 import React from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import useUpdateTour from '../../../hooks/tours/useUpdateTour'
-import { ITour } from '../../../models/Tour'
-import styles from '../../../../styles/Admin.module.css'
+import useUpdateTour from '../../hooks/tours/useUpdateTour'
+import { ITour } from '../../models/Tour'
+import styles from '../../../styles/Admin.module.css'
 
 const CommentDialog = ({ tour, showCommentDialog, hideCommentDialog }: { tour: ITour, showCommentDialog: any, hideCommentDialog: any }) => {
     const defaultValues = {

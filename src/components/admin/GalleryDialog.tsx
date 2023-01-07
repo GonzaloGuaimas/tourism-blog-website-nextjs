@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Dialog } from 'primereact/dialog'
 import { InputText } from 'primereact/inputtext'
 import { classNames } from 'primereact/utils'
-import styles from '../../../../styles/Admin.module.css'
+import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
 import { Button } from 'primereact/button'
-import { handleOnSubmit } from '../../../services/cloudinary/handleOnSubmit'
+import { handleOnSubmit } from '../../services/cloudinary/handleOnSubmit'
 
 const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourName } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any, tourName: string }) => {
     const defaultGallery = {
