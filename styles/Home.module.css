@@ -454,16 +454,8 @@
   width: 100%;
   justify-items: center;
   padding: 1rem;
+  gap: 1rem;
 }
-.GalleryAnimate {
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-  animation-name: animate-element-fade;
-  -webkit-animation-name: animate-element-fade;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
-}
-
 .Gallery .GalleryElement {
   width: 100%;
   align-items: center;
@@ -476,9 +468,40 @@
 	-webkit-transition: .3s ease-in-out;
 	transition: .5s ease-in-out;
 }
+.Gallery .GalleryElement .TourInfo {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  padding: .5rem;
+  width: 100%;
+  border-radius: 10px 10px 2px 2px;
+  background-image: linear-gradient( rgba(137, 137, 137, 0.1), rgba(0, 0, 0, 0.7))
+}
+.Gallery .GalleryElement .TourInfo h5 {
+  font-weight: 600;
+}
+.Gallery .GalleryElement .TourInfo hr {
+  width: 40%;
+  height: 2px;
+  border: none;
+  background-color: var(--primary-color);
+  font-weight: 400;
+}
+.Gallery .GalleryElement .TourLogo {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+}
+.Gallery .GalleryElement .TourLogo img {
+  border-radius: 50px;
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0px 11px 15px rgba(0, 0, 0, 0.5);
+}
+
 .Gallery .GalleryElement:hover {
-  -webkit-transform: scale(1.08);
-	transform: scale(1.08);
+  -webkit-transform: scale(1.02);
+	transform: scale(1.02);
 }
 .Gallery .GalleryElement img {
   width: 100%;
