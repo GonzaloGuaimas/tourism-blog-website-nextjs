@@ -63,7 +63,7 @@
   align-items: center;
   font-weight: bold;
   column-gap: 3rem;
-  background-image: linear-gradient(rgb(66 62 55 / 52%), rgb(190 179 179 / 7%)),url('../public/assets/blogExample/main.jpg');
+  background-image: linear-gradient(rgb(66 62 55 / 52%), rgb(190 179 179 / 7%)),url('../public/assets/main.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
