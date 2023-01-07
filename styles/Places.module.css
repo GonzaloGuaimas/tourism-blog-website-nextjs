@@ -63,14 +63,8 @@
 }
 .About .AboutH3{
     font-weight: 400;
-    animation-duration: 1s;
-    animation-name: animate-element-left;
-    animation-fill-mode: forwards;
 }
 .About .AboutP{
-    animation-duration: 1s;
-    animation-name: animate-element-right;
-    animation-fill-mode: forwards;
     text-align: justify;
     padding: 1rem;
     white-space: break-spaces;
