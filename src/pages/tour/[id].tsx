@@ -34,8 +34,8 @@ export default function Place({ params }: { params: any}) {
         <main className={styles.main}>
             <Home tour={tour}/>
             <About tour={tour}/>
-            <Gallery tour={tour} />
             <Map tour={tour}/>
+            <Gallery tour={tour} />
             <Contact whatsAppNumber={tour?.whatsAppNumber}/>
             {!toursQuery.isLoading ? <Comments tour={tour}/> : null}
             <Footer refValue={footerRef}/>
