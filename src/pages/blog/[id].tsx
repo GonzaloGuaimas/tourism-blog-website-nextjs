@@ -24,7 +24,7 @@ export default function Blog({ params }: { params: any}) {
             <title>Free Tours Argentina | Blog</title>
             <meta name="description" content="Descubrí los Free Tours de Argentina" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href="/assets/logoMundo.png" />
+            <link rel="icon" href="/assets/roudedLogo.png" />
             </Head>
             <NavBar action={() => {router.back()}} type={'blog'}/>
             <main className={styles.main}>

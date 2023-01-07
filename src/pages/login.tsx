@@ -42,7 +42,7 @@ export default function Login() {
           <title>Free Tours Argentina</title>
           <meta name="description" content="Descubrí los Free Tours de Argentina" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/assets/logoMundo.png" />
+          <link rel="icon" href="/assets/roudedLogo.png" />
         </Head>
         <NavBar type='blog' action={() => {router.replace('/')}}/>
         <main className={styles.main}>

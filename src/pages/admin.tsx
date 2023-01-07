@@ -34,7 +34,7 @@ export default function Admin() {
             <title>Free Tours Argentina | Admin</title>
             <meta name="description" content="Descubrí los Free Tours de Argentina" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <link rel="icon" href="/assets/logoMundo.png" />
+            <link rel="icon" href="/assets/roudedLogo.png" />
           </Head>
           <NavBar type={'admin'} action={() => signOut()}/>
           <main className={styles.main}>
