@@ -151,16 +151,16 @@ a {
   animation-fill-mode: forwards;
 }
 .titleSection h1{
-  font-size: calc(1.5rem + 1vw);
+  font-size: 1rem;
   text-align: center;
 }
 .titleSection h2{
-  font-size: calc(.8rem + 1vw);
+  font-size: 1rem;
   color: var(--primary-color);
   text-align: center;
 }
 .titleSection h3{
-  font-size: calc(1.6rem + 1vw);
+  font-size: 1.7rem;
   color: var(--primary-color);
   text-align: center;
 }
