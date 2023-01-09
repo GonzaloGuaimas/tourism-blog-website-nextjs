@@ -422,7 +422,7 @@
 
 .BlogContent {
   width: 100%;
-  padding: 0rem 1rem 0rem 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   display: flex;
   column-gap: 2rem;
   align-items: center;
@@ -613,6 +613,14 @@
     flex-direction: column;
   }
 
+}
+@media (min-width: 800px){
+  .BlogDetailDate {
+    width: 60%;
+  }
+  .BlogContent{
+    width: 60%;
+  }
 }
 
 
