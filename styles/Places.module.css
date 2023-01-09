@@ -94,7 +94,7 @@
     display: flex;
     column-gap: 1rem;
     align-items: center;
-    padding: 1rem;
+    padding: .8rem;
     width: 350px;
     height: max-content;
     border-radius: 2px;
@@ -114,11 +114,10 @@
     font-size: medium;
     font-weight: 400;
     text-align: start;
-    padding: 1.3rem;
 }
 .AboutCardIcon {
     color: var(--primary-color);
-    font-size: calc(2rem + 1vw);
+    font-size: 2rem
 }
 /*------------------ROUTE----------------------------*/
 .RouteContainer {
@@ -143,6 +142,8 @@
     overflow: hidden;
     height: 30vh;
     border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
 }
 .RouteElement {
     width: 100%;
