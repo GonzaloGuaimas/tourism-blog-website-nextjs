@@ -17,7 +17,7 @@ const DestinationGrid = ({tourQuery}: {tourQuery: any}) => {
           {tourQuery.isLoading ? <h2>¡¡Cargando Free Tours!!</h2> :
             tourQuery?.data?.map((tour: ITour)=> {
               return (
-                <DestinationCard key={tour.name} image={tour.gallery[0].imageLink} title={tour.name} description={tour.coverDescription} logo={tour.logoImageLink}/>
+                <DestinationCard key={tour.name} image={tour.coverImageLink} title={tour.name} description={tour.coverDescription} logo={tour.logoImageLink}/>
               )
             })
           }
