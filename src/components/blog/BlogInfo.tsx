@@ -9,7 +9,7 @@ import { getTours } from '../../services/tours/getTours'
 
 export const BlogInfo = ({ post }: { post: IPost}) => {
   const tourQuery = useQuery('tours', getTours)
-  const logo = getTourLogo(tourQuery, post.tourName)
+  const logo = getTourLogo(tourQuery, post?.tourName)
   return (
     <div className={styles.BlogDetailDate}>
         <div>
