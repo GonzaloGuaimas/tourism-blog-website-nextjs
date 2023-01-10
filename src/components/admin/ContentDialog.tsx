@@ -7,8 +7,8 @@ import Image from 'next/image'
 import React from 'react'
 import useNewContent from '../../hooks/admin/useNewContent'
 
-const ContentDialog = ({ showContentDialog, hideContentDialog, setContents } : { showContentDialog: boolean, hideContentDialog: any, setContents: any }) => {
-    const { submitted, loading, imageContent, contentItem, handleOnChange, onInputChange, submitForm  } = useNewContent(setContents, hideContentDialog)
+const ContentDialog = ({ showContentDialog, hideContentDialog, setContents, toast } : { showContentDialog: boolean, hideContentDialog: any, setContents: any, toast: any }) => {
+    const { submitted, loading, imageContent, contentItem, handleOnChange, onInputChange, submitForm  } = useNewContent(setContents, hideContentDialog, toast)
 
   return (
     <Dialog visible={showContentDialog} style={{ margin: '1rem' }} header='Nuevo Párrafo' modal className="p-fluid" onHide={hideContentDialog}>

@@ -2,12 +2,12 @@ import { useMutation } from 'react-query'
 import { IAward } from '../../models/Award'
 import { deleteAward } from '../../services/awards/deleteAward'
 
-const useDeleteAward = ( setAwards: any ) => {
+const useDeleteAward = ( setAwards: any, toast: any ) => {
     const mutation = useMutation(
         (data: IAward) => deleteAward(data),
             {
                 onSuccess: () => {
-                    console.log('Delete Data')
+                    toast.current.show({severity: 'Error', summary: 'Realizado', detail: 'Reconocimiento Eliminado'})
                 },
             }
     )

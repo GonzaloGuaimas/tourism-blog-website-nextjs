@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import styles from '../../../styles/Admin.module.css'
 import { useForm, Controller } from 'react-hook-form'
 import { InputText } from 'primereact/inputtext'
@@ -14,6 +14,7 @@ import { uploadOne } from '../../services/cloudinary/uploadOne'
 import { IGallery, IPoint, ITour } from '../../models/Tour'
 import { useMutation } from 'react-query'
 import { updateTour } from '../../services/tours/updateTour'
+import { Toast } from 'primereact/toast'
 
 export const MainForm = ({tour}: { tour: ITour}) => {
   const defaultValues = {
@@ -47,19 +48,22 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
   const [route, setRoute] = useState(tour.route.map((element) => element))
   const [gallery, setGallery] = useState(tour.gallery.map((element) => element))
-  //const [showMessage, setShowMessage] = useState(false)
   const [logoImage, setLogoImage] = useState<string | undefined>(defaultValues.logoImageLink)
   const [coverImage, setCoverImage] = useState<string | undefined>(defaultValues.coverImageLink)
 
   const [loading, setLoading] = useState(false)
-
+  const toast = useRef<any>()
   const mutation = useMutation(
     (data: ITour) => updateTour(data),
         {
             onSuccess: () => {
                 setLoading(false)
-                console.log('Update Data')
+                toast.current.show({severity: 'success', summary: 'Realizado', detail: 'Tour Actualizado!'})
             },
+            onError: () => {
+                setLoading(false)
+                toast.current.show({severity: 'error', summary: 'Error', detail: 'Ocurrió un Error Inesperado'})
+            }
         }
     )
 
@@ -78,8 +82,6 @@ export const MainForm = ({tour}: { tour: ITour}) => {
     data.gallery = gallery
     setLoading(true)
     mutation.mutate(data)
-    // await createTour(data)
-    // setShowMessage(true)
   }
 
   function handleOnChange(changeEvent: any) {
@@ -95,9 +97,11 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
   const removeGalleryItem = (gallery: IGallery) => {
     setGallery((prev) => prev.filter((prevItem) => prevItem.imageLink !== gallery.imageLink))
+    toast.current.show({severity: 'error', summary: 'Realizado', detail: 'Elemento Eliminado'})
   }
   const removePointItem = (route: IPoint) => {
     setRoute((prev) => prev.filter((prevItem) => prevItem.imageLink !== route.imageLink))
+    toast.current.show({severity: 'error', summary: 'Realizado', detail: 'Elemento Eliminado'})
   }
 
   return (
@@ -289,8 +293,9 @@ export const MainForm = ({tour}: { tour: ITour}) => {
             <p>Después de realizar los cambios, Guardalos!</p>
         </form>
       </div>
-      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute}/>
-      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} setGallery={setGallery} tourName={tour.name}/>
+      <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute} toast={toast}/>
+      <GalleryDialog showGalleryDialog={showGalleryDialog} hideGalleryDialog={() => {setShowGalleryDialog(false)}} setGallery={setGallery} tourName={tour.name} toast={toast}/>
+      <Toast position="bottom-right" ref={toast}/>
     </>
   )
 }

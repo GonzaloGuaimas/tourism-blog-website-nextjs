@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { handleOnSubmit } from '../../services/cloudinary/handleOnSubmit'
 
-const useNewContent = (setContents: any, hideContentDialog: any) => {
+const useNewContent = (setContents: any, hideContentDialog: any, toast: any) => {
     const defaultValues = {
         title: '',
         paragraph: '',
@@ -33,6 +33,7 @@ const useNewContent = (setContents: any, hideContentDialog: any) => {
         _contentItem['imageLink'] = await handleOnSubmit(e)
         setContentItem(_contentItem)
         setContents((prev: any) => [...prev, _contentItem])
+        toast.current.show({severity: 'success', summary: 'Realizado', detail: 'Contenido Agregado'})
         setImageContent('/assets/emptyImage.png')
         setContentItem(defaultValues)
         setLoading(false)

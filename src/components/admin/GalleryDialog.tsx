@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../services/cloudinary/handleOnSubmit'
 
-const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourName } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any, tourName: string }) => {
+const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourName, toast } : { showGalleryDialog: boolean, hideGalleryDialog: any, setGallery: any, tourName: string, toast: any }) => {
     const defaultGallery = {
         title: '',
         uploadDate: '',
@@ -18,6 +18,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourNam
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
     const [galleryItem, setGalleryItem] = useState<any>(defaultGallery)
+    const [imgValidator, setImgValidator] = useState(false)
 
     const onInputChange = (e: any, name: string) => {
         const val = (e.target && e.target.value) || ''
@@ -28,24 +29,32 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourNam
     function handleOnChange(changeEvent: any) {
         const reader = new FileReader()
         reader.onload = function(onloadEvent){
+            onloadEvent.target?.result === undefined ? setImgValidator(false) : setImgValidator(true)
             setImage(onloadEvent.target?.result?.toString())
         }
         reader.readAsDataURL(changeEvent.target.files[0])
     }
     async function submitForm(e: any) {
-        setLoading(true)
         e.preventDefault()
-        setSubmitted(true)
-        let _galleryItem = {...galleryItem}
-        _galleryItem['tourName'] = tourName
-        _galleryItem['uploadDate'] = new Date()
-        _galleryItem['imageLink'] = await handleOnSubmit(e)
-        setGalleryItem(_galleryItem)
-        setGallery((prev: any) => [...prev, _galleryItem])
-        setLoading(false)
-        setImage('/assets/emptyImage.png')
-        setGalleryItem(defaultGallery)
-        hideGalleryDialog()
+        if(imgValidator){
+            setLoading(true)
+            setSubmitted(true)
+            let _galleryItem = {...galleryItem}
+            _galleryItem['tourName'] = tourName
+            _galleryItem['uploadDate'] = new Date()
+            _galleryItem['imageLink'] = await handleOnSubmit(e)
+            setGalleryItem(_galleryItem)
+            setGallery((prev: any) => [...prev, _galleryItem])
+            toast.current.show({severity: 'success', summary: 'Realizado', detail: 'Elemento Agregado'})
+            setLoading(false)
+            setImgValidator(false)
+            setImage('/assets/emptyImage.png')
+            setGalleryItem(defaultGallery)
+            hideGalleryDialog()
+        } else {
+            toast.current.show({severity: 'error', summary: 'Error', detail: 'Seleccione Imagen'})
+        }
+        
     }
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+  import React, { useRef, useState } from 'react'
 import { IAward } from '../../models/Award'
 import { ITour } from '../../models/Tour'
 import styles from '../../../styles/Admin.module.css'
@@ -8,12 +8,14 @@ import { Column } from 'primereact/column'
 import { Button } from 'primereact/button'
 import AwardDialog from './AwardDialog'
 import useDeleteAward from '../../hooks/admin/useDeleteAward'
+import { Toast } from 'primereact/toast'
 
 
 const AwardsForm = ({tour, awardsData}: { tour: ITour, awardsData: IAward[]}) => {
+    const toast = useRef<any>()
     const [showAwardDialog, setShowAwardDialog] = useState(false)
     const [awards, setAwards] = useState(awardsData)
-    const { mutation, removeItem } = useDeleteAward(setAwards)
+    const { mutation, removeItem } = useDeleteAward(setAwards, toast)
   return (
     <>
       <div className={styles.MainInfo}>
@@ -36,7 +38,8 @@ const AwardsForm = ({tour, awardsData}: { tour: ITour, awardsData: IAward[]}) =>
                 </DataTable>
             </div>
       </div>
-      <AwardDialog showAwardDialog={showAwardDialog} hideAwardDialog={() => setShowAwardDialog(false)} setAwards={setAwards} tourName={tour.name}/>
+      <Toast ref={toast} position='bottom-right'/>
+      <AwardDialog showAwardDialog={showAwardDialog} hideAwardDialog={() => setShowAwardDialog(false)} setAwards={setAwards} tourName={tour.name} toast={toast}/>
     </>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ContentDialog from './ContentDialog'
 import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
@@ -12,6 +12,7 @@ import { IContent, IPost } from '../../models/Post'
 import useNewPosts from '../../hooks/admin/useNewPosts'
 import { ITour } from '../../models/Tour'
 import useDeletePost from '../../hooks/admin/useDeletePost'
+import { Toast } from 'primereact/toast'
 
 const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
     const defaultValues = {
@@ -25,10 +26,10 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
       }
     const [showContentDialog, setShowContentDialog] = useState(false)
     const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues })
-
-    const { setContents, contents, image, loading, onSubmit, handleOnChange } = useNewPosts(tour, reset, defaultValues)
+    const toast = useRef<any>()
+    const { setContents, contents, image, loading, onSubmit, handleOnChange } = useNewPosts(tour, reset, defaultValues, toast)
     const [posts, setPosts] = useState(postsData)
-    const { mutation, removeItem }= useDeletePost(setPosts)
+    const { mutation, removeItem }= useDeletePost(setPosts, toast)
   return (
     <>
         <div className={styles.MainInfo}>
@@ -104,7 +105,8 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
                 </DataTable>
             </div>
         </div>
-        <ContentDialog showContentDialog={showContentDialog} hideContentDialog={() => setShowContentDialog(false)} setContents={setContents}/>
+        <ContentDialog showContentDialog={showContentDialog} hideContentDialog={() => setShowContentDialog(false)} setContents={setContents} toast={toast}/>
+        <Toast ref={toast} position='bottom-right'/>
     </>
     )
 }

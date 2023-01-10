@@ -9,7 +9,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     switch (method) {
         case 'GET':
             try {
-                const tours = await Tour.find().select('-password')
+                const tours = await Tour.find()
                 return res.status(200).send({tours})
             } catch (error) {
                 res.status(400).json({ success: false, error })

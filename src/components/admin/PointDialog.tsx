@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { Button } from 'primereact/button'
 import { handleOnSubmit } from '../../services/cloudinary/handleOnSubmit'
 
-const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPointDialog: boolean, hidePointDialog: any, setRoute: any }) => {
+const PointDialog = ({ showPointDialog, hidePointDialog, setRoute, toast } : { showPointDialog: boolean, hidePointDialog: any, setRoute: any, toast: any }) => {
     const defaultPoint = {
         name: '',
         locationLink: '',
@@ -17,6 +17,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
     const [loading, setLoading] = useState(false)
     const [image, setImage] = useState<string | undefined>('/assets/emptyImage.png')
     const [point, setPoint] = useState<any>(defaultPoint)
+    const [imgValidator, setImgValidator] = useState(false)
 
     const onInputChange = (e: any, name: string) => {
         const val = (e.target && e.target.value) || ''
@@ -28,6 +29,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
         try {
             const reader = new FileReader()
             reader.onload = function(onloadEvent){
+                onloadEvent.target?.result === undefined ? setImgValidator(false) : setImgValidator(true)
                 setImage(onloadEvent.target?.result?.toString())
             }
             reader.readAsDataURL(changeEvent.target.files[0])
@@ -36,17 +38,24 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
         }
     }
     async function submitForm(e: any) {
-        setLoading(true)
         e.preventDefault()
-        setSubmitted(true)
-        let _point = {...point}
-        _point['imageLink'] = await handleOnSubmit(e)
-        setPoint(_point)
-        setRoute((prev: any) => [...prev, _point])
-        setPoint(defaultPoint)
-        setImage('/assets/emptyImage.png')
-        setLoading(false)
-        hidePointDialog()
+        if(imgValidator){
+            setLoading(true)
+            setSubmitted(true)
+            let _point = {...point}
+            _point['imageLink'] = await handleOnSubmit(e)
+            setPoint(_point)
+            setRoute((prev: any) => [...prev, _point])
+            toast.current.show({severity: 'success', summary: 'Realizado', detail: 'Elemento Agregado'})
+            setPoint(defaultPoint)
+            setImage('/assets/emptyImage.png')
+            setImgValidator(false)
+            setLoading(false)
+            hidePointDialog()
+        } else {
+            toast.current.show({severity: 'error', summary: 'Error', detail: 'Seleccione Imagen'})
+        }
+       
     }
 
   return (
