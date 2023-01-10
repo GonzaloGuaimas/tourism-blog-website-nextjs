@@ -32,13 +32,15 @@ export default function Blog() {
                     </div>
                 </div>
                 <div className={styles.BlogContainer}>
-                    {
-                        postsQuery?.data?.map((post: IPost) => {
-                            return(
-                                <BlogCard key={post.imageLink} post={post}/>
-                            )
-                        })
-                    }
+                    <div className={styles.Blog}>
+                        {
+                            postsQuery?.data?.map((post: IPost) => {
+                                return(
+                                    <BlogCard key={post.imageLink} post={post}/>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
                 <Footer refValue={footerRef}/>
             </main>
