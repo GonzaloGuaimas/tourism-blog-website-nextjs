@@ -11,7 +11,7 @@ import Image from 'next/image'
 import PointDialog from './PointDialog'
 import GalleryDialog from './GalleryDialog'
 import { uploadOne } from '../../services/cloudinary/uploadOne'
-import { IGallery, ITour } from '../../models/Tour'
+import { IGallery, IPoint, ITour } from '../../models/Tour'
 import { useMutation } from 'react-query'
 import { updateTour } from '../../services/tours/updateTour'
 
@@ -95,6 +95,9 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
   const removeGalleryItem = (gallery: IGallery) => {
     setGallery((prev) => prev.filter((prevItem) => prevItem.imageLink !== gallery.imageLink))
+  }
+  const removePointItem = (route: IPoint) => {
+    setRoute((prev) => prev.filter((prevItem) => prevItem.imageLink !== route.imageLink))
   }
 
   return (
@@ -261,8 +264,8 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                     <Column field="locationLink" header="Mapa"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => console.log('delete', rowData.id)} />)}/>
-                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-pencil" onClick={() => console.log('delete', rowData.id)} />)}/>
+                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => removePointItem(rowData)} />)}/>
+                    {/* <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-pencil" onClick={() => console.log('delete', rowData.id)} />)}/> */}
                 </DataTable>
             </div>
 
