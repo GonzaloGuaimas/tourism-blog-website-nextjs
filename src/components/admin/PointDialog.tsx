@@ -43,6 +43,8 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
         _point['imageLink'] = await handleOnSubmit(e)
         setPoint(_point)
         setRoute((prev: any) => [...prev, _point])
+        setPoint(defaultPoint)
+        setImage('/assets/emptyImage.png')
         setLoading(false)
         hidePointDialog()
     }
@@ -63,7 +65,7 @@ const PointDialog = ({ showPointDialog, hidePointDialog, setRoute } : { showPoin
             <div className={styles.ImageField}>
                 <label htmlFor="imageLink">
                     Seleccionar Imagen
-                    <input id='imageLink' type="file" name='file' onChange={handleOnChange}/>
+                    <input id='imageLink' type="file" accept=".png, .jpg, .jpeg" name='file' onChange={handleOnChange}/>
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>

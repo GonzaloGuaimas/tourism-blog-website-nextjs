@@ -33,6 +33,8 @@ const useNewContent = (setContents: any, hideContentDialog: any) => {
         _contentItem['imageLink'] = await handleOnSubmit(e)
         setContentItem(_contentItem)
         setContents((prev: any) => [...prev, _contentItem])
+        setImageContent('/assets/emptyImage.png')
+        setContentItem(defaultValues)
         setLoading(false)
         hideContentDialog()
     }

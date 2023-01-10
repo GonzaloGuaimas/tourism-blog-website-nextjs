@@ -20,7 +20,7 @@ const AwardDialog = ({ showAwardDialog, hideAwardDialog, setAwards, tourName } :
             <div className={styles.ImageField}>
                 <label htmlFor="imageLink">
                     Seleccionar Imagen
-                    <input id='imageLink' type="file" name='file' onChange={handleOnChange}/>
+                    <input id='imageLink' accept=".png, .jpg, .jpeg" type="file" name='file' onChange={handleOnChange}/>
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>

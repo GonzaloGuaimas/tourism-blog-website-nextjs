@@ -14,9 +14,19 @@ import { ITour } from '../../models/Tour'
 import useDeletePost from '../../hooks/admin/useDeletePost'
 
 const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
+    const defaultValues = {
+        title: '',
+        subtitle: '',
+        imageLink: '',
+        updateDate: '',
+        date: '',
+        tourName: '',
+        content: []
+      }
     const [showContentDialog, setShowContentDialog] = useState(false)
-    const { setContents, contents, image, loading, defaultValues, onSubmit, handleOnChange } = useNewPosts(tour)
-    const { control, formState: { errors }, handleSubmit } = useForm({ defaultValues })
+    const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues })
+
+    const { setContents, contents, image, loading, onSubmit, handleOnChange } = useNewPosts(tour, reset, defaultValues)
     const [posts, setPosts] = useState(postsData)
     const { mutation, removeItem }= useDeletePost(setPosts)
   return (
@@ -27,7 +37,7 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
                 <div className={styles.ImageField}>
                     <label htmlFor="imageLink">
                         Seleccionar Imagen
-                        <input id='imageLink' type="file" name='file' onChange={handleOnChange}/>
+                        <input id='imageLink' type="file" accept=".png, .jpg, .jpeg" name='file' onChange={handleOnChange}/>
                     </label>
                     <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
                 </div>

@@ -44,6 +44,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourNam
         setGallery((prev: any) => [...prev, _galleryItem])
         setLoading(false)
         setImage('/assets/emptyImage.png')
+        setGalleryItem(defaultGallery)
         hideGalleryDialog()
     }
 
@@ -58,7 +59,7 @@ const PointDialog = ({ showGalleryDialog, hideGalleryDialog, setGallery, tourNam
             <div className={styles.ImageField}>
                 <label htmlFor="imageLink">
                     Seleccionar Imagen
-                    <input id='imageLink' type="file" name='file' onChange={handleOnChange}/>
+                    <input id='imageLink' type="file" accept=".png, .jpg, .jpeg" name='file' onChange={handleOnChange}/>
                 </label>
                 <Image src={image || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>

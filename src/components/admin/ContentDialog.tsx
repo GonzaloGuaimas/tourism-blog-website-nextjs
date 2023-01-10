@@ -26,7 +26,7 @@ const ContentDialog = ({ showContentDialog, hideContentDialog, setContents } : {
             <div className={styles.ImageField}>
                 <label htmlFor="imageLink2">
                     Seleccionar Imagen
-                    <input id='imageLink2' type="file" name='file' onChange={handleOnChange}/>
+                    <input id='imageLink2' type="file" accept=".png, .jpg, .jpeg" name='file' onChange={handleOnChange}/>
                 </label>
                 <Image src={imageContent || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>

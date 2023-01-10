@@ -23,6 +23,7 @@ const useNewAward = (setAwards: any, tourName: string, hideAwardDialog: any) => 
                 onSuccess: () => {
                     setLoading(false)
                     setImage('/assets/emptyImage.png')
+                    setAwardItem(defaultValues)
                     hideAwardDialog()
                     console.log('Created Data')
                 },
