@@ -14,7 +14,7 @@ export default async function(req: NextApiRequest, res: NextApiResponse){
 		case 'GET':
 			try {
 				// const tour = await Tour.findById(id)
-				const tour = await Tour.find({name: id})
+				const tour = await Tour.find({name: id}).select('-password')
 				return res.status(200).json({tour})
 			} catch(error){
 				res.status(400).json({success: false, error})

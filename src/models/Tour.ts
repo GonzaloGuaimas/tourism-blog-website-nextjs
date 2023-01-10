@@ -131,7 +131,6 @@ const TourSchema = new mongoose.Schema({
         type: String
     },
     password: {
-        require: true,
         type: String
     },
     gallery: {
