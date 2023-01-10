@@ -14,6 +14,7 @@ import { getAwards } from '../services/awards/getAwards'
 import AwardsForm from '../components/admin/AwardsForm'
 import { getPosts } from '../services/posts/getPosts'
 import BlogForm from '../components/admin/BlogForm'
+import { IPost } from '../models/Post'
 
 // eslint-disable-next-line no-unused-vars
 const inter = Inter({ subsets: ['latin'] })
@@ -44,7 +45,7 @@ export default function Admin() {
                   {toursQuery.isLoading ? <h2>Cargando Datos</h2> : <MainForm tour={tour}/>}
                 </TabPanel>
                 <TabPanel header="Contenido Blog">
-                  {postsQuery.isLoading ? <h2>Cargando Datos</h2> : <BlogForm tour={tour} postsData={postsQuery.data}/>}
+                  {postsQuery.isLoading ? <h2>Cargando Datos</h2> : <BlogForm tour={tour} postsData={postsQuery.data.filter((element: IPost) => element.tourName === tour?.name)}/>}
                 </TabPanel>
                 <TabPanel header="Reconocimientos">
                   {awardsQuery.isLoading ? <h2>Cargando Datos</h2> : <AwardsForm tour={tour} awardsData={awardsQuery.data}/>}
