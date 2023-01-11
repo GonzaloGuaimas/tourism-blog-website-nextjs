@@ -6,6 +6,7 @@ import styles from '../../../styles/Admin.module.css'
 import Image from 'next/image'
 import React from 'react'
 import useNewContent from '../../hooks/admin/useNewContent'
+import { InputTextarea } from 'primereact/inputtextarea'
 
 const ContentDialog = ({ showContentDialog, hideContentDialog, setContents, toast } : { showContentDialog: boolean, hideContentDialog: any, setContents: any, toast: any }) => {
     const { submitted, loading, imageContent, contentItem, handleOnChange, onInputChange, submitForm  } = useNewContent(setContents, hideContentDialog, toast)
@@ -20,7 +21,7 @@ const ContentDialog = ({ showContentDialog, hideContentDialog, setContents, toas
             </div>
             <div className="field">
                 <label htmlFor="paragraph">Párrafo</label>
-                <InputText id="paragraph" value={contentItem.paragraph} onChange={(e) => onInputChange(e, 'paragraph')} required className={classNames({ 'p-invalid': submitted && !contentItem.paragraph })} />
+                <InputTextarea id="paragraph" value={contentItem.paragraph} onChange={(e) => onInputChange(e, 'paragraph')} required className={classNames({ 'p-invalid': submitted && !contentItem.paragraph })} autoResize />
                 {submitted && !contentItem.paragraph && <small className="p-error">Ingresar Párrafo.</small>}
             </div>
             <div className={styles.ImageField}>

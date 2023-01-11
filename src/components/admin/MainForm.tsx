@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import styles from '../../../styles/Admin.module.css'
 import { useForm, Controller } from 'react-hook-form'
 import { InputText } from 'primereact/inputtext'
+import { InputTextarea } from 'primereact/inputtextarea'
 import { Password } from 'primereact/password'
 import { Button } from 'primereact/button'
 import { classNames } from 'primereact/utils'
@@ -144,11 +145,11 @@ export const MainForm = ({tour}: { tour: ITour}) => {
               </label>
               <Image src={coverImage || '/assets/emptyImage.png'} alt={''} height={500} width={500}/>
             </div>
-
+            
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="coverDescription" control={control} rules={{ required: 'Ingrese Descripción' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputTextarea id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} autoResize />
                     )} />
                     <label htmlFor="coverDescription" className={classNames({ 'p-error': errors.name })}>Descripción Imagen Portada*</label>
                 </span>
@@ -158,7 +159,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="shortDescription" control={control} rules={{ required: 'Ingrese Descripción.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
+                        <InputTextarea id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} autoResize />
                     )} />
                     <label htmlFor="shortDescription" className={classNames({ 'p-error': errors.name })}>Descripción Corta Encabezado*</label>
                 </span>
@@ -168,8 +169,8 @@ export const MainForm = ({tour}: { tour: ITour}) => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="longerDescription" control={control} rules={{ required: 'Ingrese Descripción.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
-                    )} />
+                        <InputTextarea id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} autoResize />
+                        )} />
                     <label htmlFor="longerDescription" className={classNames({ 'p-error': errors.name })}>Descripción Larga Encabezado*</label>
                 </span>
                 {errors['longerDescription'] && <small className="p-error">{errors['longerDescription'].message}</small>}
@@ -178,8 +179,8 @@ export const MainForm = ({tour}: { tour: ITour}) => {
             <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="extraInfo" control={control} rules={{ required: 'Ingrese Información Extra.' }} render={({ field, fieldState }) => (
-                        <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
-                    )} />
+                        <InputTextarea id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} autoResize />
+                        )} />
                     <label htmlFor="extraInfo" className={classNames({ 'p-error': errors.name })}>Información Extra del Tour*</label>
                 </span>
                 {errors['extraInfo'] && <small className="p-error">{errors['extraInfo'].message}</small>}
