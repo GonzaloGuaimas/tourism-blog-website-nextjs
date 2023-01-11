@@ -137,7 +137,7 @@
 }
 .BlogContent {    
     width: 100%;
-    padding: 0rem 3rem 1rem 3rem;
+    padding: 0rem 1rem 1rem 1rem;
     display: flex;
     column-gap: 2rem;
     align-items: center;
@@ -148,6 +148,7 @@
   .BlogContent div{
     flex: 3;
     text-align: start;
+    width: 100%;
   }
   .BlogContent img{
     width: 300px;
