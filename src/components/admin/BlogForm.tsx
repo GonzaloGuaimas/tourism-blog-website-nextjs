@@ -14,6 +14,7 @@ import { ITour } from '../../models/Tour'
 import useDeletePost from '../../hooks/admin/useDeletePost'
 import { Toast } from 'primereact/toast'
 import { Accordion, AccordionTab } from 'primereact/accordion'
+import useScreenWidth from '../../hooks/useScreenWidth'
 
 const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
     const defaultValues = {
@@ -25,6 +26,7 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
         tourName: '',
         content: []
       }
+    const { isMobile } = useScreenWidth() 
     const [showContentDialog, setShowContentDialog] = useState(false)
     const { control, formState: { errors }, handleSubmit, reset } = useForm({ defaultValues })
     const toast = useRef<any>()
@@ -41,10 +43,10 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
                             <h2>Publicaciones</h2>
                         </div>
                         <DataTable value={posts} size="small" responsiveLayout="stack" breakpoint="960px">
-                            <Column field="date" header="Fecha" body={(rowData) => {return rowData.date.toString().split('T')[0]}}></Column>
-                            <Column field="title" header="Título"></Column>
-                            <Column field="subtitle" header="Subtítulo"></Column>
-                            <Column field="imageLink" header="Imagen" 
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="date" header="Fecha" body={(rowData) => {return rowData.date.toString().split('T')[0]}}></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="title" header="Título"></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="subtitle" header="Subtítulo"></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="imageLink" header="Imagen" 
                             body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
                             <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => {
                                 mutation.mutate(rowData)
