@@ -12,10 +12,12 @@ import Image from 'next/image'
 import PointDialog from './PointDialog'
 import GalleryDialog from './GalleryDialog'
 import { uploadOne } from '../../services/cloudinary/uploadOne'
-import { IGallery, IPoint, ITour } from '../../models/Tour'
+import { IComment, IGallery, IPoint, ITour } from '../../models/Tour'
 import { useMutation } from 'react-query'
 import { updateTour } from '../../services/tours/updateTour'
 import { Toast } from 'primereact/toast'
+import useScreenWidth from '../../hooks/useScreenWidth'
+import { Accordion, AccordionTab } from 'primereact/accordion'
 
 export const MainForm = ({tour}: { tour: ITour}) => {
   const defaultValues = {
@@ -49,8 +51,10 @@ export const MainForm = ({tour}: { tour: ITour}) => {
 
   const [route, setRoute] = useState(tour.route.map((element) => element))
   const [gallery, setGallery] = useState(tour.gallery.map((element) => element))
+  const [comment, setComment] = useState(tour.comments.map((element) => element))
   const [logoImage, setLogoImage] = useState<string | undefined>(defaultValues.logoImageLink)
   const [coverImage, setCoverImage] = useState<string | undefined>(defaultValues.coverImageLink)
+  const { isMobile } = useScreenWidth() 
 
   const [loading, setLoading] = useState(false)
   const toast = useRef<any>()
@@ -81,6 +85,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
     }
     data.route = route
     data.gallery = gallery
+    data.comments = comment
     setLoading(true)
     mutation.mutate(data)
   }
@@ -104,7 +109,10 @@ export const MainForm = ({tour}: { tour: ITour}) => {
     setRoute((prev) => prev.filter((prevItem) => prevItem.imageLink !== route.imageLink))
     toast.current.show({severity: 'error', summary: 'Realizado', detail: 'Elemento Eliminado'})
   }
-
+  const removeCommentItem = (comment: IComment) => {
+    setComment((prev) => prev.filter((prevItem) => prevItem.date !== comment.date))
+    toast.current.show({severity: 'error', summary: 'Realizado', detail: 'Elemento Eliminado'})
+  }
   return (
     <>
       <div className={styles.MainInfo}>
@@ -258,38 +266,58 @@ export const MainForm = ({tour}: { tour: ITour}) => {
             </div>
 
             <hr />
+            <Accordion>
+                <AccordionTab header='Recorrido'>
+                    <div className={styles.DataTableField}>
+                        <div>
+                            <h2>Recorrido</h2>
+                            <Button className={styles.TableButton} type='button' label="Nuevo Punto" onClick={() => setShowPointDialog(true)}/>
+                        </div>
+                        <DataTable value={route} size="small" responsiveLayout="scroll">
+                            <Column field="name" header="Nombre"></Column>
+                            <Column field="imageLink" header="Imagen" 
+                            body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
+                            <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => removePointItem(rowData)} />)}/>
+                        </DataTable>
+                    </div>
+                </AccordionTab>
+                <AccordionTab header='Galería'>
+                    <div className={styles.DataTableField}>
+                        <div>
+                            <h2>Galería</h2>
+                            <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
+                        </div>
+                        <DataTable value={gallery} size="small" responsiveLayout="scroll">
+                            <Column field="uploadDate" header="Fecha" body={(rowData) => {return rowData.uploadDate.toString().split('T')[0]}}></Column>
+                            <Column field="title" header="Titulo"></Column>
+                            <Column field="imageLink" header="Imagen" 
+                            body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
+                            <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => removeGalleryItem(rowData)} />)}/>
+                        </DataTable>
+                    </div>
+                </AccordionTab>
+                <AccordionTab header='Comentarios'>
+                    <div className={styles.DataTableField}>
+                        <div>
+                            <h2>Comentarios</h2>
+                        </div>
+                        <DataTable value={comment} size="small" responsiveLayout="stack" breakpoint="960px">
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="date" header="Fecha" body={(rowData) => {return rowData.date.toString().split('T')[0]}}></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="name" header="Nombre"></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="country" header="País/Provincia"></Column>
+                            <Column className={isMobile ? 'mobileRowTable' : ''} field="comment" header="Comentario"></Column>
+                            <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => removeCommentItem(rowData)} />)}/>
+                        </DataTable>
+                    </div>
+                </AccordionTab>
+            </Accordion>
             
-            <div className={styles.DataTableField}>
-                <div>
-                    <h2>Recorrido</h2>
-                    <Button className={styles.TableButton} type='button' label="Nuevo Punto" onClick={() => setShowPointDialog(true)}/>
-                </div>
-                <DataTable value={route} size="small" responsiveLayout="scroll">
-                    <Column field="name" header="Nombre"></Column>
-                    <Column field="imageLink" header="Imagen" 
-                    body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => removePointItem(rowData)} />)}/>
-                </DataTable>
-            </div>
-
-            <hr />
-           
-            <div className={styles.DataTableField}>
-                <div>
-                    <h2>Galería</h2>
-                    <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
-                </div>
-                <DataTable value={gallery} size="small" responsiveLayout="scroll">
-                    <Column field="uploadDate" header="Fecha" body={(rowData) => {return rowData.uploadDate.toString().split('T')[0]}}></Column>
-                    <Column field="title" header="Titulo"></Column>
-                    <Column field="imageLink" header="Imagen" 
-                    body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
-                    <Column body={(rowData) => (<Button className={styles.RowButton} type='button' icon="pi pi-trash" onClick={() => removeGalleryItem(rowData)} />)}/>
-                </DataTable>
-            </div>
             <br />
-            <Button type="submit" loading={loading} label="Guardar" className="mt-2" />
-            <p>Después de realizar los cambios, Guardalos!</p>
+            <div className={styles.saveButtonContainer}>
+                <Button type="submit" loading={loading} label="Guardar" className="mt-2" />
+                <p>Después de realizar los cambios, Guardalos!</p>
+            </div>
+            
         </form>
       </div>
       <PointDialog showPointDialog={showPointDialog} hidePointDialog={() => {setShowPointDialog(false)}} setRoute={setRoute} toast={toast}/>
