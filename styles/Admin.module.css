@@ -176,5 +176,8 @@
     .BlogContent {
         flex-direction: column;
         row-gap: 1rem;
-      }
+    }
+    .saveButtonContainer {
+        width: -webkit-fill-available;
+    }
   }

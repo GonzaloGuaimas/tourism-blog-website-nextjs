@@ -22,11 +22,10 @@ const AwardsForm = ({tour, awardsData}: { tour: ITour, awardsData: IAward[]}) =>
             <div className={styles.DataTableField}>
                 <div>
                     <h2>Reconocimientos</h2>
-                    <Button className={styles.TableButton} type='button' label="Nuevo Reconocimiento" onClick={() => setShowAwardDialog(true)}/>
+                    <Button className={styles.TableButton} type='button' label="Nuevo" onClick={() => setShowAwardDialog(true)}/>
                 </div>
                 <DataTable value={awards} size="small" responsiveLayout="scroll">
-                    {/* <Column field="uploadDate" header="Fecha Subida"></Column> */}
-                    {/* <Column field="date" header="Fecha"></Column> */}
+                    <Column field="date" header="Fecha" body={(rowData) => {return rowData.date.toString().split('T')[0]}}></Column>
                     <Column field="name" header="Nombre"></Column>
                     <Column field="tourName" header="Usuario"></Column>
                     <Column field="imageLink" header="Imagen" 
