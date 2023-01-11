@@ -266,11 +266,9 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                 </div>
                 <DataTable value={route} size="small" responsiveLayout="scroll">
                     <Column field="name" header="Nombre"></Column>
-                    <Column field="locationLink" header="Mapa"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>
                     <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-trash" onClick={() => removePointItem(rowData)} />)}/>
-                    {/* <Column body={(rowData) => (<Button type='button' className={styles.RowButton} icon="pi pi-pencil" onClick={() => console.log('delete', rowData.id)} />)}/> */}
                 </DataTable>
             </div>
 
@@ -282,7 +280,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                     <Button className={styles.TableButton} type='button' label="Nueva Imagen" onClick={() => setShowGalleryDialog(true)}/>
                 </div>
                 <DataTable value={gallery} size="small" responsiveLayout="scroll">
-                    {/* <Column field="uploadDate" header="Fecha"></Column> */}
+                    <Column field="uploadDate" header="Fecha" body={(rowData) => {return rowData.uploadDate.toString().split('T')[0]}}></Column>
                     <Column field="title" header="Titulo"></Column>
                     <Column field="imageLink" header="Imagen" 
                     body={(rowData) => (<Image src={rowData.imageLink} alt={''} height={500} width={500}/>)}/>

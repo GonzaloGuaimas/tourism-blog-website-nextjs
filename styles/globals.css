@@ -233,7 +233,11 @@ a {
 .p-tabview .p-tabview-nav .p-tabview-ink-bar{
   background-color: var(--primary-color) !important;
 }
-
+@media (max-width: 800px) {
+  .p-datatable .p-datatable-tbody tr td {
+    display: block !important;
+  }
+}
 .swiper {
   width: 100%;
   text-align: -webkit-center;

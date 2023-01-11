@@ -40,9 +40,8 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
                         <div>
                             <h2>Publicaciones</h2>
                         </div>
-                        <DataTable value={posts} size="small" responsiveLayout="scroll">
-                            {/* <Column field="uploadDate" header="Fecha Subida"></Column> */}
-                            {/* <Column field="date" header="Fecha"></Column> */}
+                        <DataTable value={posts} size="small" responsiveLayout="stack" breakpoint="960px">
+                            <Column field="date" header="Fecha" body={(rowData) => {return rowData.date.toString().split('T')[0]}}></Column>
                             <Column field="title" header="Título"></Column>
                             <Column field="subtitle" header="Subtítulo"></Column>
                             <Column field="imageLink" header="Imagen" 
@@ -55,6 +54,9 @@ const BlogForm = ({ postsData, tour }: { postsData: IPost[], tour: ITour}) => {
                     </div>
                 </AccordionTab>
                 <AccordionTab header="Nueva Publicación">
+                    <div>
+                        <h2>Nueva Publicación</h2>
+                    </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className={styles.ImageField}>
                             <label htmlFor="imageLink">
