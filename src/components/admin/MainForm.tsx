@@ -3,7 +3,6 @@ import styles from '../../../styles/Admin.module.css'
 import { useForm, Controller } from 'react-hook-form'
 import { InputText } from 'primereact/inputtext'
 import { InputTextarea } from 'primereact/inputtextarea'
-import { Password } from 'primereact/password'
 import { Button } from 'primereact/button'
 import { classNames } from 'primereact/utils'
 import { DataTable } from 'primereact/datatable'
@@ -23,7 +22,6 @@ export const MainForm = ({tour}: { tour: ITour}) => {
   const defaultValues = {
     logoImageLink: tour.logoImageLink,
     name: tour.name,
-    password: tour.password,
 
     coverImageLink: tour.coverImageLink,
     coverDescription: tour.coverDescription,
@@ -136,7 +134,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                 {errors['name'] && <small className="p-error">{errors['name'].message}</small>}
             </div>
 
-            <div className={styles.field}>
+            {/* <div className={styles.field}>
                 <span className="p-float-label">
                     <Controller name="password" control={control} rules={{ required: 'Ingrese Contraseña.' }} render={({ field, fieldState }) => (
                         <Password id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
@@ -144,7 +142,7 @@ export const MainForm = ({tour}: { tour: ITour}) => {
                     <label htmlFor="password" className={classNames({ 'p-error': errors.password })}>Contraseña*</label>
                 </span>
                 {errors['password'] && <small className="p-error">{errors['password'].message}</small>}
-            </div>
+            </div> */}
 
             <div className={styles.ImageField}>
               <label htmlFor="inputCover">

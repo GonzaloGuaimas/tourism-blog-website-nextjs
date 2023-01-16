@@ -11,15 +11,7 @@ export default async function(req: NextApiRequest, res: NextApiResponse){
 	await dbConnect
 
 	switch (method) {
-		case 'GET':
-			try {
-				// const tour = await Tour.findById(id)
-				const tour = await Tour.find({name: id})
-				return res.status(200).json({tour})
-			} catch(error){
-				res.status(400).json({success: false, error})
-			}
-			break
+		
 		case 'PUT':
 			try {
 				const tour = await Tour.findOneAndUpdate({name: id}, body, 
